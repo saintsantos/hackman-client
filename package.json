@@ -1,0 +1,18 @@
+{
+  "name": "hackman",
+  "private": false,
+  "version": "0.0.0",
+  "description": "A hackathon management app",
+  "repository": "https://github.com/saintsantos/hackman-client",
+  "scripts": {
+    "prestart": "npm install",
+    "postinstall": "bower install",
+    "start": "http-server -a localhost -p 8000 -c-1"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "bower": "^1.7.9"
+  },
+  "dependencies": {
+  }
+}
