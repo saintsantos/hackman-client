@@ -5,6 +5,6 @@
   "description": "A hackathon management app",
   "repository": "https://github.com/saintsantos/hackman-client",
   "dependencies": {
-      
+    "bootswatch-dist": "journal"
   }
 }
