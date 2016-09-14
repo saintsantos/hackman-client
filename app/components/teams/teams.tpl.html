@@ -1,1 +1,135 @@
     <!-- Insert html here-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Olivia's Test Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <a class="navbar-brand" href="#">hackMan</a>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log In   </a></li>
+</ul>
+
+
+</nav>
+<div class="container">
+  <h1>EventName</h1>
+
+  <p>Browse the groups registered in your event:</p>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Teams</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="btn-group">
+        <button type="button" class="btn btn-info" onclick="loadTeamInfo('DummyTeam1')">DummyTeam1</button>
+        <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="auto" title="View Announcements" onclick="loadAnnouncementInfo('DummyTeam1','There are no announcem\
+ents to show at this time')"><span class="glyphicon glyphicon-alert"></span></button>
+       <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="auto" title="View Members" onclick="loadMembers('DummyTeam1',1,2,3)"><span class="glyphicon glyphicon\
+-user"></button></td>
+      </div>
+      </tr>
+
+ <tr>
+        <td><div class="btn-group">
+        <button type="button" class="btn btn-info" onclick="loadTeamInfo('DummyTeam2')">DummyTeam2</button>
+        <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="auto" title="View Announcements" onclick="loadAnnouncementInfo('DummyTeam2','There are no announcem\
+ents to show at this time')"><span class="glyphicon glyphicon-alert"></span></button>
+        <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="auto" title="View Members" onclick="loadMembers('DummyTeam2',4,5,6)"><span class="glyphicon glyphico\
+n-user"></span></button></td>
+     </div>
+      </tr>
+
+      <tr>
+
+        <td><div class="btn-group">
+            <button type="button" class="btn btn-info" onclick="loadTeamInfo('DummyTeam3')"> DummyTeam3    </button>
+            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="auto" title="View Announcements" onclick="loadAnnouncementInfo('DummyTeam3','The meaning of lif\
+e is 42')"> <span class="glyphicon glyphicon-alert"></span></button>
+            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="auto" title="View Members" onclick="loadMembers('DummyTeam3',7,8,9)"><span class="glyphicon glyp\
+hicon-user"></span></button>
+
+      </div>  </td>
+
+</tr>
+
+
+    </tbody>
+  </table>
+
+      <button type="button" class="btn btn-danger" onclick="teamInfoPopUp()"><span class="glyphicon glyphicon-plus-sign"></span> Add New Team</button>
+</div>
+<div class="container">
+<div class="jumbotron">
+<b id="eventCountdown">Your event has not started yet</b>
+<div class="well">
+<h2>Event Timer</h2>
+</div>
+<div class="well">
+<p><b id="groupName"></b></p>
+<p id="InfoPanel"> </p>
+</div>
+<div class="btn-group">
+            <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="auto" title="View Team Information" onclick="underConstruction"> <span class="glyphicon glyphicon-\
+info-sign"></span></button>
+            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="auto" title="View Announcements" onclick="underConstruction()"> <span class="glyphicon glyphico\
+n-alert"></span></button>
+            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="auto" title="View Members" onclick="underConstruction()"><span class="glyphicon glyphicon-user">\
+</span></button>
+
+      </div>
+<p id="ConstMessage"></p>
+
+</div>
+</div>
+
+
+<script>
+
+
+        function teamInfoPopUp(){
+        var team=prompt("Enter your team name:","teamName");
+        if(team!=null && team!="teamName"){
+        alert("We were unable to create the team:\n\t"+team+"\n as our databases are not yet up and running.\n Thank you for your understanding");
+        }}
+<!-- data-toggle function from w3schools.com, will be changed asap-->
+        $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        function underConstruction(){
+        document.getElementById("ConstMessage").innerHTML = "These buttons are under construction. Please check back once databases are up and running!";
+        }
+
+        function loadTeamInfo(group) {
+            document.getElementById("groupName").innerHTML = group;
+            document.getElementById("InfoPanel").innerHTML = "This is the information for the team";
+
+        }
+        function loadAnnouncementInfo(group,announce){
+            document.getElementById("groupName").innerHTML = group;
+            document.getElementById("InfoPanel").innerHTML = announce;
+        }
+        function loadMembers(group,num1,num2,num3){
+            document.getElementById("groupName").innerHTML = group;
+            document.getElementById("InfoPanel").innerHTML = "DummyMember"+num1+"\t DummyMember"+num2+"\t DummyMember"+num3;
+        }
+    </script>
+</body>
+</html>
