@@ -10,11 +10,20 @@ angular
         //any function using TeamService.<insertfunctionnamehere> ie
         //TeamService.httpCall();
         function httpCall() {
-            method: 'POST',
-            url: 'http://url.com',
-            params: {
-                name: 'String',
-                date: 'String'
+            var xhrParams = {
+                method: 'POST',
+                url: 'http://url.com',
+                params: {
+                    name: 'String',
+                    date: 'String'
+                }
             }
-        };
-    });
+
+            return $http(xhrParams);
+
+        }
+
+        return {
+            httpCall: httpCall,
+        }
+    })
