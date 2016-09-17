@@ -5,6 +5,8 @@
   "description": "A hackathon management app",
   "repository": "https://github.com/saintsantos/hackman-client",
   "dependencies": {
-    "bootswatch-dist": "journal"
+    "bootswatch-dist": "journal",
+    "angular-messages": "^1.5.8",
+    "autosize": "^3.0.17"
   }
 }
