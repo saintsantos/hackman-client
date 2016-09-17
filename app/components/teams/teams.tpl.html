@@ -1,4 +1,4 @@
-    <!-- Insert html here-->
+     <!-- Insert html here-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +19,8 @@
 <nav class="navbar navbar-inverse">
   <a class="navbar-brand" href="#">hackMan</a>
   <ul class="nav navbar-nav navbar-right">
-    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-alert"></span> Alerts    </a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-user"></span>    Register</a></li>
     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log In   </a></li>
 </ul>
 
@@ -39,20 +40,16 @@
       <tr>
         <td><div class="btn-group">
         <button type="button" class="btn btn-info" onclick="loadTeamInfo('DummyTeam1')">DummyTeam1</button>
-        <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="auto" title="View Announcements" onclick="loadAnnouncementInfo('DummyTeam1','There are no announcem\
-ents to show at this time')"><span class="glyphicon glyphicon-alert"></span></button>
-       <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="auto" title="View Members" onclick="loadMembers('DummyTeam1',1,2,3)"><span class="glyphicon glyphicon\
--user"></button></td>
+        <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="auto" title="View Announcements" onclick="loadAnnouncementInfo('DummyTeam1','There are no announcements to show at this time')"><span class="glyphicon glyphicon-alert"></span></button>
+       <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="auto" title="View Members" onclick="loadMembers('DummyTeam1',1,2,3)"><span class="glyphicon glyphicon-user"></button></td>
       </div>
       </tr>
 
  <tr>
         <td><div class="btn-group">
         <button type="button" class="btn btn-info" onclick="loadTeamInfo('DummyTeam2')">DummyTeam2</button>
-        <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="auto" title="View Announcements" onclick="loadAnnouncementInfo('DummyTeam2','There are no announcem\
-ents to show at this time')"><span class="glyphicon glyphicon-alert"></span></button>
-        <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="auto" title="View Members" onclick="loadMembers('DummyTeam2',4,5,6)"><span class="glyphicon glyphico\
-n-user"></span></button></td>
+        <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="auto" title="View Announcements" onclick="loadAnnouncementInfo('DummyTeam2','There are no announcements to show at this time')"><span class="glyphicon glyphicon-alert"></span></button>
+        <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="auto" title="View Members" onclick="loadMembers('DummyTeam2',4,5,6)"><span class="glyphicon glyphicon-user"></span></button></td>
      </div>
       </tr>
 
@@ -60,10 +57,8 @@ n-user"></span></button></td>
 
         <td><div class="btn-group">
             <button type="button" class="btn btn-info" onclick="loadTeamInfo('DummyTeam3')"> DummyTeam3    </button>
-            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="auto" title="View Announcements" onclick="loadAnnouncementInfo('DummyTeam3','The meaning of lif\
-e is 42')"> <span class="glyphicon glyphicon-alert"></span></button>
-            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="auto" title="View Members" onclick="loadMembers('DummyTeam3',7,8,9)"><span class="glyphicon glyp\
-hicon-user"></span></button>
+            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="auto" title="View Announcements" onclick="loadAnnouncementInfo('DummyTeam3','The meaning of life is 42')"> <span class="glyphicon glyphicon-alert"></span></button>
+            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="auto" title="View Members" onclick="loadMembers('DummyTeam3',7,8,9)"><span class="glyphicon glyphicon-user"></span></button>
 
       </div>  </td>
 
@@ -86,11 +81,9 @@ hicon-user"></span></button>
 <p id="InfoPanel"> </p>
 </div>
 <div class="btn-group">
-            <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="auto" title="View Team Information" onclick="underConstruction"> <span class="glyphicon glyphicon-\
-info-sign"></span></button>
-            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="auto" title="View Announcements" onclick="underConstruction()"> <span class="glyphicon glyphico\
-n-alert"></span></button>
-            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="auto" title="View Members" onclick="underConstruction()"><span class="glyphicon glyphicon-user">\
+            <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="auto" title="View Team Information" onclick="underConstruction"> <span class="glyphicon glyphicon-info-sign"></span></button>
+            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="auto" title="View Announcements" onclick="underConstruction()"> <span class="glyphicon glyphicon-alert"></span></button>
+            <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="auto" title="View Members" onclick="underConstruction()"><span class="glyphicon glyphicon-user">
 </span></button>
 
       </div>
@@ -108,9 +101,9 @@ n-alert"></span></button>
         if(team!=null && team!="teamName"){
         alert("We were unable to create the team:\n\t"+team+"\n as our databases are not yet up and running.\n Thank you for your understanding");
         }}
-<!-- data-toggle function from w3schools.com, will be changed asap-->
+
         $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="tooltip"]').tooltip({trigger: "hover", animation: true});
         });
 
         function underConstruction(){
