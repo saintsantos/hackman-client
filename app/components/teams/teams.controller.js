@@ -10,7 +10,7 @@ angular
             console.log("This is a function triggered in a controller");
         }
 
-	function teamInfoPopUp(){
+	$scope.teamInfoPopUp=function(){
 	    var team=prompt("Enter your team name:","teamName");
 	    if(team!=null && team!="teamName"){
 		alert("We were unable to create the team:\n\t"+team+"\n as our databases are not yet up and running.\n\
@@ -21,21 +21,20 @@ angular
 		$('[data-toggle="tooltip"]').tooltip({trigger: "hover", animation: true});
 	    });
 
-        function underConstruction(){
-	    document.getElementById("ConstMessage").innerHTML = "These buttons are under construction. Please chec\
-k back once databases are up and running!";
+        $scope.underConstruction=function(){
+	    document.getElementById("ConstMessage").innerHTML = "These buttons are under construction. Please check back once databases are up and running!";
         }
 
-        function loadTeamInfo(group) {
+         $scope.loadTeamInfo=function(group) {
             document.getElementById("groupName").innerHTML = group;
             document.getElementById("InfoPanel").innerHTML = "This is the information for the team";
 
         }
-        function loadAnnouncementInfo(group,announce){
+        $scope.loadAnnouncementInfo=function(group,announce){
             document.getElementById("groupName").innerHTML = group;
             document.getElementById("InfoPanel").innerHTML = announce;
         }
-        function loadMembers(group,num1,num2,num3){
+        $scope.loadMembers=function(group,num1,num2,num3){
             document.getElementById("groupName").innerHTML = group;
             document.getElementById("InfoPanel").innerHTML = "DummyMember"+num1+"\t DummyMember"+num2+"\t Dumm\
 yMember"+num3;
