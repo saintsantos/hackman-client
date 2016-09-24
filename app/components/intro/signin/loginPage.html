@@ -8,10 +8,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
-
+#reg {
+  margin:auto;
+  width: 50%;
+}
 .bg-dkBlue{
     background-color: #2c40b2;
-    color: #7d8282;
+    color: #b6bbbc;
 }
 .bg-ltBlue{
   background-color: #2c87b2;
@@ -30,42 +33,64 @@
       padding-bottom: 150px;
   }
   .pad-light {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
+  .centered-box{
+    width=40%;
+  }
 </style>
 </head>
+
+
 <body class="bg-dkBlue">
 <div class="container-fluid bg-dkBlue text-center pad-hvy">
   <h1><font size=7><b>hackMan</b></font></h1>
   <h3>The best way to manage all your groups</h3>
+
+<!-- all the panel stuff-->
   <div class="panel-group" id="loginOrRegister">
-    <div class="panel panel-default pad-light">
+    <div id='reg' class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title"><a data-toggle="collapse" data-parent="#loginOrRegister" href="#register"><span class="glyphicon glyphicon-user"></span>  Register</a></h4>
       </div>
       <div id="register" class="panel-collapse collapse">
         <div class="panel-body bg-ltGrey">
-          <p>register stuff</p>
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" id="usernameRegister" placeholder="User Name">
+              <input type="password" class="form-control" id="passwordRegister" placeholder="Password">
+              <input type="email" class="form-control" id="emailRegister" placeholder="fluffy@someplace.com"
+              <label><input type="checkbox"> I agree to all of hackMan's terms and policies outlined <a href="#" data-toggle="tooltip" data-placement="auto" title="BLOOD IS THE PRICE OF GLORY">here</a></label>
+              <br>
+              <button type="submit" class="btn btn-info">Register</button>
+            </div>
+          </form>
         </div>
       </div>
-      <div class="panel panel-default pad-light">
+      <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title"><a data-toggle="collapse" data-parent="#loginOrRegister" href="#login"><span class="glyphicon glyphicon-log-in"></span>  Log In</a></h4>
         </div>
         <div id="login" class="panel-collapse collapse">
           <div class="panel-body bg-ltGrey">
-            <p>login stuff and fluff</p>
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control" id="username" placeholder="User Name">
+                <input type="password" class="form-control" id="password" placeholder="Password">
+                <button type="submit" class="btn btn-info">Log In</button>
+              </div>
+            </form>
           </div>
         </div>
     </div>
-
-
-
-
-
-  </div>
+</div>
 
 </div>
 </body>
+<script>
+        $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip({trigger: "hover", animation: true});
+        });
+    </script>
 </html>
