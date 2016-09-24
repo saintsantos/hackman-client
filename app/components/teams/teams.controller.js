@@ -1,6 +1,6 @@
 angular
     //This is used for dependency calls. See teams.module.js to see the dependencies in action.
-    .module('teams.controller', [])
+    .module('teams.controller', ['ui.bootstrap'])
     //The exported name of the controller module, this is called in other modules and in html
     .controller('TeamsController', function($scope, $state, TeamService) {
         //An example of a controller for an html file.
