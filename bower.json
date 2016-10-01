@@ -8,8 +8,8 @@
     "bootswatch-dist": "journal",
     "angular-messages": "^1.5.8",
     "autosize": "^3.0.17",
-    "angular-materialize": "^0.2.1"
-    "angular-bootstrap": "^2.1.4"
+    "angular-materialize": "^0.2.1",
+    "angular-bootstrap": "^2.1.4",
     "ngAnimate": "*"
   }
 }
