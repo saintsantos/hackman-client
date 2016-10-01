@@ -11,12 +11,8 @@ angular
         //TeamService.httpCall();
         function httpCall() {
             var xhrParams = {
-                method: 'POST',
-                url: 'http://url.com',
-                params: {
-                    name: 'String',
-                    date: 'String'
-                }
+                method: 'GET',
+                url: 'http://54.244.60.155:3000/api/user/hi',
             }
 
             return $http(xhrParams);
