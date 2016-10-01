@@ -1,7 +1,31 @@
+@import 'https://fonts.googleapis.com/css?family=VT323';
+
 #home {
     width: 25%;
 }
 
-h2, h3, h4 {
+#hackingBlue {
+  background-color: #10AAC4;
+  font: sans-serif;
   font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px #808080;
+}
+
+#hackerHead {
+  /*color: #74BE30;*/
+  font-size: 40px;
+  font-family: 'vt323', monospace;
+}
+
+#hackingSub {
+  background-color: #white;
+}
+
+body {
+  background-color: #c0c5ce;
+}
+
+ul {
+  width: 30%;
 }

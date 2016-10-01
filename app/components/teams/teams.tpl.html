@@ -19,32 +19,24 @@
   <ul class="nav navbar-nav navbar-right">
     <li><a href="#"><span class="glyphicon glyphicon-alert"></span> Alerts    </a></li>
     <li><a href="#"><span class="glyphicon glyphicon-user"></span>    Register</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-log-in" data-toggle="modal" data-target="#myModal"></span> Log In   </a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log In   </a></li>
   </ul>
 </nav>
 
 <div class="container">
   <img src="../../assets/img/ubhacking.png" id="home">
 
-    <h2>Hackers</h2>
-    <div class="panel-group">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" href="#collapse4">GroupName1</a>
-          </h4>
-        </div>
-        <div id="collapse4" class="panel-collapse collapse">
-          <div class="panel-body">Panel Body</div>
-          <div class="panel-footer">Panel Footer</div>
-          <!--<ul class="list-group">
-            <li class="list-group-item">One</li>
-            <li class="list-group-item">Two</li>
-            <li class="list-group-item">Three</li>
-          </ul>-->
-        </div>
-      </div>
-    </div>
+    <h2 id="hackerHead">Hackers</h2>
+    <!-- <h4>Simple Accordion</h4> -->
+
+      <ul class="collapsible popout" data-collapsible="accordion">
+         <li ng-repeat="x in groups">
+            <div class="collapsible-header" id="hackingBlue">{{x.X}}</div>
+            <div class="collapsible-body" id="hackingSub"><p>This is first section.</p></div>
+         </li>
+      </ul>
+
+
 <!--  <table class="table table-condensed">
     <thead>
       <tr>
