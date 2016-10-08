@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
 #reg {
   margin:auto;
@@ -48,43 +49,30 @@
   <h1><font size=7><b>hackMan</b></font></h1>
   <h3>The best way to manage all your groups</h3>
 
-<!-- all the panel stuff-->
-  <div class="panel-group" id="loginOrRegister">
-    <div id='reg' class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title"><a data-toggle="collapse" data-parent="#loginOrRegister" href="#register"><span class="glyphicon glyphicon-user"></span>  Register</a></h4>
+<!--panel stuff-->
+<ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">input</i>  Login</div>
+      <div class="collapsible-body">
+          <p>pls do the thing?</p>
+          <!--login form-->
+
       </div>
-      <div id="register" class="panel-collapse collapse">
-        <div class="panel-body bg-ltGrey">
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control" id="usernameRegister" placeholder="User Name">
-              <input type="password" class="form-control" id="passwordRegister" placeholder="Password">
-              <input type="email" class="form-control" id="emailRegister" placeholder="fluffy@someplace.com"
-              <label><input type="checkbox"> I agree to all of hackMan's terms and policies outlined <a href="#" data-toggle="tooltip" data-placement="auto" title="BLOOD IS THE PRICE OF GLORY">here</a></label>
-              <br>
-              <button type="submit" class="btn btn-info">Register</button>
-            </div>
-          </form>
-        </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="medium material-icons">perm_identity</i>  Register</div>
+      <div class="collapsible-body">
+          <p>also do the thing pls?</p>
+          <!--register form-->
       </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title"><a data-toggle="collapse" data-parent="#loginOrRegister" href="#login"><span class="glyphicon glyphicon-log-in"></span>  Log In</a></h4>
-        </div>
-        <div id="login" class="panel-collapse collapse">
-          <div class="panel-body bg-ltGrey">
-            <form>
-              <div class="form-group">
-                <input type="text" class="form-control" id="username" placeholder="User Name">
-                <input type="password" class="form-control" id="password" placeholder="Password">
-                <button type="submit" class="btn btn-info">Log In</button>
-              </div>
-            </form>
-          </div>
-        </div>
-    </div>
-</div>
+    </li>
+  </ul>
+
+
+
+
+
+
 
 </div>
 </body>
@@ -92,5 +80,9 @@
         $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip({trigger: "hover", animation: true});
         });
+        $(document).ready(function(){
+            $('.collapsible').collapsible({
+                accordion : true 
+ });
     </script>
 </html>
