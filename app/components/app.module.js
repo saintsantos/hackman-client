@@ -6,7 +6,8 @@ angular
         'app.config',
 
         //moduels pertaining to hackman functionality
-        'teams.module'
+        'teams.module',
+        'user.module'
     ]).controller('mainCtrl', function($rootScope, $state) {
         console.log("Starting");
     })

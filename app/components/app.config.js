@@ -15,7 +15,7 @@ angular
             .state('login', {
                 url: '/intro/login',
                 templateUrl: '/components/intro/signin/loginPage.html',
-                controller: 'loginController'
+                controller: 'UserController'
             })
 
     })
