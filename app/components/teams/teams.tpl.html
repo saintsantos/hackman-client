@@ -35,7 +35,7 @@
             <div class="collapsible-body" id="hackingSub"><p>This is first section.</p></div>
          </li>
       </ul>
-      <div ng-controller="timerCtrl">
+      <div id="timer" ng-controller="timerCtrl">
           <h2>
               <timer countdown="86400" max-time-unit="'hour'" interval="1000">{{hours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
           </h2>

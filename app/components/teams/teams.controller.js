@@ -9,7 +9,15 @@ angular
           "X":"Magic Cam"},{
           "X":"Super Freezer 5000"},{
           "X":"Random Group"},{
-          "X":"HoloGen"
+          "X":"HoloGen"},{
+          "X":"Super Freezer 5000"},{
+          "X":"Random Group"},{
+          "X":"Super Freezer 5000"},{
+          "X":"Random Group"},{
+          "X":"Super Freezer 5000"},{
+          "X":"Random Group"},{
+          "X":"Super Freezer 5000"},{
+          "X":"Random Group"
         }]
 
 
