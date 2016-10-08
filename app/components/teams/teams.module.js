@@ -4,5 +4,6 @@ angular
     //All those modules are called here to glue them together
     .module('teams.module', [
         'teams.controller',
-        'teams.service'
+        'teams.service',
+        'teams.timer'
     ])

@@ -19,22 +19,27 @@
   <ul class="nav navbar-nav navbar-right">
     <li><a href="#"><span class="glyphicon glyphicon-alert"></span> Alerts    </a></li>
     <li><a href="#"><span class="glyphicon glyphicon-user"></span>    Register</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log In   </a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log Out   </a></li>
   </ul>
 </nav>
 
 <div class="container">
   <img src="../../assets/img/ubhacking.png" id="home">
 
-    <h2 id="hackerHead">Hackers</h2>
+    <h2 id="hackerHead">Teams</h2>
     <!-- <h4>Simple Accordion</h4> -->
 
-      <ul class="collapsible popout" data-collapsible="accordion">
+      <ul class="collapsible" data-collapsible="accordion">
          <li ng-repeat="x in groups">
             <div class="collapsible-header" id="hackingBlue"><i class="fa fa-group"></i>{{x.X}}</div>
             <div class="collapsible-body" id="hackingSub"><p>This is first section.</p></div>
          </li>
       </ul>
+      <div ng-controller="timerCtrl">
+          <h2>
+              <timer countdown="86400" max-time-unit="'hour'" interval="1000">{{hours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
+          </h2>
+      </div>
 
 
 <!--  <table class="table table-condensed">
@@ -75,7 +80,7 @@
   </table>
 
       <button type="button" class="btn btn-danger" ng-click="teamInfoPopUp()"><span class="glyphicon glyphicon-plus-sign"></span> Add New Team</button> -->
-</div>
+<!--</div>
 <div class="container">
     <div class="jumbotron">
         <b id="eventCountdown">Your event has not started yet</b>
@@ -95,7 +100,7 @@
       <p id="ConstMessage"></p>
 
   </div>
-</div>
+</div>-->
 <!--<script>
         $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip({trigger: "hover", animation: true});
@@ -103,5 +108,6 @@
     </script>-->
 
 <!--<script src="teams.controller.js"></script> -->
+
 </body>
 </html>
