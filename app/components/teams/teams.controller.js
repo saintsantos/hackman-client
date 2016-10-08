@@ -1,6 +1,6 @@
 angular
     //This is used for dependency calls. See teams.module.js to see the dependencies in action.
-    .module('teams.controller', [])
+    .module('teams.controller', ['ui.bootstrap'])
     //The exported name of the controller module, this is called in other modules and in html
     .controller('TeamsController', function($scope, $state, TeamService) {
         //An example of a controller for an html file.
@@ -11,6 +11,8 @@ angular
           "X":"Random Group"},{
           "X":"HoloGen"
         }]
+
+
 
         $scope.test = function() {
             //Actually define what the function is supposed to do here
@@ -43,3 +45,12 @@ angular
             }
         }
     })
+<<<<<<< b2fa3ca7bf3a294e65fcbbd6afd99f8a85821e8d
+=======
+//angular
+//     .module('teams.controller', ['timer'])
+//
+//     .controller('timerCtrl', function($scope, $state) {
+//
+//     })
+>>>>>>> added a timer, needs to be formatted with CSS
