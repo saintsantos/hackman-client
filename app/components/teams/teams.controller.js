@@ -53,12 +53,3 @@ angular
             }
         }
     })
-<<<<<<< b2fa3ca7bf3a294e65fcbbd6afd99f8a85821e8d
-=======
-//angular
-//     .module('teams.controller', ['timer'])
-//
-//     .controller('timerCtrl', function($scope, $state) {
-//
-//     })
->>>>>>> added a timer, needs to be formatted with CSS
