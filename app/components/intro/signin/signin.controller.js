@@ -4,14 +4,15 @@ angular
     //The exported name of the controller module, this is called in other modules and in html
     .controller('UserController', function($scope, $state, UserService) {
         console.log("Controller works");
-        
+
         $scope.login = function() {
             console.log("HERE!");
-            var name = 'saintsantos';
-            var email = 'hello@email.com';
-            /*UserService.login(name, email).then(function(user) {
+            var name = 'hello';
+            var password = '123456789';
+            UserService.login(name, password).then(function(user) {
                 console.log(user);
-            })*/
+            })
+            $state.go('teams');
         }
 
     })
