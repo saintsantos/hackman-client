@@ -53,17 +53,59 @@
 <ul class="collapsible" data-collapsible="accordion">
     <li>
       <div class="collapsible-header"><i class="material-icons">input</i>  Login</div>
+      <!--will put an angular thing here... somehow...-->
       <div class="collapsible-body">
-          <p>pls do the thing?</p>
           <!--login form-->
-
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="user_name" type="text" class="validate" placeholder="User Name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate" placeholder="Password">
+        </div>
+      </div>
+      <button class="btn bg-ltGrey" type="submit" id="submitLogin">Login! <i class="material-icons small">done</i></button>
+    </form>
+    <!--end of login form-->
       </div>
     </li>
+    <br>
     <li>
       <div class="collapsible-header"><i class="medium material-icons">perm_identity</i>  Register</div>
-      <div class="collapsible-body">
-          <p>also do the thing pls?</p>
+      <!--will put another angular thing here...again, somehow...-->
+      <div class="collapsible-body" >
           <!--register form-->
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="user_name" type="text" class="validate" placeholder="User Name">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate" placeholder="Email">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password" type="password" class="validate" placeholder="Password">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="reEnterPassword" type="Password" class="validate" placeholder="Re-enter Password">
+              </div>
+            </div>
+            <p id="terms_conditions"><input type="checkbox"></input>  I agree to hackMan's terms and conditions outlined here</p>
+            <button class="btn bg-ltGrey" id="Terms and Conditions">Terms and Conditions</button>
+            <br>
+            <br>
+            <button class="btn bg-ltGrey" type="submit" id="submitRegister">Register! <i class="material-icons small">done</i></button>
+          </form>
+          <!--end of register form-->
       </div>
     </li>
   </ul>
@@ -82,7 +124,7 @@
         });
         $(document).ready(function(){
             $('.collapsible').collapsible({
-                accordion : true 
+                accordion : true
  });
     </script>
 </html>
