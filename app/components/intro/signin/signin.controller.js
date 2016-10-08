@@ -15,10 +15,10 @@ angular
             $state.go('teams');
         }
         $scope.termsAndConditions=function() {
-            $state.go('^.termsAndConditions.html');
+            $state.go('t&c');
         }
         $scope.loginPage=function(){
-            $state.go('^.loginPage.html');
+            $state.go('login');
         }
 
     })
