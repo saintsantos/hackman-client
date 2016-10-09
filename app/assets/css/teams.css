@@ -1,7 +1,22 @@
 @import 'https://fonts.googleapis.com/css?family=VT323';
 
+#main_div {
+    position: absolute;
+    top: 12%;
+    padding-left: 7%;
+}
+
 #home {
-    width: 25%;
+    width: 30%;
+}
+
+#nav-text {
+    /*text-shadow: 2px 2px #808080;*/
+    font-size: 40px;
+}
+
+#team_view {
+  width: 40%;
 }
 
 #hackingBlue {
@@ -10,6 +25,7 @@
   font-weight: bold;
   color: white;
   text-shadow: 1px 1px #808080;
+  /*border: 4px;*/
 }
 
 #hackerHead {
@@ -29,10 +45,10 @@
     right: 3%;
 }
 
-body {
-  background-color: #c0c5ce;
+#timer-text {
+    text-shadow: 2px 2px #18AAC4;/*#808080;*/
 }
 
-ul {
-  width: 30%;
+body {
+  background-color: #c0c5ce;
 }
