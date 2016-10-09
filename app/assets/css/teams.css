@@ -20,6 +20,7 @@
 }
 
 #hackingBlue {
+
   background-color: #18AAC4;
   font: sans-serif;
   font-weight: bold;
@@ -34,14 +35,52 @@
   font-family: 'vt323', monospace;
 }
 
-#hackingSub {
-  /*background-color: #white;*/
+#team-block {
+
+}
+
+#fixed-div {
+    position: fixed;
+    float: right;
+    top: 10%;
+    right: 3%;
+    width: 50%;
+}
+
+#team-info {
+    position: fixed;
+    top: 40%;
+    right: 8%;
+    left: 45%;
+    /*display: inline-block;*/
+}
+
+#alerts {
+    position: fixed;
+    top: 19%;
+    right: 12%;
+    left: 42%;
+}
+
+#alert-height {
+    height: 8em;
+}
+
+#alert-text {
+    font: sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px #808080;
+}
+
+#card-height {
+    height: 25em;
 }
 
 #timer {
     position: fixed;
-    /*float: right;*/
-    top: 10%;
+    /*position: fixed;*/
+    float: right;
+    /*top: 10%;*/
     right: 3%;
 }
 
