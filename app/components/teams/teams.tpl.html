@@ -16,12 +16,12 @@
 
 <div class="navbar-fixed">
     <nav class="grey darken-3">
-      <a class="navbar-brand" href="#">hackMan</a>
-      <ul class="right">
-        <li><a href="#"><i class="fa fa-exclamation-triangle"></i> Alerts    </a></li>
-        <li><a href="#"><i class="fa fa-user"></i>    Register</a></li>
-        <li><a href="#"><i class="fa fa-sign-in"></i> Log Out   </a></li>
-      </ul>
+    <a id="hackerHead" class="navbar-brand" href="#">hackMan</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#"><i class="fa fa-exclamation-triangle"></i> Alerts    </a></li>
+            <li><a href="#"><i class="fa fa-user"></i>    Register</a></li>
+            <li><a href="#"><i class="fa fa-sign-in"></i> Log Out   </a></li>
+        </ul>
     </nav>
 </div>
 <!-- <nav class="navbar navbar-inverse">
@@ -42,7 +42,7 @@
       <ul id="team_view" class="collapsible popout" data-collapsible="accordion">
          <li ng-repeat="x in groups">
             <div class="collapsible-header" id="hackingBlue"><i class="fa fa-group"></i>{{x.X}}</div>
-            <div class="collapsible-body" id="hackingSub"><p>This is first section.</p></div>
+            <div class="collapsible-body white" id="hackingSub"><p>This is first section.</p></div>
          </li>
       </ul>
       <div id="timer" ng-controller="timerCtrl">
@@ -50,7 +50,7 @@
               <timer id="timer-text" countdown="86400" max-time-unit="'hour'" interval="1000">{{hours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
           </h2>
       </div>
-
+ </div>
 
 <!--  <table class="table table-condensed">
     <thead>
@@ -111,6 +111,5 @@
 
   </div>
 </div>-->
-
 </body>
 </html>
