@@ -14,5 +14,11 @@ angular
             })
             $state.go('teams');
         }
+        $scope.termsAndConditions=function() {
+            $state.go('t&c');
+        }
+        $scope.loginPage=function(){
+            $state.go('login');
+        }
 
     })
