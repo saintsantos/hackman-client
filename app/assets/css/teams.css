@@ -58,8 +58,8 @@
 #alerts {
     position: fixed;
     top: 19%;
-    right: 12%;
-    left: 42%;
+    right: 6%;
+    left: 43%;
 }
 
 #alert-height {
@@ -81,7 +81,11 @@
     /*position: fixed;*/
     float: right;
     /*top: 10%;*/
-    right: 3%;
+    right: 4%;
+}
+
+#info-title {
+    background-color: #18AAC4;
 }
 
 #timer-text {
