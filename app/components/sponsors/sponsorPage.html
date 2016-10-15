@@ -8,6 +8,10 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
+.sponsor-div{
+    padding-top: 50px;
+}
+
 .bg-ltGrey{
   background-color: #7d8280;
   color: #000000;
@@ -32,7 +36,7 @@
     <h1>{{title}}</h1>
 
 
-<div ng-repeat="thing in sponsors">
+<div class="sponsor-div" ng-repeat="thing in sponsors">
     <img ng-src="{{thing.image}}" style="width:304px;height:228px;">
     <br>
     <p><h2>{{thing.name}}</h2></p>
