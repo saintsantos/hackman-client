@@ -14,11 +14,25 @@ angular
             })
             $state.go('teams');
         }
+        $scope.register = function() {
+            console.log("registerfunction");
+            var name = 'user1'
+            var email = 'user1@mail.com'
+            var password = 'pwd'
+            var passwordRe = 'pwd'
+            UserService.register(name, email, password).then(function(user){
+                console.log(user);
+            })
+            $state.go('teams')
+        }
         $scope.termsAndConditions=function() {
             $state.go('t&c');
         }
         $scope.loginPage=function(){
             $state.go('login');
+        }
+        $scope.registerPage=function(){
+            $state.go('register');
         }
 
     })
