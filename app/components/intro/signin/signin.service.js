@@ -18,10 +18,6 @@ angular
 
         }
 
-        return {
-            login: login,
-        }
-
         function register(username, email, password) {
             var xhrParams = {
                 method: 'POST',
@@ -36,6 +32,7 @@ angular
         }
 
         return {
+            login: login,
             register: register,
         }
 
