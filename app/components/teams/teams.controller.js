@@ -52,4 +52,11 @@ angular
             alert("We were unable to create the team:\n\t"+team+"\n as our databases are not yet up and running.\n Thank you for your understanding");
             }
         }
+
+        //Olivia added this to mess around with the angular stuff on the sponsors page
+        $scope.sponsor = function() {
+            console.log("triggered");
+            $state.go('sponsor');
+
+        };
     })
