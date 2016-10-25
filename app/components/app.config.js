@@ -17,5 +17,15 @@ angular
                 templateUrl: '/components/intro/signin/loginPage.html',
                 controller: 'UserController'
             })
+            .state('t&c', {
+                url: '/intro/terms',
+                templateUrl: '/components/intro/signin/termsAndConditions.html',
+                controller: 'UserController'
+            })
+            .state('sponsor', {
+                url: '/sponsors',
+                templateUrl: '/components/sponsors/sponsorPage.html',
+                controller: 'SponsorController'
+            })
 
     })

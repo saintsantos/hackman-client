@@ -7,7 +7,8 @@ angular
 
         //moduels pertaining to hackman functionality
         'teams.module',
-        'user.module'
+        'user.module',
+        'sponsor.module'
     ]).controller('mainCtrl', function($rootScope, $state) {
         console.log("Starting");
     })
