@@ -7,7 +7,7 @@ angular
         function login(username, password) {
             var xhrParams = {
                 method: 'GET',
-                url: 'http://54.244.60.155:3000/api/user/login',
+                url: 'http://54.244.170.44:3000/api/user/login',
                 params: {
                     username: username,
                     password: password
@@ -21,7 +21,7 @@ angular
         function register(username, email, password) {
             var xhrParams = {
                 method: 'POST',
-                url: 'http://54.244.60.155:3000/api/user/register',
+                url: 'http://54.244.170.44:3000/api/user/register',
                 params: {
                     username: username,
                     email: email,
