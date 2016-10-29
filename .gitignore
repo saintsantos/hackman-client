@@ -1,4 +1,4 @@
 node_modules
 app/assets/lib/
 .DS_Store
-app/config.env
+app/components/config.js

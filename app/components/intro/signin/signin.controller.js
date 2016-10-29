@@ -5,11 +5,7 @@ angular
     .controller('UserController', function($scope, $state, $window,UserService, authService) {
 
         if($window.localStorage.getItem('id_token')) {
-            console.log("found a token!");
-            UserService.login($window.localStorage.getItem('username'), $window.localStorage.getItem('email')).then (function(user) {
-                console.log(user);
-            })
-            $state.go('teams');
+            $state.go('teams')
         } else {
             $state.go('login');
         }

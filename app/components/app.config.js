@@ -21,8 +21,8 @@ angular
     })
     .config(function(lockProvider) {
         lockProvider.init({
-            clientID: 'insert ID here',
-            domain: 'insert domain here'
+            clientID: '0SnVXOn7KonOtQhhdrsG4emhGdajpXNO',
+            domain: 'saintsantos1341.auth0.com'
         });
     })
     //interceptor - adds token XHR header to all requests
