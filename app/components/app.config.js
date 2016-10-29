@@ -27,5 +27,10 @@ angular
                 templateUrl: '/components/sponsors/sponsorPage.html',
                 controller: 'SponsorController'
             })
+            .state('members', {
+                url: '/members',
+                templateUrl: '/components/members/members.tpl.html',
+                controller: 'membersController'
+            })
 
     })

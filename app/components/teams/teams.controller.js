@@ -53,6 +53,11 @@ angular
             }
         }
 
+        $scope.members = function() {
+            console.log("going to members page");
+            $state.go('members');
+        }
+
         //Olivia added this to mess around with the angular stuff on the sponsors page
         $scope.sponsor = function() {
             console.log("triggered");
