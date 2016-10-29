@@ -33,6 +33,7 @@
                     });
                     authManager.authenticate();
                     UserService.login($window.localStorage.getItem('username'), $window.localStorage.getItem('email'));
+
                 });
             }
 
