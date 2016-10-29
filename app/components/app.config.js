@@ -4,7 +4,7 @@ angular
 
     .config(function($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise('/intro/login')
+        $urlRouterProvider.otherwise('/teams')//'/intro/login')
 
         $stateProvider
             .state('teams', {

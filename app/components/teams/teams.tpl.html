@@ -5,23 +5,33 @@
   <title>hackMan</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="../../assets/css/teams.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+  <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 </head>
 
 
 <body ng-controller="TeamsController">
 
-<nav class="navbar navbar-inverse">
+<div class="navbar-fixed">
+    <nav class="grey darken-3">
+    <a id="hackerHead" class="navbar-brand" href="#">hackMan</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#"><i class="fa fa-exclamation-triangle"></i> Alerts    </a></li>
+            <li><a href="#"><i class="fa fa-user"></i>    Register</a></li>
+            <li><a href="#"><i class="fa fa-sign-in"></i> Log Out   </a></li>
+        </ul>
+    </nav>
+</div>
+<!-- <nav class="navbar navbar-inverse">
   <a class="navbar-brand" href="#">hackMan</a>
   <ul class="nav navbar-nav navbar-right">
     <li><a href="#"><span class="glyphicon glyphicon-alert"></span> Alerts    </a></li>
     <li><a href="#"><span class="glyphicon glyphicon-user"></span>    Register</a></li>
     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log Out   </a></li>
   </ul>
-</nav>
+</nav> -->
 
 
 <!--Olivia's sponsor and prize testing buttons!!!-->
@@ -30,24 +40,66 @@
 
 
 
-<div class="container">
+<div class="container" id="main_div">
+
   <img src="../../assets/img/ubhacking.png" id="home">
 
     <h2 id="hackerHead">Teams</h2>
     <!-- <h4>Simple Accordion</h4> -->
 
-      <ul class="collapsible" data-collapsible="accordion">
+      <ul id="team_view" class="collapsible popout" data-collapsible="accordion">
          <li ng-repeat="x in groups">
             <div class="collapsible-header" id="hackingBlue"><i class="fa fa-group"></i>{{x.X}}</div>
-            <div class="collapsible-body" id="hackingSub"><p>This is first section.</p></div>
+            <div class="collapsible-body white" id="hackingSub">
+            <ul>
+                <li><i class="fa fa-user"></i> Person 1</li>
+                <li><i class="fa fa-user"></i> Person 2</li>
+                <li><i class="fa fa-user"></i> Person 3</li>
+                <li><i class="fa fa-user"></i> Person 4</li>
+            </ul>
+            </div>
          </li>
       </ul>
-      <div id="timer" ng-controller="timerCtrl">
-          <h2>
-              <timer countdown="86400" max-time-unit="'hour'" interval="1000">{{hours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
-          </h2>
+      <div id="fixed-div">
+          <div id="timer" ng-controller="timerCtrl">
+              <h2>
+                  <!-- <timer id="timer-text" countdown="86400" max-time-unit="'hour'" interval="1000">{{hours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer> -->
+                  <timer id="timer-text" end-time="145162800000000">TIME REMAINING: {{hours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
+              </h2>
+          </div>
+          <!-- <div id="team-info"> -->
+          <div id="alerts">
+              <div class="card red darken-3" id="alert-height">
+                <div class="card-content">
+                    <span id="alert-text" class="card-title white-text"><i class="fa fa-exclamation-triangle"></i>  This is where Alerts will be displayed</span>
+                    <!-- <div class="divider"></div> -->
+                <br/>
+                <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. -->
+              </div>
+          </div>
+          <!-- <div class="row">
+              <div class="col s8 offset-s5" > -->
+                <div id="team-info">
+                    <div class="card" id="card-height">
+                      <div class="card-content">
+                          <div >
+                              <span class="card-title black-text">Team Info</span>
+                          </div>
+                          <div class="divider"></div>
+                      <h5>Name:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;John Doe's Group</p>
+                      <h5>Project Description:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;We are building a hackathon management application.</p>
+                      <h5>Status:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;We need a lot of help.</p>
+                      <h5>Location:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;Third Floor, Near 310 Davis Hall</p>
+                      <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. -->
+                    </div>
+                </div>
+                  <!-- </div>
+              </div> -->
+          <!-- </div> -->
+      </div>
       </div>
 
+ </div>
 
 <!--  <table class="table table-condensed">
     <thead>
@@ -108,13 +160,5 @@
 
   </div>
 </div>-->
-<!--<script>
-        $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip({trigger: "hover", animation: true});
-        });
-    </script>-->
-
-<!--<script src="teams.controller.js"></script> -->
-
 </body>
 </html>
