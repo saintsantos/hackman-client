@@ -7,7 +7,9 @@ angular
 
         //moduels pertaining to hackman functionality
         'teams.module',
-        'user.module'
+        'user.module',
+        'auth.service',
+        'angular-jwt'
     ]).controller('mainCtrl', function($rootScope, $state) {
         console.log("Starting");
     })

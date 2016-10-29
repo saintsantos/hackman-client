@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang=en>
 <head>
+    <base href="/">
   <title>hackMan</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,6 +54,8 @@
 <ul class="collapsible container" data-collapsible="accordion">
     <li>
       <div class="collapsible-header bg-dkGrey col s6 offset-s3"><i class="material-icons">input</i>  Login</div>
+      <button class="btn bg-ltBlue" type="submit" id="Oauth" ng-click="loggingIn()">Login!<i class="material-icons small">done</i></button>
+      <button class="btn bg-ltBlue" type="submit" id="Oauth" ng-click="signUp()">SignUp!<i class="material-icons small">done</i></button>
       <!--will put an angular thing here... somehow...-->
       <div class="collapsible-body bg-ltGrey col s6 offset-s3">
           <!--login form-->

@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="/">
   <title>hackMan</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +13,7 @@
 </head>
 
 
-<body ng-controller="TeamsController">
+<body>
 
 <div class="navbar-fixed">
     <nav class="grey darken-3">
@@ -29,7 +30,9 @@
   <ul class="nav navbar-nav navbar-right">
     <li><a href="#"><span class="glyphicon glyphicon-alert"></span> Alerts    </a></li>
     <li><a href="#"><span class="glyphicon glyphicon-user"></span>    Register</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log Out   </a></li>
+    <li><button ng-click="loggingOut()"> Log Out</button></li>
+    <li><button ng-click="check()"> Check</button></li>
+    <li><a href="#"><span class="glyphicon glyphicon-log-in" ng-click="loggingOut()"></span> Log Out   </a></li>
   </ul>
 </nav> -->
 
