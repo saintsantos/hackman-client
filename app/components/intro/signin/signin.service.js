@@ -4,13 +4,13 @@ angular
     //Service name for calls in other modules
     .factory('UserService', function($http, $window, $q) {
 
-        function login(username, password) {
+        function login(username, email) {
             var xhrParams = {
-                method: 'GET',
-                url: 'http://54.244.60.155:3000/api/user/login',
+                method: 'POST',
+                url: 'http://localhost:3000/api/user/login',
                 params: {
                     username: username,
-                    password: password
+                    email: email
                 }
             }
 
@@ -18,7 +18,28 @@ angular
 
         }
 
+        function signup(username, email, first_name, last_name, role, skills) {
+            var xhrParams = {
+                method: 'POST',
+                url: 'http://localhost:3000/api/user/signup',
+                params: {
+                    username: username,
+                    email: email,
+                    first_name: first_name,
+                    last_name: last_name,
+                    role: role,
+                    skills: skills
+                }
+            }
+
+            return $http(xhrParams);
+
+        }
+
+
+
         return {
+            signup: signup,
             login: login,
         }
 
