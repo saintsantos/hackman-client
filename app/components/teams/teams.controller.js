@@ -1,10 +1,12 @@
 angular
     //This is used for dependency calls. See teams.module.js to see the dependencies in action.
-    .module('teams.controller', ['ui.bootstrap'])
+    .module('teams.controller', ['ui.bootstrap', 'auth.service'])
     //The exported name of the controller module, this is called in other modules and in html
-    .controller('TeamsController', function($scope, $state, TeamService) {
+    .controller('TeamsController', function($scope, $state, $window, TeamService, authService) {
         //An example of a controller for an html file.
         //In angular, in order to make a function callable, use $scope to make the function as shown below.
+        var authenticate = this;
+        authenticate.authService = authService;
         $scope.groups = [{
           "X":"Magic Cam"},{
           "X":"Super Freezer 5000"},{
@@ -51,5 +53,16 @@ angular
             if(team!=null && team!="teamName"){
             alert("We were unable to create the team:\n\t"+team+"\n as our databases are not yet up and running.\n Thank you for your understanding");
             }
+        }
+
+        $scope.loggingOut = function() {
+            authenticate.authService.logout();
+            $state.go('login');
+
+        }
+
+        $scope.check = function() {
+            console.log("Checking login...");
+            TeamService.check();
         }
     })
