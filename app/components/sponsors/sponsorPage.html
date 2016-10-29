@@ -4,24 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../../assets/css/teams.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<style>
-.sponsor-div{
-    padding-top: 50px;
-}
 
-.bg-ltGrey{
-  background-color: #7d8280;
-  color: #000000;
-}
-</style>
 </head>
 
 
-<body class="bg-ltGrey" ng-app="Sponsors">
-    <div class="bg-ltGrey">
+<body ng-app="Sponsors">
+
     <nav class="navbar navbar-inverse">
       <a class="navbar-brand" href="#">hackMan</a>
       <ul class="nav navbar-nav navbar-right">
@@ -34,18 +26,23 @@
 
 
 <div class="text-center container">
-    <h1>{{title}}</h1>
+    <h1 id="hackerHead">{{title}}</h1>
 
 
-<div class="sponsor-div" ng-repeat="thing in sponsors">
-    <img ng-src="{{thing.image}}" style="width:304px;height:228px;">
-    <br>
-    <p><h2>{{thing.name}}</h2></p>
-    <p>{{thing.about}}</p>
-    <a ng-href={{sponsors.link}}>Visit our Site!</a>
-    <br>
-    <br>
-    <br>
+<div id="card" ng-repeat="thing in sponsors">
+    <div class="card" id="card-height">
+      <div class="card-content">
+          <img ng-src="{{thing.image}}" style="width:304px;height:228px;">
+          <br>
+          <div >
+              <span class="card-title black-text"><h2>{{thing.name}}</h2></span>
+          </div>
+          <div class="divider"></div>
+          <p>About Us: {{thing.about}}</p>
+          <div class="divider"></div>
+          <a ng-href={{sponsors.link}}>Visit our Site!</a>
+
+      </div>
 </div>
 
 
@@ -61,5 +58,7 @@
 
 
 
-</div>
+
+
+
 </body>
