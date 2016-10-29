@@ -53,7 +53,13 @@ angular
             }
         }
 
-        //Olivia added this to mess around with the angular stuff on the sponsors page
+        //Olivia added these to mess around with the angular stuff on the sponsors and prizes page
+        $scope.prize = function() {
+            console.log("triggered");
+            $state.go('prize');
+
+        }
+
         $scope.sponsor = function() {
             console.log("triggered");
             $state.go('sponsor');
