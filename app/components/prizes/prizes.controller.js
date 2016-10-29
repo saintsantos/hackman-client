@@ -1,5 +1,5 @@
 angular
-    .module('prize.controller', [])
+    .module('prizes.controller', [])
     .controller('PrizeController', function($scope) {
         $scope.title='Prizes';
         $scope.sponsorX=[
