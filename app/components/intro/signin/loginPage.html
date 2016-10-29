@@ -8,119 +8,27 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../assets/css/teams.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<style>
-#reg {
-  margin:auto;
-  width: 50%;
-}
-.bg-dkBlue{
-    background-color: #2c40b2;
-    color: #b6bbbc;
-}
-.bg-ltBlue{
-  background-color: #2c87b2;
-  color: #000000;
-}
-.bg-dkGrey{
-  background-color: #585c5c;
-  color: #2c87b2;
-}
-.bg-ltGrey{
-  background-color: #7d8282;
-  color: #000000;
-}
-.pad-hvy {
-      padding-top: 150px;
-      padding-bottom: 150px;
-  }
-  .pad-light {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-  .centered-box{
-    width=40%;
-  }
-</style>
 </head>
-
-
 <body class="bg-dkBlue">
-<div class="container-fluid bg-dkBlue text-center pad-hvy">
-  <h1><font size=7><b>hackMan</b></font></h1>
+
+    <div class="navbar-fixed">
+        <nav class="grey darken-3">
+        <a id="hackerHead" class="navbar-brand" href="#">hackMn</a>
+        </nav>
+    </div>
+
+<div class="container-fluid bg-dkBlue text-center pad-hvy card" id="login-card">
+  <h1 id="hackerlogo"><b>HACKMN</b></h1>
   <h3>The best way to manage all your groups</h3>
+  <img src="../../assets/img/ubhacking.png" id="login-ub-hacking">
+  <br/>
 
 <!--panel stuff-->
-<ul class="collapsible container" data-collapsible="accordion">
-    <li>
-      <div class="collapsible-header bg-dkGrey col s6 offset-s3"><i class="material-icons">input</i>  Login</div>
-      <button class="btn bg-ltBlue" type="submit" id="Oauth" ng-click="loggingIn()">Login!<i class="material-icons small">done</i></button>
-      <button class="btn bg-ltBlue" type="submit" id="Oauth" ng-click="signUp()">SignUp!<i class="material-icons small">done</i></button>
-      <!--will put an angular thing here... somehow...-->
-      <div class="collapsible-body bg-ltGrey col s6 offset-s3">
-          <!--login form-->
-    <form class="col s6 ">
-      <div class="row">
-        <div class="input-field col s4 offset-s4">
-          <input id="user_name" type="text" class="validate" placeholder="User Name">
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s4 offset-s4">
-          <input id="password" type="password" class="validate" placeholder="Password">
-        </div>
-      </div>
-      <button class="btn bg-ltBlue col s2 offset-s5" type="submit" id="submitLogin" ng-click="login()">Login! <i class="material-icons small">done</i></button>
-    </form>
-    <!--end of login form-->
-      </div>
-    </li>
-    <br>
-    <li>
-      <div class="collapsible-header bg-dkGrey col s6 offset-s3"><i class="medium material-icons">perm_identity</i>  Register</div>
-      <!--will put another angular thing here...again, somehow...-->
-      <div class="collapsible-body bg-ltGrey col s6 offset-s3" >
-          <!--register form-->
-          <form class="col s6">
-            <div class="row">
-              <div class="input-field col s4 offset-s4 ">
-                <input id="user_name" type="text" class="validate" placeholder="User Name">
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s4 offset-s4 ">
-                <input id="email" type="email" class="validate" placeholder="Email">
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s4 offset-s4">
-                <input id="password" type="password" class="validate" placeholder="Password">
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s4 offset-s4 ">
-                <input id="reEnterPassword" type="Password" class="validate" placeholder="Re-enter Password">
-              </div>
-            </div>
-            <p id="terms_conditions" class="center-align"><input type="checkbox"></input>  I agree to hackMan's terms and conditions outlined here</p>
-            <br>
-            <button id="terms_conditions" class="btn bg-ltBlue col s2 offset-s5" ng-click="termsAndConditions()">Terms And Conditions</button>
-            <br>
-            <br>
-            <button class="btn bg-ltBlue" type="submit" id="submitRegister">Register! <i class="material-icons small">done</i></button>
-          </form>
-          <!--end of register form-->
-      </div>
-    </li>
-  </ul>
-
-
-
-
-
-
-
+<a class="waves-effect waves-light btn" ng-click="loggingIn()">Login</a>
 </div>
+
 </body>
 <script>
         $(document).ready(function(){
