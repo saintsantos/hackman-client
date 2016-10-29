@@ -2,10 +2,10 @@
     'user strict';
 
     angular
-        .module('auth.service', ['auth0.lock'])
+        .module('auth.service', ['auth0.lock', 'user.service'])
         .service('authService', authService);
 
-        function authService(lock, authManager, $state, $q) {
+        function authService(lock, authManager, $state, $q, UserService, $window) {
             function login() {
                 console.log("triggered!");
                 lock.show();
@@ -15,6 +15,7 @@
                 console.log("Logging out");
                 localStorage.removeItem('id_token');
                 authManager.unauthenticate();
+                $state.go('login');
             }
 
             // Set up the logic for when a user authenticates
@@ -31,6 +32,7 @@
                         //deferredProfile.resolve(profile);
                     });
                     authManager.authenticate();
+                    UserService.login($window.localStorage.getItem('username'), $window.localStorage.getItem('email'));
                 });
             }
 
