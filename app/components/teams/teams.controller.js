@@ -1,6 +1,6 @@
 angular
     //This is used for dependency calls. See teams.module.js to see the dependencies in action.
-    .module('teams.controller', ['ui.bootstrap', 'auth.service'])
+    .module('teams.controller', ['ui.materialize', 'auth.service'])
     //The exported name of the controller module, this is called in other modules and in html
     .controller('TeamsController', function($scope, $state, $window, TeamService, authService) {
         //An example of a controller for an html file.
@@ -55,7 +55,6 @@ angular
 
         $scope.loggingOut = function() {
             authenticate.authService.logout();
-            $state.go('login');
 
         }
 
