@@ -25,7 +25,12 @@ angular
                 templateUrl: '/components/sponsors/sponsorPage.html',
                 controller: 'SponsorController'
             })
-            .state('prize', {
+			.state('members', {
+                url: '/members',
+                templateUrl: '/components/members/members.tpl.html',
+                controller: 'membersController'
+            })
+			.state('prize', {
                 url: '/prizes',
                 templateUrl: '/components/prizes/prizepage.html',
                 controller: 'PrizeController'
