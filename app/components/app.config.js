@@ -1,10 +1,8 @@
 //Routes and config information is to be stored here
 angular
-    .module('app.config', ['ui.router'])
+    .module('app.config', ['ui.router', 'auth0.lock', 'auth.service'])
 
     .config(function($stateProvider, $urlRouterProvider) {
-
-        $urlRouterProvider.otherwise('/teams')//'/intro/login')
 
         $stateProvider
             .state('teams', {
@@ -33,4 +31,55 @@ angular
                 controller: 'PrizeController'
             })
 
+            $urlRouterProvider.otherwise('/intro/login');
+
     })
+    .config(function(lockProvider) {
+        lockProvider.init({
+            clientID: '0SnVXOn7KonOtQhhdrsG4emhGdajpXNO',
+            domain: 'saintsantos1341.auth0.com'
+        });
+    })
+    //interceptor - adds token XHR header to all requests
+    //http://stackoverflow.com/questions/20062493/interceptor-for-all-http-requests-in-angularjs-1-0-x
+    .config(function($httpProvider) {
+
+        $httpProvider.interceptors.push(
+            //anonymous function
+            function($q, $window, $location) {
+
+                return {
+                    //only for the request headers
+
+                    'request': function(config) {
+
+                        // do this only for the API calls
+                        // TODO - Some way to authenticate all requests, like images, etc.
+                        if (config.url.indexOf('/api/') !== -1) {
+                            config.headers['token'] = $window.localStorage.getItem('id_token');
+                        }
+
+                        return config;
+                    },
+
+                    'responseError': function(rejection) {
+                        // do something on error
+                        if (rejection.status === 401) {
+                            $location.path('/user/login');
+                        }
+                        return $q.reject(rejection);
+                    }
+
+
+                };
+            }
+        );
+
+    })
+    .run(run);
+    run.$inject = ['$rootScope','authService', 'lock'];
+    function run($rootScope, authService, lock) {
+        $rootScope.authService = authService;
+        authService.registerAuthenticationListener();
+        lock.interceptHash();
+    }

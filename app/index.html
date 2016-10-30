@@ -3,6 +3,7 @@
 
 <html lang="en" class="no-js" ng-app="hackman">
 <head>
+    <base href="/">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Hackman</title>
@@ -27,6 +28,7 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
     <!-- angular : begin -->
     <script src="assets/lib/angular/angular.js"></script>
     <script src="assets/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -50,6 +52,13 @@
     <script src="assets/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script> -->
     <script src="assets/lib/ngAnimate/js/angular-animate.min.js"></script>
     <script src="assets/lib/autosize/dist/autosize.min.js"></script>
+
+    <!-- Auth0 : Begin -->
+    <script src="assets/lib/auth0-lock/build/lock.js"></script>
+    <script src="assets/lib/angular-lock/dist/angular-lock.js"></script>
+    <script src="assets/lib/angular-jwt/dist/angular-jwt.js"></script>
+    <script src="components/auth/auth.service.js"></script>
+    <!-- Auth0 : End -->
 
     <!-- global : begin -->
     <script src="components/app.module.js"></script>

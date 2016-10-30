@@ -19,7 +19,18 @@ angular
 
         }
 
+        function check() {
+            var xhrParams = {
+                method: 'POST',
+                url: 'http://localhost:3000/api/user/check',
+            }
+
+            return $http(xhrParams);
+
+        }
+
         return {
+            check: check,
             httpCall: httpCall,
         }
     })

@@ -10,6 +10,8 @@ angular
         'user.module',
         'sponsor.module',
         'prize.module'
+        'auth.service',
+        'angular-jwt'
     ]).controller('mainCtrl', function($rootScope, $state) {
         console.log("Starting");
     })
