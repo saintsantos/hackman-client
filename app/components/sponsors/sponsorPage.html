@@ -30,10 +30,11 @@
 
 
 <div id="card" ng-repeat="thing in sponsors">
+    <img ng-src="{{thing.image}}" style="width:304px;height:228px;">
+    <br>
     <div class="card" id="card-height">
       <div class="card-content">
-          <img ng-src="{{thing.image}}" style="width:304px;height:228px;">
-          <br>
+
           <div >
               <span class="card-title black-text"><h2>{{thing.name}}</h2></span>
           </div>
