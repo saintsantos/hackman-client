@@ -10,6 +10,10 @@
     width: 30%;
 }
 
+#login-ub-hacking {
+    width: 40%;
+}
+
 #nav-text {
     /*text-shadow: 2px 2px #808080;*/
     font-size: 40px;
@@ -35,6 +39,11 @@
   font-family: 'vt323', monospace;
 }
 
+#hackerlogo {
+  /*color: #74BE30;*/
+  font-size: 90px;
+  font-family: 'vt323', monospace;
+}
 #team-block {
 
 }
@@ -74,6 +83,10 @@
 
 #card-height {
     height: 25em;
+}
+#login-card {
+    width: 45em;
+    height: 35em;
 }
 
 #timer {

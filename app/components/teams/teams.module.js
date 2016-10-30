@@ -5,5 +5,6 @@ angular
     .module('teams.module', [
         'teams.controller',
         'teams.service',
-        'teams.timer'
+        'teams.timer',
+        'auth.service'
     ])

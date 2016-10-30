@@ -2,9 +2,12 @@ angular
     //This is used for dependency calls. See teams.module.js to see the dependencies in action.
     .module('teams.controller', ['ui.materialize'])
     //The exported name of the controller module, this is called in other modules and in html
-    .controller('TeamsController', function($scope, $state, TeamService) {
+    .controller('TeamsController', function($scope, $state, $window, TeamService, authService) {
         //An example of a controller for an html file.
         //In angular, in order to make a function callable, use $scope to make the function as shown below.
+        var authenticate = this;
+        authenticate.authService = authService;
+
         $scope.groups = [{
           "X":"Magic Cam"},{
           "X":"Super Freezer 5000"},{
@@ -19,8 +22,6 @@ angular
           "X":"Super Freezer 5000"},{
           "X":"Random Group"
         }]
-
-
 
         $scope.test = function() {
             //Actually define what the function is supposed to do here
@@ -66,4 +67,8 @@ angular
 
         };
 
-    })
+        $scope.loggingOut = function() {
+            authenticate.authService.logout();
+
+        }
+    });
