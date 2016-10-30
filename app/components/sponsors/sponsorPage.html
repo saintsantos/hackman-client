@@ -27,23 +27,27 @@
 
 <div class="text-center container">
     <h1 id="hackerHead">{{title}}</h1>
-
-
+</div>
+<div class="container">
 <div id="card" ng-repeat="thing in sponsors">
-    <img ng-src="{{thing.image}}" style="width:304px;height:228px;">
-    <br>
-    <div class="card" id="card-height">
-      <div class="card-content">
 
-          <div >
-              <span class="card-title black-text"><h2>{{thing.name}}</h2></span>
-          </div>
-          <div class="divider"></div>
-          <p>About Us: {{thing.about}}</p>
-          <div class="divider"></div>
-          <a ng-href={{sponsors.link}}>Visit our Site!</a>
+    <div class="card horizontal">
+         <div class="card-image">
+           <img ng-src="{{thing.image}}" style="width:190px;height:228px;">
+         </div>
+         <div class="card-stacked">
+           <div class="card-content">
+            <span class="card-title black-text">{{thing.name}}</span>
+            <div class="divider"></div>
+            <p>{{thing.about}}</p>
+           </div>
+           <div class="card-action">
+             <a ng-href={{thing.link}}>Visit our Site!</a>
+           </div>
+         </div>
+       </div>
 
-      </div>
+</div>
 </div>
 
 
