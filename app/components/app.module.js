@@ -9,7 +9,7 @@ angular
         'teams.module',
         'user.module',
         'sponsor.module',
-        'prize.module'
+        'prize.module',
         'auth.service',
         'angular-jwt'
     ]).controller('mainCtrl', function($rootScope, $state) {
