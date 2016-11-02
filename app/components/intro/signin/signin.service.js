@@ -6,7 +6,7 @@ angular
 
         function login(username, email) {
             var xhrParams = {
-                method: 'POST',
+                method: 'GET',
                 url: 'http://localhost:3000/api/user/login',
                 params: {
                     username: username,
