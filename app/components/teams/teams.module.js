@@ -6,5 +6,6 @@ angular
         'teams.controller',
         'teams.service',
         'teams.timer',
-        'auth.service'
+        'auth.service',
+        'user.service'
     ])

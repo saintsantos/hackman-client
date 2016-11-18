@@ -2,13 +2,30 @@ angular
     //This is used for dependency calls. See teams.module.js to see the dependencies in action.
     .module('teams.controller', ['ui.materialize'])
     //The exported name of the controller module, this is called in other modules and in html
-    .controller('TeamsController', function($scope, $state, $window, TeamService, authService) {
+    .controller('TeamsController', function($scope, $state, $window, TeamService, authService, UserService) {
         //An example of a controller for an html file.
         //In angular, in order to make a function callable, use $scope to make the function as shown below.
         var authenticate = this;
         authenticate.authService = authService;
+        $scope.groups = []
+        TeamService.getAllTeams().then(function(teams) {
+            $scope.groups = teams.data;
+            console.log(teams.data);
+        })
+        UserService.login($window.localStorage.getItem('username'), $window.localStorage.getItem('email')).then(function(result) {
+            $scope.user = result.data;
+            if ($scope.user.role == "admin") {
+                $scope.role = true;
+            } else {
+                $scope.role = false;
+            }
 
-        $scope.groups = [{
+            console.log($scope.role);
+
+        });
+
+
+        /*$scope.groups = [{
           "X":"Magic Cam"},{
           "X":"Super Freezer 5000"},{
           "X":"Random Group"},{
@@ -21,7 +38,7 @@ angular
           "X":"Random Group"},{
           "X":"Super Freezer 5000"},{
           "X":"Random Group"
-        }]
+      }]*/
 
         $scope.test = function() {
             //Actually define what the function is supposed to do here
@@ -76,5 +93,18 @@ angular
         $scope.loggingOut = function() {
             authenticate.authService.logout();
 
+        }
+
+        $scope.saveTeam = function(team) {
+            console.log(team);
+            console.log("Team Saved");
+        }
+
+        $scope.addTeammate = function(teammate) {
+            console.log(teammate);
+        }
+
+        $scope.selectTeam = function(team) {
+            $scope.chosen_team = team;
         }
     });

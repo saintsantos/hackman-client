@@ -29,8 +29,29 @@ angular
 
         }
 
+        function getAllTeams() {
+            var xhrParams = {
+                method: 'GET',
+                url: 'http://localhost:3000/api/teams'
+            }
+
+            return $http(xhrParams);
+        }
+
+        function grabUser(username, email) {
+            var xhrParams = {
+                method: 'GET',
+                url: 'http://localhost:3000/api/user/login',
+                params: {
+                    username: username,
+                    email: email
+                }
+            }
+        }
+
         return {
             check: check,
             httpCall: httpCall,
+            getAllTeams: getAllTeams
         }
     })
