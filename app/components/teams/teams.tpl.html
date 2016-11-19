@@ -27,8 +27,8 @@
 <div class="container" id="main_div">
 
   <img src="../../assets/img/ubhacking.png" id="home">
-
     <h2 id="hackerHead">Teams</h2>
+    <button ng-click="newTeam()">Make new team</button>
       <ul id="team_view" class="collapsible popout" data-collapsible="accordion">
          <li ng-repeat="team in groups">
             <div class="collapsible-header" id="hackingBlue" ng-click="selectTeam(team)"><i class="fa fa-group"></i>{{team.teamname}}</div>
