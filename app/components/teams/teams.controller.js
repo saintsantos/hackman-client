@@ -108,13 +108,13 @@ angular
         }
 
         $scope.addTeammate = function(teammate) {
-
             //console.log(teammate);
         }
 
         $scope.deleteTeam = function(team) {
             console.log(team);
-            TeamService.delTeam(team);
+            TeamService.delTeam(team)
+            $scope.groups.splice($scope.chosen_id, 1);
         }
 
         $scope.selectTeam = function(team, teamid) {
