@@ -52,6 +52,7 @@
                         <div class="card-action">
                             <p><b>Sponsored By: </b>{{thing.sponsor}}</p>
                             <button class="btn" ng-hide="!manage" ng-click="manage = !manage; setPrize(thing, indexOf(thing))">Edit</button>
+                            <button class="btn" ng-hide="!manage" ng-click="manage = !manage; deletePrize(thing, indexOf(thing))">Delete</button>
                         </div>
                     </div>
                     <div ng-hide="manage">
