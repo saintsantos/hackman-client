@@ -1,5 +1,5 @@
 angular
-    .module('sponsor.controller', [])
+    .module('sponsor.controller', ['ui.materialize'])
     .controller('SponsorController', function($scope) {
         $scope.title='Sponsors';
         $scope.sponsorX=[
@@ -15,9 +15,6 @@ angular
                 image: "../../assets/img/table.JPG",
                 link:"https://www.amazon.com/Melissa-Doug-Wooden-Table-Chairs/dp/B00CE69IGA/ref=sr_1_11?ie=UTF8&qid=1476554374&sr=8-11&keywords=table"
             }
-
-
-
     ];
     $scope.sponsors = [
   	{
@@ -33,6 +30,11 @@ angular
         link:'https://www.amazon.com/Melissa-Doug-Wooden-Table-Chairs/dp/B00CE69IGA/ref=sr_1_11?ie=UTF8&qid=1476554374&sr=8-11&keywords=table'
   	}
   ];
+  $scope.teams = function() {
+      console.log("Going to teams");
+      $state.go('teams');
+
+  };
 
 
 });
