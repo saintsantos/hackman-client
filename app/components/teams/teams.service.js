@@ -63,18 +63,33 @@ angular
                 params: {
                     created_by: team.created_by,
                     proj_desc: team.proj_desc,
-                    'status': team.status,
-                    'location': team.location
+                    status: team.status,
+                    location: team.location
                 }
             }
 
-            return $http(xhrParams)
+            return $http(xhrParams);
+        }
+
+        function editTeam(id, team) {
+            var xhrParams = {
+                method: 'PUT',
+                url: 'http://localhost:3000/api/teams/' + id + '/modify/',
+                params: {
+                    teamname: team.name,
+                    proj_desc: team.description,
+                    status: team.status,
+                    location: team.location
+                }
+            }
+            return $http(xhrParams);
         }
 
         return {
             check: check,
             httpCall: httpCall,
             getAllTeams: getAllTeams,
-            newTeam: newTeam
+            newTeam: newTeam,
+            editTeam: editTeam
         }
     })

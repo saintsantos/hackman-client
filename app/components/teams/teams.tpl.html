@@ -31,7 +31,7 @@
     <button ng-click="newTeam()">Make new team</button>
       <ul id="team_view" class="collapsible popout" data-collapsible="accordion">
          <li ng-repeat="team in groups">
-            <div class="collapsible-header" id="hackingBlue" ng-click="selectTeam(team)"><i class="fa fa-group"></i>{{team.teamname}}</div>
+            <div class="collapsible-header" id="hackingBlue" ng-click="selectTeam(team, groups.indexOf(team))"><i class="fa fa-group"></i>{{team.teamname}}</div>
             <div class="collapsible-body white" id="hackingSub">
             <ul>
                 <li ng-repeat="name in team.teammates"><i class="fa fa-user"></i> {{name}}</li>
@@ -62,8 +62,8 @@
                         <div class="divider"></div>
                         <h5>Team Name: </h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.teamname}}</p>
                         <h5>Project Description:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.proj_desc}}</p>
-                        <h5>Status:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;We need a lot of help.</p>
-                        <h5>Location:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;Third Floor, Near 310 Davis Hall</p>
+                        <h5>Status:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.status}}</p>
+                        <h5>Location:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.location}}</p>
                         <button ng-show="role" ng-click="editing = true">Edit</button>
                         <button ng-show="role" ng-click="manageTeammate = true">Add Teammate</button>
                         <button ng-show="role" ng-click="makeAdmin()">Make Admin</button>
