@@ -54,6 +54,6 @@ angular
             newPrize: newPrize,
             editPrize: editPrize,
             getPrizes: getPrizes,
-            deletePrizes: deletePrizes
+            deletePrize: deletePrize
         }
     });
