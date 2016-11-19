@@ -1,5 +1,5 @@
 angular
-    .module('prizes.controller', [])
+    .module('prizes.controller', ['ui.materialize'])
     .controller('PrizeController', function($scope) {
         $scope.title='Prizes';
         $scope.sponsorX=[

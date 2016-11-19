@@ -14,9 +14,7 @@ angular
                 method: 'GET',
                 url: 'http://54.244.60.155:3000/api/user/hi',
             }
-
             return $http(xhrParams);
-
         }
 
         function check() {
@@ -56,6 +54,14 @@ angular
             }
         }
 
+        function delTeam(id) {
+            var xhrParams = {
+                method: 'DELETE',
+                url: 'http://localhost:3000/api/teams/' + id
+            }
+            return $http(xhrParams)
+        }
+
         function newTeam(team) {
             var xhrParams = {
                 method: 'POST',
@@ -75,6 +81,7 @@ angular
             check: check,
             httpCall: httpCall,
             getAllTeams: getAllTeams,
-            newTeam: newTeam
+            newTeam: newTeam,
+            delTeam: delTeam
         }
     })
