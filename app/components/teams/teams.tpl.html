@@ -15,7 +15,6 @@
     <nav class="grey darken-3">
     <a id="hackerHead" class="navbar-brand" href="#">hackMan</a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="#"><i class="fa fa-exclamation-triangle"></i> Alerts    </a></li>
             <li><a ng-click="sponsor()"><i class="fa fa-user"></i>      Sponsors</a></li>
             <li><a ng-click="prize()"><i class="fa fa-user"></i>      Prizes</a></li>
             <li><a ng-click="members()"><i class="fa fa-user"></i>      Members</a></li>
@@ -28,17 +27,14 @@
 <div class="container" id="main_div">
 
   <img src="../../assets/img/ubhacking.png" id="home">
-
     <h2 id="hackerHead">Teams</h2>
+    <button ng-click="newTeam()">Make new team</button>
       <ul id="team_view" class="collapsible popout" data-collapsible="accordion">
-         <li ng-repeat="x in groups">
-            <div class="collapsible-header" id="hackingBlue"><i class="fa fa-group"></i>{{x.X}}</div>
+         <li ng-repeat="team in groups">
+            <div class="collapsible-header" id="hackingBlue" ng-click="selectTeam(team)"><i class="fa fa-group"></i>{{team.teamname}}</div>
             <div class="collapsible-body white" id="hackingSub">
             <ul>
-                <li><i class="fa fa-user"></i> Person 1</li>
-                <li><i class="fa fa-user"></i> Person 2</li>
-                <li><i class="fa fa-user"></i> Person 3</li>
-                <li><i class="fa fa-user"></i> Person 4</li>
+                <li ng-repeat="name in team.teammates"><i class="fa fa-user"></i> {{name}}</li>
             </ul>
             </div>
          </li>
@@ -62,11 +58,38 @@
                     <div >
                         <span class="card-title black-text">Team Info</span>
                     </div>
-                    <div class="divider"></div>
-                    <h5>Name:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;John Doe's Group</p>
-                    <h5>Project Description:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;We are building a hackathon management application.</p>
-                    <h5>Status:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;We need a lot of help.</p>
-                    <h5>Location:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;Third Floor, Near 310 Davis Hall</p>
+                    <div ng-hide="editing">
+                        <div class="divider"></div>
+                        <h5>Team Name: </h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.teamname}}</p>
+                        <h5>Project Description:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.proj_desc}}</p>
+                        <h5>Status:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;We need a lot of help.</p>
+                        <h5>Location:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;Third Floor, Near 310 Davis Hall</p>
+                        <button ng-show="role" ng-click="editing = true">Edit</button>
+                        <button ng-show="role" ng-click="manageTeammate = true">Add Teammate</button>
+                        <button ng-show="role" ng-click="makeAdmin()">Make Admin</button>
+                    </div>
+                    <div>
+                        <form ng-show="editing" ng-submit="editing = false; saveTeam(team)">
+                            <label>Teamname:</label>
+                            <input type="text" ng-model="team.name" placeholder="{{chosen_team.teamname}}" ng-required />
+                            <label>Project Description:</label>
+                            <input type="text" ng-model="team.description" placeholder="{{chosen_team.proj_desc}}" ng-required />
+                            <label>Status:</label>
+                            <input type="text" ng-model="team.status" placeholder="Status" ng-required />
+                            <label>Location:</label>
+                            <input type="text" ng-model="team.location" placeholder="Location" ng-required />
+                            <br />
+                            <button class="btn" type="submit">Save</button>
+                        </form>
+                    </div>
+                    <div>
+                        <form ng-show="manageTeammate" ng-submit="manageTeammate = false; addTeammate(teammate)">
+                            <label>Add Teammate:</label>
+                            <input type="text" ng-model="teammate" placeholder="Teammate Name" ng-required />
+                            <br />
+                            <button class="btn" type="submit">Add Teammate</button>
+                        </form>
+                    </div>
                     </div>
                 </div>
             </div>
