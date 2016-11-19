@@ -2,7 +2,7 @@ angular
     //This is used for dependency calls. See teams.module.js to see the dependencies in action.
     .module('teams.controller', ['ui.materialize'])
     //The exported name of the controller module, this is called in other modules and in html
-    .controller('TeamsController', function($scope, $state, $window, TeamService, authService, UserService) {
+    .controller('TeamsController', function($scope, $state, $window, $filter, TeamService, authService, UserService) {
         //An example of a controller for an html file.
         //In angular, in order to make a function callable, use $scope to make the function as shown below.
         var authenticate = this;
@@ -97,7 +97,12 @@ angular
         }
 
         $scope.saveTeam = function(team) {
-            console.log(team);
+            $scope.groups[$scope.chosen_id].teamname = team.name;
+            $scope.groups[$scope.chosen_id].proj_desc = team.description;
+            $scope.groups[$scope.chosen_id].status = team.status;
+            $scope.groups[$scope.chosen_id].location = team.location;
+            var id = $scope.groups[$scope.chosen_id]._id;
+            TeamService.editTeam(id, team);
             console.log("Team Saved");
         }
 
@@ -106,7 +111,8 @@ angular
             //console.log(teammate);
         }
 
-        $scope.selectTeam = function(team) {
+        $scope.selectTeam = function(team, teamid) {
+            $scope.chosen_id = teamid;
             $scope.chosen_team = team;
         }
         $scope.newTeam = function() {
