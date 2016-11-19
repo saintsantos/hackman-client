@@ -1,6 +1,6 @@
 angular
     .module('prizes.controller', ['ui.materialize'])
-    .controller('PrizeController', function($scope, $window) {
+    .controller('PrizeController', function($scope, $window, PrizeService) {
 
         if ($window.localStorage.getItem('role') === 'admin') {
             $scope.role = true;
@@ -31,18 +31,47 @@ angular
     ];
     $scope.prizes = [
   	{
+        id: 0,
     	name:'Chair',
         about:'This is a chair, made for sitting in. Tis a very nice chair. Real butt luxury',
         image:'../../assets/img/chairPrize.JPG',
         sponsor:'Table '
   	},
   	{
+        id: 1,
     	name:'Liquid Fancy',
         about:'Liquified Fancy. Make everything extra fancy with a quick spray. Comes in a fancy spray bottle',
         image:'../../assets/img/fancySpray.JPG',
         sponsor:'Fanciful'
   	}
   ];
+
+  $scope.savePrize = function(prize) {
+      //PrizeService.editPrize(prize);
+      console.log(prize);
+  }
+
+  $scope.deletePrize = function(prize) {
+      //PrizeService.deletePrize(prize._id);
+      
+
+  }
+
+  $scope.setPrize = function(prize, index) {
+      $scope.chozen_index = index;
+      $scope.chosen_prize = prize;
+      console.log(prize);
+  }
+
+  $scope.createPrize = function() {
+      prize = {
+      	name:'Liquid Fancy',
+          about:'Liquified Fancy. Make everything extra fancy with a quick spray. Comes in a fancy spray bottle',
+          image:'../../assets/img/fancySpray.JPG',
+          sponsor:'Fanciful'
+    	}
+      $scope.prizes.push(prize);
+  }
 
 
 });
