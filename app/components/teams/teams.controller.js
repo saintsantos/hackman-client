@@ -15,6 +15,7 @@ angular
         UserService.login($window.localStorage.getItem('username'), $window.localStorage.getItem('email')).then(function(result) {
             $scope.user = result.data;
             $window.localStorage.setItem('user_id', $scope.user.id);
+            $window.localStorage.setItem('role', $scope.user.role);
             if ($scope.user.role == "admin") {
                 $scope.role = true;
             } else {
