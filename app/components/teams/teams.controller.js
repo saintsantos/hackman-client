@@ -14,6 +14,7 @@ angular
         })
         UserService.login($window.localStorage.getItem('username'), $window.localStorage.getItem('email')).then(function(result) {
             $scope.user = result.data;
+            $window.localStorage.setItem('user_id', $scope.user.id);
             if ($scope.user.role == "admin") {
                 $scope.role = true;
             } else {
@@ -106,5 +107,15 @@ angular
 
         $scope.selectTeam = function(team) {
             $scope.chosen_team = team;
+        }
+        $scope.newTeam = function() {
+            team = {
+                teamname: 'New Team',
+                created_by: $window.localStorage.getItem('user_id'),
+                proj_desc: 'Making a new team',
+                teammates: [$window.localStorage.getItem('username')]
+            }
+            $scope.groups.push(team);
+            console.log(team);
         }
     });
