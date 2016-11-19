@@ -105,8 +105,13 @@
     text-shadow: 1px 2px #909090;
 }
 
-.hide-on-med-and-down a i{
+/*.hide-on-med-and-down a i{
     line-height: 60px;
+}*/
+
+#navbar-fixer {
+    line-height: 60px;
+    font-size: 20px;
 }
 
 .navbar-fixed a:hover {
