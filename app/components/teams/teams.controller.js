@@ -106,6 +106,11 @@ angular
             //console.log(teammate);
         }
 
+        $scope.deleteTeam = function(team) {
+            console.log(team);
+            TeamService.delTeam(team);
+        }
+
         $scope.selectTeam = function(team) {
             $scope.chosen_team = team;
         }

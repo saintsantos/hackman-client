@@ -14,11 +14,11 @@
 <div class="navbar-fixed">
     <nav class="grey darken-3">
     <a id="hackerHead" class="navbar-brand" href="#">hackMan</a>
-        <ul class="right hide-on-med-and-down">
-            <li><a ng-click="sponsor()"><i class="fa fa-user"></i>      Sponsors</a></li>
-            <li><a ng-click="prize()"><i class="fa fa-user"></i>      Prizes</a></li>
-            <li><a ng-click="members()"><i class="fa fa-user"></i>      Members</a></li>
-            <li><a ng-click="loggingOut()"><i class="fa fa-sign-in"></i> Log Out   </a></li>
+        <ul id="navbar-fixer" class="right">
+            <li><a id="navbar-fixer" href="#"><i class="fa fa-exclamation-triangle"></i> Alerts    </a></li>
+            <li><a id="navbar-fixer" ng-click="sponsor()"><i class="fa fa-user"></i>      Sponsors</a></li>
+            <li><a id="navbar-fixer" ng-click="prize()"><i class="fa fa-user"></i>      Prizes</a></li>
+            <li><a id="navbar-fixer" ng-click="loggingOut()"><i class="fa fa-sign-in"></i> Log Out   </a></li>
         </ul>
     </nav>
 </div>
@@ -66,7 +66,7 @@
                         <h5>Location:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;Third Floor, Near 310 Davis Hall</p>
                         <button ng-show="role" ng-click="editing = true">Edit</button>
                         <button ng-show="role" ng-click="manageTeammate = true">Add Teammate</button>
-                        <button ng-show="role" ng-click="makeAdmin()">Make Admin</button>
+                        <button ng-show="role" ng-click="deleteTeam(chosen_team._id)">Delete Team</button>
                     </div>
                     <div>
                         <form ng-show="editing" ng-submit="editing = false; saveTeam(team)">
