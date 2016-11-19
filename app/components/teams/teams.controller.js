@@ -111,10 +111,16 @@ angular
             //console.log(teammate);
         }
 
+        $scope.deleteTeam = function(team) {
+            console.log(team);
+            TeamService.delTeam(team);
+        }
+
         $scope.selectTeam = function(team, teamid) {
             $scope.chosen_id = teamid;
             $scope.chosen_team = team;
         }
+
         $scope.newTeam = function() {
             team = {
                 teamname: 'New Team',
