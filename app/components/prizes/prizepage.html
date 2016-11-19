@@ -1,19 +1,20 @@
 <html lang=en>
+
 <head>
-  <title>Prizes</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../../assets/css/teams.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<style>
-.bg-ltGrey{
-  background-color: #7d8280;
-  color: #000000;
-}
-</style>
+    <title>Prizes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/teams.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .bg-ltGrey {
+            background-color: #7d8280;
+            color: #000000;
+        }
+    </style>
 </head>
 
 
@@ -35,27 +36,43 @@
         <h1 id="hackerHead">{{title}}</h1>
     </div>
     <div class="container">
-    <div id="card" ng-repeat="thing in prizes">
+        <button ng-show="role" ng-click="manage = !manage">Manage Prizes</button>
+        <div id="card" ng-repeat="thing in prizes">
 
-        <div class="card horizontal">
-             <div class="card-image">
-               <img ng-src="{{thing.image}}" style="width:190px;height:228px;">
-             </div>
-             <div class="card-stacked">
-               <div class="card-content">
-                <span class="card-title black-text">{{thing.name}}</span>
-                <div class="divider"></div>
-                <p>{{thing.about}}</p>
-               </div>
-               <div class="card-action">
-                 <p><b>Sponsored By: </b>{{thing.sponsor}}</p>
-               </div>
-             </div>
-           </div>
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img ng-src="{{thing.image}}" style="width:190px;height:228px;">
+                </div>
+                <div class="card-stacked">
+                    <div ng-hide="!manage">
+                        <div class="card-content">
+                            <span class="card-title black-text">{{thing.name}}</span>
+                            <div class="divider"></div>
+                            <p>{{thing.about}}</p>
+                        </div>
+                        <div class="card-action">
+                            <p><b>Sponsored By: </b>{{thing.sponsor}}</p>
+                            <button ng-hide="manage">Edit</button>
+                        </div>
+                    </div>
+                    <div ng-hide="manage">
+                        <div class="card-content">
+                            <form ng-submit="manage = !manage">
+                                <label>Prize Name:</label>
+                                <input type="text" ng-model="prize.name" placeholder="{{thing.name}}" ng-required />
+                                <label>About Prize:</label>
+                                <input type="text" ng-model="prize.about" placeholder="{{thing.about}}" ng-required />
+                                <label>Prize Sponsor:</label>
+                                <input type="text" ng-model="prize.sponsor" placeholder="{{thing.sponsor}}" ng-required />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
     </div>
-
 
 
 

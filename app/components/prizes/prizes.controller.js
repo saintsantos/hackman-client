@@ -1,6 +1,16 @@
 angular
     .module('prizes.controller', ['ui.materialize'])
-    .controller('PrizeController', function($scope) {
+    .controller('PrizeController', function($scope, $window) {
+
+        if ($window.localStorage.getItem('role') === 'admin') {
+            $scope.role = true;
+        } else {
+            $scope.role = false;
+        }
+
+        $scope.manage = true;
+
+        console.log($scope.role);
         $scope.title='Prizes';
         $scope.sponsorX=[
             {
