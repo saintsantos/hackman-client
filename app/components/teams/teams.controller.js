@@ -102,7 +102,8 @@ angular
         }
 
         $scope.addTeammate = function(teammate) {
-            console.log(teammate);
+
+            //console.log(teammate);
         }
 
         $scope.selectTeam = function(team) {
@@ -113,9 +114,15 @@ angular
                 teamname: 'New Team',
                 created_by: $window.localStorage.getItem('user_id'),
                 proj_desc: 'Making a new team',
+                'status': 'generic status',
+                'location': '1',
                 teammates: [$window.localStorage.getItem('username')]
             }
-            $scope.groups.push(team);
-            console.log(team);
+            console.log("sending team");
+            TeamService.newTeam(team).then(function(team) {
+                //console.log(team);
+                $scope.groups.push(team.data);
+            });
+            //console.log(team);
         }
     });
