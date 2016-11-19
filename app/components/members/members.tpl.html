@@ -23,7 +23,7 @@
 </head>
 
 
-<body class="bg-ltGrey" ng-app="Members">
+<body class="bg-ltGrey" ng-app="membersApp">
     <nav class="navbar navbar-inverse">
         <a class="navbar-brand" href>hackMan</a>
         <ul class="nav navbar-nav navbar-right">
@@ -33,12 +33,9 @@
         </ul>
     </nav>
 
-    <div ng-app="members.module">
-        <div ng-controller="membersController">
-            <p>The ID is {{greeting.id}}</p>
-            <p>The content is {{greeting.content}}</p>
+        <div>
+            <p>The ID is {{greeting.hi}}</p>
         </div>
-    </div>
 
     <div class="container">
         <div class="row">
