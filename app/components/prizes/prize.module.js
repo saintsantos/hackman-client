@@ -3,5 +3,6 @@
 angular
     //All those modules are called here to glue them together
     .module('prize.module', [
-        'prizes.controller'
+        'prizes.controller',
+        'prizes.service'
     ])

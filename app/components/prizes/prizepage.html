@@ -36,9 +36,8 @@
         <h1 id="hackerHead">{{title}}</h1>
     </div>
     <div class="container">
-        <button ng-show="role" ng-click="manage = !manage">Manage Prizes</button>
+        <button class="btn" ng-click="createPrize()">New Prize</button>
         <div id="card" ng-repeat="thing in prizes">
-
             <div class="card horizontal">
                 <div class="card-image">
                     <img ng-src="{{thing.image}}" style="width:190px;height:228px;">
@@ -52,18 +51,19 @@
                         </div>
                         <div class="card-action">
                             <p><b>Sponsored By: </b>{{thing.sponsor}}</p>
-                            <button ng-hide="manage">Edit</button>
+                            <button class="btn" ng-hide="!manage" ng-click="manage = !manage; setPrize(thing, indexOf(thing))">Edit</button>
                         </div>
                     </div>
                     <div ng-hide="manage">
                         <div class="card-content">
-                            <form ng-submit="manage = !manage">
+                            <form ng-submit="manage = !manage; savePrize(prize)">
                                 <label>Prize Name:</label>
                                 <input type="text" ng-model="prize.name" placeholder="{{thing.name}}" ng-required />
                                 <label>About Prize:</label>
                                 <input type="text" ng-model="prize.about" placeholder="{{thing.about}}" ng-required />
                                 <label>Prize Sponsor:</label>
                                 <input type="text" ng-model="prize.sponsor" placeholder="{{thing.sponsor}}" ng-required />
+                                <button class="btn" type="submit">Save</button>
                             </form>
                         </div>
                     </div>
