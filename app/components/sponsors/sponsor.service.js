@@ -1,6 +1,6 @@
 angular
     //Module export for dependencies
-    .module('sponsors.service', [])
+    .module('sponsor.service', [])
     //Service name for calls in other modules
     .factory('SponsorService', function($http, $window, $q) {
 

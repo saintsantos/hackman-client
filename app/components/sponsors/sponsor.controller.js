@@ -1,6 +1,6 @@
 angular
     .module('sponsor.controller', ['ui.materialize'])
-    .controller('SponsorController', function($scope, $state, $window) {
+    .controller('SponsorController', function($scope, $state, $window, SponsorService) {
 
         $scope.teams = function() {
             console.log("Going to teams");
@@ -16,43 +16,43 @@ angular
             $scope.role = false;
         }
 
-        PrizeService.getPrizes().then(function(result) {
-            $scope.prizes = result.data;
+        SponsorService.getSponsors().then(function(result) {
+            $scope.sponsors = result.data;
         })
 
         $scope.manage = true;
 
         console.log($scope.role);
 
-        $scope.savePrize = function(prize, id) {
-            //PrizeService.editPrize(prize);
-            console.log(prize);
+        $scope.saveSponsor = function(sponsor, id) {
+            SponsorService.editSponsor(sponsor);
+            console.log(sponsor);
         }
 
-        $scope.deletePrize = function(prize, id) {
-            //PrizeService.deletePrize(prize._id);
+        $scope.deleteSponsor = function(sponsor, id) {
+            SponsorService.deleteSponsor(sponsor._id);
             $scope.prizes.splice(id, 1);
-            console.log(prize);
+            console.log(sponsor);
 
         }
 
-        $scope.setPrize = function(prize, index) {
+        $scope.setSponsor = function(sponsor, index) {
             $scope.chozen_index = index;
-            $scope.chosen_prize = prize;
-            console.log(prize);
+            $scope.chosen_prize = sponsor;
+            console.log(sponsor);
         }
 
-        $scope.createPrize = function() {
-            prize = {
-              	name:'New Prize',
-                desc:'This is a new prize',
+        $scope.createSponsor = function() {
+            sponsor = {
+              	name:'New Sponsor',
+                desc:'This is a new sponsor',
                 sponsor:'Yes there is'
             }
-            PrizeService.newPrize(prize);
-            $scope.prizes.push(prize);
+            SponsorService.newSponsor(sponsor);
+            $scope.sponsors.push(sponsor);
         }
 
-        
+
         //         $scope.sponsorX=[
         //             {
         //                 name:'Fanciful Sponsor',
