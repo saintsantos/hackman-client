@@ -57,12 +57,12 @@ angular
 ];*/
 
   $scope.savePrize = function(prize, id) {
-      //PrizeService.editPrize(prize);
+      PrizeService.editPrize(prize);
       console.log(prize);
   }
 
   $scope.deletePrize = function(prize, id) {
-      //PrizeService.deletePrize(prize._id);
+      PrizeService.deletePrize(prize._id);
       $scope.prizes.splice(id, 1);
       console.log(prize);
 
