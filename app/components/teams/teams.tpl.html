@@ -37,46 +37,49 @@
         </div>
     </div>
 
-<div class="container">
-    <div class="row valign-wrapper">
-        <!-- UB HACKING LOGO -->
-        <div class="col s4">
-            <img src="../../assets/img/ubhacking.png">
-        </div>
-        <!-- ALERTS STARTS HERE  -->
-        <div class="valign  col s7 push-s1">
-            <div class="card red darken-3">
-                <div class="card-content">
-                    <span id="alert-text" class="card-title white-text"><i class="fa fa-exclamation-triangle"></i>  This is where Alerts will be displayed</span>
+    <div class="container">
+        <div class="row valign-wrapper">
+            <!-- UB HACKING LOGO -->
+            <div class="col s3">
+                <img src="../../assets/img/ubhacking.png">
+            </div>
+            <!-- ALERTS STARTS HERE  -->
+            <div class="valign  col s8 push-s1">
+                <div class="card red darken-3">
+                    <div class="card-content">
+                        <span id="alert-text" class="card-title white-text"><i class="fa fa-exclamation-triangle"></i>  This is where Alerts will be displayed</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- TEAMS TITLE TEXT HERE -->
+        <div class="container">
+            <div class="row">
+                <div class="col s2 push-s1">
+                    <h2 id="hackerHead">Teams</h2>
+                </div>
+            </div>
 
-    <div class="container">
-        <div class="row">
-            <h2 id="hackerHead">Teams</h2></div>
+            <!-- ACCORDION POPOUTS HERE -->
+            <div class="row">
+                <div class="col s6">
+                    <ul class="collapsible popout" data-collapsible="accordion">
+                        <li ng-repeat="x in groups">
+                            <div class="collapsible-header" id="hackingBlue"><i class="fa fa-group"></i>{{x.X}}</div>
+                            <div class="collapsible-body white" id="hackingSub">
+                                <ul>
+                                    <li><i class="fa fa-user"></i> Person 1</li>
+                                    <li><i class="fa fa-user"></i> Person 2</li>
+                                    <li><i class="fa fa-user"></i> Person 3</li>
+                                    <li><i class="fa fa-user"></i> Person 4</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-        <!-- ACCORDION POPOUTS HERE -->
-        <div class="row">
-            <div class="col s6">
-            <ul class="collapsible popout" data-collapsible="accordion">
-                <li ng-repeat="x in groups">
-                    <div class="collapsible-header" id="hackingBlue"><i class="fa fa-group"></i>{{x.X}}</div>
-                    <div class="collapsible-body white" id="hackingSub">
-                        <ul>
-                            <li><i class="fa fa-user"></i> Person 1</li>
-                            <li><i class="fa fa-user"></i> Person 2</li>
-                            <li><i class="fa fa-user"></i> Person 3</li>
-                            <li><i class="fa fa-user"></i> Person 4</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-            <!-- TEAM INFO STARTS HERE -->
-                <div class="card col s5 push-s1" id="card-height">
+                <!-- TEAM INFO STARTS HERE -->
+                <div class="card col s6" id="card-height">
                     <div class="card-content">
                         <div>
                             <span class="card-title black-text">Team Info</span>
@@ -92,125 +95,129 @@
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;Third Floor, Near 310 Davis Hall</p>
                     </div>
                 </div>
-
-            <div class="row">
-                <div class="col s3">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
-                            <div>
-                                <h5 class="center-align flow-text">I like dogs and web dev</h5>
-                            </div>
-                            <div class="fixed-action-btn horizontal click-to-toggle">
-                                <a class="btn-floating red">
-                                    <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
-                                </a>
-                                <ul>
-                                    <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
-                                    <li><a class="btn-floating blue"><i class="fa fa-linkedin" id="fontawesomeicons" aria-hidden="true"></i></a></li>
-                                    <li><a class="btn-floating purple darken-1"><i class="fa fa-user" id="fontawesomeicons" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s3">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
-                            <div>
-                                <h5 class="center-align flow-text">I like dogs and web dev</h5>
-                            </div>
-                            <div class="fixed-action-btn horizontal click-to-toggle">
-                                <a class="btn-floating red">
-                                    <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
-                                </a>
-                                <ul>
-                                    <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
-                                    <li><a class="btn-floating blue"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    <li><a class="btn-floating purple darken-1"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--                BOTTOM TWO PROFILES START HERE -->
+                <!-- MEMBER PROFILE CARDS START HERE -->
                 <div class="row">
-                    <div class="col s3">
-                        <div class="card">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
-                                <div>
-                                    <h5 class="center-align flow-text">I like dogs and web dev</h5>
+
+                    <!-- TOP TWO PROFILES START HERE -->
+                    <div class="row">
+                        <div class="col s3">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
                                 </div>
-                                <div class="fixed-action-btn horizontal click-to-toggle">
-                                    <a class="btn-floating red">
-                                        <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
-                                    </a>
-                                    <ul>
-                                        <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
-                                        <li><a class="btn-floating blue"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                        <li><a class="btn-floating purple darken-1"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                                    </ul>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
+                                    <div>
+                                        <h5 class="center-align flow-text">I like dogs and web dev</h5>
+                                    </div>
+                                    <div class="fixed-action-btn horizontal click-to-toggle">
+                                        <a class="btn-floating red">
+                                            <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
+                                        </a>
+                                        <ul>
+                                            <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
+                                            <li><a class="btn-floating blue"><i class="fa fa-linkedin" id="fontawesomeicons" aria-hidden="true"></i></a></li>
+                                            <li><a class="btn-floating purple darken-1"><i class="fa fa-user" id="fontawesomeicons" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s3">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
+                                    <div>
+                                        <h5 class="center-align flow-text">I like dogs and web dev</h5>
+                                    </div>
+                                    <div class="fixed-action-btn horizontal click-to-toggle">
+                                        <a class="btn-floating red">
+                                            <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
+                                        </a>
+                                        <ul>
+                                            <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
+                                            <li><a class="btn-floating blue"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                            <li><a class="btn-floating purple darken-1"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col s3">
-                        <div class="card">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
-                                <div>
-                                    <h5 class="center-align flow-text">I like dogs and web dev</h5>
+                    <!--                BOTTOM TWO PROFILES START HERE -->
+                    <div class="row push-s6">
+                        <div class="col s3 push-s6">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
                                 </div>
-                                <div class="fixed-action-btn horizontal click-to-toggle">
-                                    <a class="btn-floating red">
-                                        <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
-                                    </a>
-                                    <ul>
-                                        <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
-                                        <li><a class="btn-floating blue"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                        <li><a class="btn-floating purple darken-1"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                                    </ul>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
+                                    <div>
+                                        <h5 class="center-align flow-text">I like dogs and web dev</h5>
+                                    </div>
+                                    <div class="fixed-action-btn horizontal click-to-toggle">
+                                        <a class="btn-floating red">
+                                            <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
+                                        </a>
+                                        <ul>
+                                            <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
+                                            <li><a class="btn-floating blue"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                            <li><a class="btn-floating purple darken-1"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s3 push-s6">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
+                                    <div>
+                                        <h5 class="center-align flow-text">I like dogs and web dev</h5>
+                                    </div>
+                                    <div class="fixed-action-btn horizontal click-to-toggle">
+                                        <a class="btn-floating red">
+                                            <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
+                                        </a>
+                                        <ul>
+                                            <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
+                                            <li><a class="btn-floating blue"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                            <li><a class="btn-floating purple darken-1"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
     </div>
-</div>
-</div>
+    </div>
 </body>
 
 </html>
