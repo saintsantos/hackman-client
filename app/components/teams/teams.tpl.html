@@ -19,6 +19,15 @@
                 <div class="grey darken-3 nav-wrapper">
                     <a id="hackerHead" class="navbar-brand" href="#">hackMan</a>
                     <ul class="right hide-on-med-and-down">
+                        <li class="center-align">
+                            <div ng-controller="timerCtrl">
+                                <div id="wrapper" class="center-align">
+                                    <h2>
+                                        <timer id="timer-text" end-time="145162800000000">TIME REMAINING: {{hours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
+                                    </h2>
+                                </div>
+                            </div>
+                        </li>
                         <li><a ng-click="sponsor()"><i class="fa fa-user"></i>Sponsors</a></li>
                         <li><a ng-click="prize()"><i class="fa fa-user"></i>Prizes</a></li>
                         <li><a ng-click="loggingOut()"><i class="fa fa-sign-in"></i>Log Out</a></li>
@@ -28,41 +37,30 @@
         </div>
     </div>
 
-
-        <div class="row valign-wrapper">
-            <!-- UB HACKING LOGO -->
-            <div class="col s7 push-s1">
-                <img src="../../assets/img/ubhacking.png" id="home">
+<div class="container">
+    <div class="row valign-wrapper">
+        <!-- UB HACKING LOGO -->
+        <div class="col s4">
+            <img src="../../assets/img/ubhacking.png">
+        </div>
+        <!-- ALERTS STARTS HERE  -->
+        <div class="valign  col s7 push-s1">
+            <div class="card red darken-3">
+                <div class="card-content">
+                    <span id="alert-text" class="card-title white-text"><i class="fa fa-exclamation-triangle"></i>  This is where Alerts will be displayed</span>
+                </div>
             </div>
-            <!-- ALERTS STARTS HERE  -->
-            <!-- <div id="alerts"> -->
-                    <div class="valign  col s5 pull-s1">
-                        <div class="card red darken-3">
-                            <div class="card-content">
-                                <span id="alert-text" class="card-title white-text"><i class="fa fa-exclamation-triangle"></i>  This is where Alerts will be displayed</span>
-                            </div>
-                        </div>
-                    </div>
-            <!-- </div> -->
         </div>
+    </div>
+
     <div class="container">
-
         <div class="row">
-            <!-- TIMER STARTS HERE -->
-            <!-- <div id="fixed-div"> -->
-                <div class="col s12"  ng-controller="timerCtrl">
-                    <div id="wrapper" style="text-align: center">
+            <h2 id="hackerHead">Teams</h2></div>
 
-                    <h2>
-                        <timer id="timer-text" end-time="145162800000000">TIME REMAINING: {{hours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
-                    </h2>
-                </div>
-                </div>
-        </div>
-
-        <div class="row"><h2 id="hackerHead">Teams</h2></div>
+        <!-- ACCORDION POPOUTS HERE -->
         <div class="row">
-            <ul id="team_view" class="collapsible popout" data-collapsible="accordion">
+            <div class="col s6">
+            <ul class="collapsible popout" data-collapsible="accordion">
                 <li ng-repeat="x in groups">
                     <div class="collapsible-header" id="hackingBlue"><i class="fa fa-group"></i>{{x.X}}</div>
                     <div class="collapsible-body white" id="hackingSub">
@@ -75,24 +73,25 @@
                     </div>
                 </li>
             </ul>
-            <div class="row">
-                    <div class="card" id="card-height">
-                        <div class="card-content">
-                            <div>
-                                <span class="card-title black-text">Team Info</span>
-                            </div>
-                            <div class="divider"></div>
-                            <h5>Name:</h5>
-                            <p>&nbsp;&nbsp;&nbsp;&nbsp;John Doe's Group</p>
-                            <h5>Project Description:</h5>
-                            <p>&nbsp;&nbsp;&nbsp;&nbsp;We are building a hackathon management application.</p>
-                            <h5>Status:</h5>
-                            <p>&nbsp;&nbsp;&nbsp;&nbsp;We need a lot of help.</p>
-                            <h5>Location:</h5>
-                            <p>&nbsp;&nbsp;&nbsp;&nbsp;Third Floor, Near 310 Davis Hall</p>
+        </div>
+
+            <!-- TEAM INFO STARTS HERE -->
+                <div class="card col s5 push-s1" id="card-height">
+                    <div class="card-content">
+                        <div>
+                            <span class="card-title black-text">Team Info</span>
                         </div>
+                        <div class="divider"></div>
+                        <h5>Name:</h5>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;John Doe's Group</p>
+                        <h5>Project Description:</h5>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;We are building a hackathon management application.</p>
+                        <h5>Status:</h5>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;We need a lot of help.</p>
+                        <h5>Location:</h5>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;Third Floor, Near 310 Davis Hall</p>
                     </div>
-            </div>
+                </div>
 
             <div class="row">
                 <div class="col s3">
@@ -208,14 +207,10 @@
             </div>
 
         </div>
-
-                <!-- TEAM INFO STARTS HERE -->
-
-                <!--                  TOP TWO PROFILES START HERE -->
-
-            </div>
-        </div>
     </div>
+    </div>
+</div>
+</div>
 </body>
 
 </html>
