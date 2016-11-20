@@ -1,76 +1,221 @@
-     <!-- Insert html here-->
+<!-- Insert html here-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <base href="/">
     <title>hackMan</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../assets/css/teams.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 
 <body>
-<div class="navbar-fixed">
-    <nav class="grey darken-3">
-    <a id="hackerHead" class="navbar-brand" href="#">hackMan</a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="#"><i class="fa fa-exclamation-triangle"></i> Alerts    </a></li>
-            <li><a ng-click="sponsor()"><i class="fa fa-user"></i>      Sponsors</a></li>
-            <li><a ng-click="prize()"><i class="fa fa-user"></i>      Prizes</a></li>
-            <li><a ng-click="loggingOut()"><i class="fa fa-sign-in"></i> Log Out   </a></li>
-        </ul>
-    </nav>
-</div>
-
-
-<div class="container" id="main_div">
-
-  <img src="../../assets/img/ubhacking.png" id="home">
-
-    <h2 id="hackerHead">Teams</h2>
-      <ul id="team_view" class="collapsible popout" data-collapsible="accordion">
-         <li ng-repeat="x in groups">
-            <div class="collapsible-header" id="hackingBlue"><i class="fa fa-group"></i>{{x.X}}</div>
-            <div class="collapsible-body white" id="hackingSub">
-            <ul>
-                <li><i class="fa fa-user"></i> Person 1</li>
-                <li><i class="fa fa-user"></i> Person 2</li>
-                <li><i class="fa fa-user"></i> Person 3</li>
-                <li><i class="fa fa-user"></i> Person 4</li>
-            </ul>
-            </div>
-         </li>
-      </ul>
-    <div id="fixed-div">
-        <div id="timer" ng-controller="timerCtrl">
-        <h2>
-            <timer id="timer-text" end-time="145162800000000">TIME REMAINING: {{hours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
-        </h2>
+    <div class="row container">
+        <div class="navbar-fixed">
+            <nav>
+                <div class="grey darken-3 nav-wrapper">
+                    <a id="hackerHead" class="navbar-brand" href="#">hackMan</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a ng-click="sponsor()"><i class="fa fa-user"></i>Sponsors</a></li>
+                        <li><a ng-click="prize()"><i class="fa fa-user"></i>Prizes</a></li>
+                        <li><a ng-click="loggingOut()"><i class="fa fa-sign-in"></i>Log Out</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-        <div id="alerts">
-            <div class="card red darken-3" id="alert-height">
-                <div class="card-content">
-                <span id="alert-text" class="card-title white-text"><i class="fa fa-exclamation-triangle"></i>  This is where Alerts will be displayed</span>
-                <br/>
+    </div>
+
+
+        <div class="row valign-wrapper">
+            <!-- UB HACKING LOGO -->
+            <div class="col s7 push-s1">
+                <img src="../../assets/img/ubhacking.png" id="home">
+            </div>
+            <!-- ALERTS STARTS HERE  -->
+            <!-- <div id="alerts"> -->
+                    <div class="valign  col s5 pull-s1">
+                        <div class="card red darken-3">
+                            <div class="card-content">
+                                <span id="alert-text" class="card-title white-text"><i class="fa fa-exclamation-triangle"></i>  This is where Alerts will be displayed</span>
+                            </div>
+                        </div>
+                    </div>
+            <!-- </div> -->
+        </div>
+    <div class="container">
+
+        <div class="row">
+            <!-- TIMER STARTS HERE -->
+            <!-- <div id="fixed-div"> -->
+                <div class="col s12"  ng-controller="timerCtrl">
+                    <div id="wrapper" style="text-align: center">
+
+                    <h2>
+                        <timer id="timer-text" end-time="145162800000000">TIME REMAINING: {{hours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
+                    </h2>
+                </div>
+                </div>
+        </div>
+
+        <div class="row"><h2 id="hackerHead">Teams</h2></div>
+        <div class="row">
+            <ul id="team_view" class="collapsible popout" data-collapsible="accordion">
+                <li ng-repeat="x in groups">
+                    <div class="collapsible-header" id="hackingBlue"><i class="fa fa-group"></i>{{x.X}}</div>
+                    <div class="collapsible-body white" id="hackingSub">
+                        <ul>
+                            <li><i class="fa fa-user"></i> Person 1</li>
+                            <li><i class="fa fa-user"></i> Person 2</li>
+                            <li><i class="fa fa-user"></i> Person 3</li>
+                            <li><i class="fa fa-user"></i> Person 4</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="row">
+                    <div class="card" id="card-height">
+                        <div class="card-content">
+                            <div>
+                                <span class="card-title black-text">Team Info</span>
+                            </div>
+                            <div class="divider"></div>
+                            <h5>Name:</h5>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;John Doe's Group</p>
+                            <h5>Project Description:</h5>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;We are building a hackathon management application.</p>
+                            <h5>Status:</h5>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;We need a lot of help.</p>
+                            <h5>Location:</h5>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;Third Floor, Near 310 Davis Hall</p>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="row">
+                <div class="col s3">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
+                            <div>
+                                <h5 class="center-align flow-text">I like dogs and web dev</h5>
+                            </div>
+                            <div class="fixed-action-btn horizontal click-to-toggle">
+                                <a class="btn-floating red">
+                                    <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
+                                </a>
+                                <ul>
+                                    <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
+                                    <li><a class="btn-floating blue"><i class="fa fa-linkedin" id="fontawesomeicons" aria-hidden="true"></i></a></li>
+                                    <li><a class="btn-floating purple darken-1"><i class="fa fa-user" id="fontawesomeicons" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s3">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
+                            <div>
+                                <h5 class="center-align flow-text">I like dogs and web dev</h5>
+                            </div>
+                            <div class="fixed-action-btn horizontal click-to-toggle">
+                                <a class="btn-floating red">
+                                    <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
+                                </a>
+                                <ul>
+                                    <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
+                                    <li><a class="btn-floating blue"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    <li><a class="btn-floating purple darken-1"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--                BOTTOM TWO PROFILES START HERE -->
+                <div class="row">
+                    <div class="col s3">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
+                                <div>
+                                    <h5 class="center-align flow-text">I like dogs and web dev</h5>
+                                </div>
+                                <div class="fixed-action-btn horizontal click-to-toggle">
+                                    <a class="btn-floating red">
+                                        <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
+                                    </a>
+                                    <ul>
+                                        <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
+                                        <li><a class="btn-floating blue"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                        <li><a class="btn-floating purple darken-1"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s3">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
+                                <div>
+                                    <h5 class="center-align flow-text">I like dogs and web dev</h5>
+                                </div>
+                                <div class="fixed-action-btn horizontal click-to-toggle">
+                                    <a class="btn-floating red">
+                                        <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
+                                    </a>
+                                    <ul>
+                                        <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
+                                        <li><a class="btn-floating blue"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                        <li><a class="btn-floating purple darken-1"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div id="team-info">
-                <div class="card" id="card-height">
-                    <div class="card-content">
-                    <div >
-                        <span class="card-title black-text">Team Info</span>
-                    </div>
-                    <div class="divider"></div>
-                    <h5>Name:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;John Doe's Group</p>
-                    <h5>Project Description:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;We are building a hackathon management application.</p>
-                    <h5>Status:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;We need a lot of help.</p>
-                    <h5>Location:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;Third Floor, Near 310 Davis Hall</p>
-                    </div>
-                </div>
+
+        </div>
+
+                <!-- TEAM INFO STARTS HERE -->
+
+                <!--                  TOP TWO PROFILES START HERE -->
+
             </div>
         </div>
     </div>
-</div>
 </body>
+
 </html>
