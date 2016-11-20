@@ -58,12 +58,12 @@ angular
             }
         }
 
-        function addTeammate(id, teamname) {
+        function addTeammate(id, username) {
             var xhrParams = {
                 method: 'POST',
-                url: 'http://localhost:3000/api/teams/' + teamname + '/modify/' + id,
+                url: 'http://localhost:3000/api/teams/' + id + '/modify/' + username,
             }
-						return(xhrParams)
+						return $http(xhrParams)
         }
 
 				function delTeammate(id, teamname) {
@@ -164,6 +164,8 @@ angular
             getAlerts: getAlerts,
             makeAdmin: makeAdmin,
             removeAdmin: removeAdmin,
-            getTeammates: getTeammates
+            getTeammates: getTeammates,
+            delTeammate: delTeammate,
+            addTeammate: addTeammate
         }
     })
