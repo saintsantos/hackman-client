@@ -82,8 +82,8 @@ angular
                 method: 'PUT',
                 url: 'http://localhost:3000/api/teams/' + id + '/modify/',
                 params: {
-                    teamname: team.name,
-                    proj_desc: team.description,
+                    teamname: team.teamname,
+                    proj_desc: team.proj_desc,
                     status: team.status,
                     location: team.location
                 }

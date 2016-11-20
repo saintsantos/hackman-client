@@ -59,11 +59,11 @@
                         <div class="card-content">
                             <form ng-submit="manage = !manage; savePrize(prize)">
                                 <label>Prize Name:</label>
-                                <input type="text" ng-model="prize.name" placeholder="{{thing.name}}" ng-required />
+                                <input type="text" ng-model="thing.name" placeholder="{{thing.name}}" ng-required />
                                 <label>About Prize:</label>
-                                <input type="text" ng-model="prize.about" placeholder="{{thing.about}}" ng-required />
+                                <input type="text" ng-model="thing.about" placeholder="{{thing.about}}" ng-required />
                                 <label>Prize Sponsor:</label>
-                                <input type="text" ng-model="prize.sponsor" placeholder="{{thing.sponsor}}" ng-required />
+                                <input type="text" ng-model="pthing.sponsor" placeholder="{{thing.sponsor}}" ng-required />
                                 <button class="btn" type="submit">Save</button>
                             </form>
                         </div>
