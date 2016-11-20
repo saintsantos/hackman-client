@@ -13,7 +13,11 @@
 
             function logout() {
                 console.log("Logging out");
-                localStorage.removeItem('id_token');
+                $window.localStorage.removeItem('id_token');
+                $window.localStorage.removeItem('role');
+                $window.localStorage.removeItem('username');
+                $window.localStorage.removeItem('email');
+                $window.localStorage.removeItem('user_id');
                 authManager.unauthenticate();
                 $state.go('login');
             }

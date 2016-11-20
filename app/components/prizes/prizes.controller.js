@@ -8,6 +8,10 @@ angular
             $scope.role = false;
         }
 
+        PrizeService.getPrizes().then(function(result) {
+            $scope.prizes = result.data;
+        })
+
         $scope.manage = true;
 
         console.log($scope.role);
@@ -29,7 +33,7 @@ angular
 
 
     ];
-    $scope.prizes = [
+    /*$scope.prizes = [
   	{
         id: 0,
     	name:'Chair',
@@ -44,7 +48,7 @@ angular
         image:'../../assets/img/fancySpray.JPG',
         sponsor:'Fanciful'
   	}
-  ];
+];*/
 
   $scope.savePrize = function(prize, id) {
       //PrizeService.editPrize(prize);
@@ -66,12 +70,12 @@ angular
 
   $scope.createPrize = function() {
       prize = {
-      	name:'Liquid Fancy',
-          about:'Liquified Fancy. Make everything extra fancy with a quick spray. Comes in a fancy spray bottle',
-          image:'../../assets/img/fancySpray.JPG',
-          sponsor:'Fanciful'
+      	   name:'New Prize',
+           desc:'This is a new prize',
+           sponsor:'Yes there is'
     	}
-      $scope.prizes.push(prize);
+    PrizeService.newPrize(prize);
+    $scope.prizes.push(prize);
   }
 
 

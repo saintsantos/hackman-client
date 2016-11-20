@@ -36,7 +36,7 @@
         <h1 id="hackerHead">{{title}}</h1>
     </div>
     <div class="container">
-        <button class="btn" ng-click="createPrize()">New Prize</button>
+        <button ng-show="role" class="btn" ng-click="createPrize()">New Prize</button>
         <div id="card" ng-repeat="thing in prizes">
             <div class="card horizontal">
                 <div class="card-image">
@@ -45,14 +45,14 @@
                 <div class="card-stacked">
                     <div ng-hide="!manage">
                         <div class="card-content">
-                            <span class="card-title black-text">{{thing.name}}</span>
+                            <span class="card-title black-text">{{thing.prizeName}}</span>
                             <div class="divider"></div>
-                            <p>{{thing.about}}</p>
+                            <p>{{thing.prize_desc}}</p>
                         </div>
                         <div class="card-action">
                             <p><b>Sponsored By: </b>{{thing.sponsor}}</p>
-                            <button class="btn" ng-hide="!manage" ng-click="manage = !manage; setPrize(thing, indexOf(thing))">Edit</button>
-                            <button class="btn" ng-hide="!manage" ng-click="manage = !manage; deletePrize(thing, indexOf(thing))">Delete</button>
+                            <button ng-show="role" class="btn" ng-click="manage = !manage; setPrize(thing, indexOf(thing))">Edit</button>
+                            <button ng-show="role" class="btn" ng-click="manage = !manage; deletePrize(thing, indexOf(thing))">Delete</button>
                         </div>
                     </div>
                     <div ng-hide="manage">
