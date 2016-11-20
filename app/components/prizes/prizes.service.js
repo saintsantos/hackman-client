@@ -4,14 +4,15 @@ angular
     //Service name for calls in other modules
     .factory('PrizeService', function($http, $window, $q) {
 
-        function newPrize(name) {
+        function newPrize(prize) {
+            //console.log(prize);
             var xhrParams = {
                 method: 'POST',
-                url: 'http://localhost:3000/api/admin/prize' + name,
+                url: 'http://localhost:3000/api/admin/prize/' + prize.name,
                 params: {
-
+                    desc: prize.desc,
+                    sponsor: prize.sponsor
                 }
-
             }
             return $http(xhrParams);
 
@@ -32,7 +33,7 @@ angular
         function getPrizes() {
             var xhrParams = {
                 method: 'GET',
-                url: 'http://localhost:3000/api/prizes'
+                url: 'http://localhost:3000/api/prizes/'
 
             }
             return $http(xhrParams);

@@ -16,7 +16,7 @@ angular
             $scope.user = result.data;
             $window.localStorage.setItem('user_id', $scope.user.id);
             $window.localStorage.setItem('role', $scope.user.role);
-            if ($scope.user.role == "admin") {
+            if ($scope.user.role === "admin") {
                 $scope.role = true;
             } else {
                 $scope.role = false;
