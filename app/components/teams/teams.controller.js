@@ -98,13 +98,13 @@ angular
         }
 
         $scope.saveTeam = function(team) {
-            $scope.groups[$scope.chosen_id].teamname = team.name;
-            $scope.groups[$scope.chosen_id].proj_desc = team.description;
+            $scope.groups[$scope.chosen_id].teamname = team.teamname;
+            $scope.groups[$scope.chosen_id].proj_desc = team.proj_desc;
             $scope.groups[$scope.chosen_id].status = team.status;
             $scope.groups[$scope.chosen_id].location = team.location;
             var id = $scope.groups[$scope.chosen_id]._id;
             TeamService.editTeam(id, team);
-            console.log("Team Saved");
+            console.log(team);
         }
 
         $scope.addTeammate = function(teammate) {

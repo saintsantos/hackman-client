@@ -28,7 +28,7 @@
 
   <img src="../../assets/img/ubhacking.png" id="home">
     <h2 id="hackerHead">Teams</h2>
-    <button ng-click="newTeam()">Make new team</button>
+    <button class="btn" ng-click="newTeam()">Make new team</button>
       <ul id="team_view" class="collapsible popout" data-collapsible="accordion">
          <li ng-repeat="team in groups">
             <div class="collapsible-header" id="hackingBlue" ng-click="selectTeam(team, groups.indexOf(team))"><i class="fa fa-group"></i>{{team.teamname}}</div>
@@ -64,20 +64,20 @@
                         <h5>Project Description:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.proj_desc}}</p>
                         <h5>Status:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.status}}</p>
                         <h5>Location:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.location}}</p>
-                        <button ng-show="role" ng-click="editing = true">Edit</button>
-                        <button ng-show="role" ng-click="manageTeammate = true">Add Teammate</button>
-                        <button ng-show="role" ng-click="deleteTeam(chosen_team._id)">Delete Team</button>
+                        <button class="btn" ng-show="role" ng-click="editing = true">Edit</button>
+                        <button class="btn" ng-show="role" ng-click="manageTeammate = true">Add Teammate</button>
+                        <button class="btn" ng-show="role" ng-click="deleteTeam(chosen_team._id)">Delete Team</button>
                     </div>
                     <div>
-                        <form ng-show="editing" ng-submit="editing = false; saveTeam(team)">
+                        <form ng-show="editing" ng-submit="editing = false; saveTeam(chosen_team)">
                             <label>Teamname:</label>
-                            <input type="text" ng-model="team.name" placeholder="{{chosen_team.teamname}}" ng-required />
+                            <input type="text" ng-model="chosen_team.teamname" placeholder="{{chosen_team.teamname}}" ng-required />
                             <label>Project Description:</label>
-                            <input type="text" ng-model="team.description" placeholder="{{chosen_team.proj_desc}}" ng-required />
+                            <input type="text" ng-model="chosen_team.proj_desc" placeholder="{{chosen_team.proj_desc}}" ng-required />
                             <label>Status:</label>
-                            <input type="text" ng-model="team.status" placeholder="Status" ng-required />
+                            <input type="text" ng-model="chosen_team.status" placeholder="Status" ng-required />
                             <label>Location:</label>
-                            <input type="text" ng-model="team.location" placeholder="Location" ng-required />
+                            <input type="text" ng-model="chosen_team.location" placeholder="Location" ng-required />
                             <br />
                             <button class="btn" type="submit">Save</button>
                         </form>
