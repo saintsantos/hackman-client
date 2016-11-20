@@ -26,8 +26,14 @@ angular
 
         });
 
-
-        /*$scope.groups = [{
+        TeamService.getAlerts().then(function(result) {
+            //console.log(result.data);
+            $scope.latest = result.data.slice(-1)[0];
+            $scope.alerts = result.data;
+        });
+        /*
+        $scope.currentAlert=[{"Alert"}]
+        $scope.groups = [{
           "X":"Magic Cam"},{
           "X":"Super Freezer 5000"},{
           "X":"Random Group"},{
@@ -80,6 +86,13 @@ angular
 
         //Olivia added this to mess around with the angular stuff on the sponsors page
         //Olivia added these to mess around with the angular stuff on the sponsors and prizes page
+        $scope.addAlerts = function(alert) {
+            //console.log(alert);
+            TeamService.addAlert(alert);
+            $scope.alerts.push(alert);
+            $scope.latest = $scope.alerts.slice(-1)[0];
+        }
+
         $scope.prize = function() {
             console.log("Going to prizes");
             $state.go('prize');
