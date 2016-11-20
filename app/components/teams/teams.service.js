@@ -63,7 +63,16 @@ angular
                 method: 'POST',
                 url: 'http://localhost:3000/api/teams/' + teamname + '/modify/' + id,
             }
+						return(xhrParams)
         }
+
+				function delTeammate(id, teamname) {
+					var xhrParams = {
+						method: 'DELETE',
+						url: 'http://localhost:3000/api/teams/' + teamname + '/modify/' + id,
+					}
+					return $http(xhrParams)
+				}
 
         function delTeam(id) {
             var xhrParams = {

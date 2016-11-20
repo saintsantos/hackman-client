@@ -107,6 +107,7 @@
                             <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.location}}</p>
                             <button class="btn" ng-show="admin == true || owner == true" ng-click="editing = true">Edit</button>
                             <button class="btn" ng-show="admin == true || owner == true" ng-click="manageTeammate = true">Add Teammate</button>
+                            <button class="btn" ng-show="admin == true || owner == true" ng-click="removeTeammate = true">Remove Teammate</button>
                             <button class="btn" ng-show="admin == true || owner == true" ng-click="deleteTeam(chosen_team._id)">Delete Team</button>
                         </div>
                         <div>
@@ -129,6 +130,16 @@
                                 <input type="text" ng-model="teammate" placeholder="Teammate Name" ng-required />
                                 <br />
                                 <button class="btn" type="submit">Add Teammate</button>
+                                <button class="btn" ng-click="manageTeammate = false">Cancel</button>
+                            </form>
+                        </div>
+                        <div>
+                            <form ng-show="removeTeammate" ng-submit="removeTeammate = false">
+                                <label>Remove Teammate:</label>
+                                <input type="text" ng-model="teammate" placeholder="Teammate Name" ng-required />
+                                <br />
+                                <button class="btn" type="submit">Remove Teammate</button>
+                                <button class="btn" ng-click="removeTeammate = false">Cancel</button>
                             </form>
                         </div>
                     </div>
