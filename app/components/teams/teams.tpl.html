@@ -29,6 +29,7 @@
   <img src="../../assets/img/ubhacking.png" id="home">
     <h2 id="hackerHead">Teams</h2>
     <button ng-click="newTeam()">Make new team</button>
+
       <ul id="team_view" class="collapsible popout" data-collapsible="accordion">
          <li ng-repeat="team in groups">
             <div class="collapsible-header" id="hackingBlue" ng-click="selectTeam(team)"><i class="fa fa-group"></i>{{team.teamname}}</div>
@@ -45,16 +46,28 @@
             <timer id="timer-text" end-time="145162800000000">TIME REMAINING: {{hours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
         </h2>
         </div>
+
         <div id="alerts">
             <div class="card red darken-3" id="alert-height">
                 <div class="card-content">
                 <span id="alert-text" class="card-title white-text"><i class="fa fa-exclamation-triangle"></i>  Alert:</span>
-                <!--<input placeholder="Send out an alert!" ng-model="currentAlert" type="text">
-                <button class="btn" type="submit" ng-click="addAlerts()">Send</button>
-                <p>{{currentAlert}}</p> -->
+                {{currentAlert}}
                 <br/>
-                </div>
+
+                <button class="btn" ng-click="showAlerts=true">Send a New Alert</button>
+
+
+
+            <div>
+                <!--add funciton call to form thingy-->
+                <br>
+                <form ng-show="showAlerts" ng-submit="showAlerts=false">
+                    <input type="text" ng-model="alert" placeholder="New Alert">
+                    <button class="btn" type="submit">Send Alert!</button>
+                </form>
+
             </div>
+        </div>
             <div id="team-info">
                 <div class="card" id="card-height">
                     <div class="card-content">
