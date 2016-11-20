@@ -51,10 +51,20 @@
             <div class="card red darken-3" id="alert-height">
                 <div class="card-content">
                 <span id="alert-text" class="card-title white-text"><i class="fa fa-exclamation-triangle"></i>  Alert:</span>
-                {{currentAlert}}
+                <!--This should display the current alert, which is right now assumed to be 'alert'-->
+                {{alert}}
                 <br/>
+                <button class="btn" ng-click="showAllAlerts=true">Show All Alerts</button>
+                <br>
+                <div ng-show="showAllAlerts" ng-submit="showAllAlerts=false">
+                    <!--assuming that the collection of all alerts is called alerts-->
+                    <ul ng-repeat="x in alerts"><li>{{x}}</li></ul>
+                    <!--The above code SHOULD make a list of all the alerts in the database-->
+                    <button class="btn" type="submit">Close</button>
 
-                <button class="btn" ng-click="showAlerts=true">Send a New Alert</button>
+                </div>
+                <br>
+                <button class="btn" ng-show="role" ng-click="showAlerts=true">Send a New Alert</button>
 
 
 
