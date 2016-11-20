@@ -92,6 +92,12 @@ angular
 
         };
 
+        $scope.teams = function() {
+            console.log("Going to teams");
+            $state.go('teams');
+            $window.location.reload();
+        };
+
         $scope.loggingOut = function() {
             authenticate.authService.logout();
 
@@ -137,5 +143,8 @@ angular
                 $scope.groups.push(team.data);
             });
             //console.log(team);
+        }
+        $scope.pageRefresh = function() {
+            $window.location.reload();
         }
     });

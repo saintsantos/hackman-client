@@ -1,6 +1,12 @@
 angular
     .module('prizes.controller', ['ui.materialize'])
-    .controller('PrizeController', function($scope, $window, PrizeService) {
+    .controller('PrizeController', function($scope, $state, $window, PrizeService) {
+
+        $scope.teams = function() {
+            console.log("Going to teams");
+            $state.go('teams');
+            $window.location.reload();
+        };
 
         if ($window.localStorage.getItem('role') === 'admin') {
             $scope.role = true;
@@ -77,6 +83,7 @@ angular
     PrizeService.newPrize(prize);
     $scope.prizes.push(prize);
   }
+
 
 
 });
