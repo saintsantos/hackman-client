@@ -24,20 +24,20 @@ angular
 
         console.log($scope.role);
 
-        $scope.saveSponsor = function(sponsor, id) {
-            SponsorService.editSponsor(sponsor);
+        $scope.saveSponsor = function(sponsor) {
+            //SponsorService.editSponsor(sponsor._id, sponsor);
             console.log(sponsor);
         }
 
         $scope.deleteSponsor = function(sponsor, id) {
             SponsorService.deleteSponsor(sponsor._id);
-            $scope.prizes.splice(id, 1);
-            console.log(sponsor);
+            $scope.sponsors.splice(id, 1);
+            //console.log(sponsor);
 
         }
 
         $scope.setSponsor = function(sponsor, index) {
-            $scope.chozen_index = index;
+            $scope.chosen_index = index;
             $scope.chosen_prize = sponsor;
             console.log(sponsor);
         }
@@ -45,11 +45,12 @@ angular
         $scope.createSponsor = function() {
             sponsor = {
               	name:'New Sponsor',
-                desc:'This is a new sponsor',
-                sponsor:'Yes there is'
+                desc:'This is a new sponsor'
             }
-            SponsorService.newSponsor(sponsor);
-            $scope.sponsors.push(sponsor);
+            SponsorService.newSponsor(sponsor).then(function(sponsor) {
+                console.log(sponsor.data);
+                $scope.sponsors.push(sponsor.data);
+            });
         }
 
 
