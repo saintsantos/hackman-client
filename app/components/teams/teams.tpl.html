@@ -48,14 +48,13 @@
                 </div>
                 <div class="card red darken-3">
                     <div class="card-content">
+                        <span class="card-title white-text"><i class="fa fa-exclamation-triangle"></i>  Alert: {{latest.text}}</span>
                         <!--This should display the current alert, which is right now assumed to be 'alert'-->
-                        <div ng-show="showAllAlerts" ng-submit="showAllAlerts=false">
+                        <div ng-show="showAllAlerts" ng-submit="showAllAlerts = false">
                             <ul ng-repeat="x in alerts">
-                                <li>{{x}}</li>
+                                <li class="white-text">{{x.text}}</li>
                             </ul>
                             <button class="btn" type="submit">Close</button>
-
-                            <span class="card-title white-text"><i class="fa fa-exclamation-triangle"></i>  Alert:</span> {{latest.text}}
                         </div>
                     </div>
                 </div>
