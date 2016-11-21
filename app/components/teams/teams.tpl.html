@@ -52,6 +52,7 @@
             <!-- ACCORDION POPOUTS HERE -->
             <div class="row">
                 <div class="col s6">
+                    <button class="btn" ng-click="newTeam()">Make new team</button>
                     <ul class="collapsible popout" data-collapsible="accordion">
                         <li ng-repeat="team in groups">
                             <div class="collapsible-header" id="hackingBlue" ng-click="selectTeam(team, groups.indexOf(team))"><i class="fa fa-group"></i>{{team.teamname}}</div>
