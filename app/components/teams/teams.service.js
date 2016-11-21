@@ -91,12 +91,38 @@ angular
             return $http(xhrParams);
         }
 
+        function addAlert(alert) {
+
+            var xhrParams = {
+                method: 'POST',
+                url: 'http://localhost:3000/api/admin/alert/add',
+                params: {
+                    text: alert.text
+                }
+            }
+
+            return $http(xhrParams);
+
+        }
+
+        function getAlerts() {
+            var xhrParams = {
+                method: 'GET',
+                url: 'http://localhost:3000/api/alerts/'
+            }
+
+            return $http(xhrParams);
+        }
+
+        //Move the alert calls to the alert service.
         return {
             check: check,
             httpCall: httpCall,
             getAllTeams: getAllTeams,
             newTeam: newTeam,
             editTeam: editTeam,
-            delTeam: delTeam
+            delTeam: delTeam,
+            addAlert: addAlert,
+            getAlerts: getAlerts
         }
     })
