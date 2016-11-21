@@ -1,11 +1,11 @@
 angular
     //Module export for dependencies
-    .module('sponsors.service', [])
+    .module('sponsor.service', [])
     //Service name for calls in other modules
     .factory('SponsorService', function($http, $window, $q) {
 
-        function newSponsor(Sponsor) {
-            //console.log(Sponsor);
+        function newSponsor(sponsor) {
+            console.log(sponsor);
             var xhrParams = {
                 method: 'POST',
                 url: 'http://localhost:3000/api/admin/sponsor/' + sponsor.name,
@@ -17,11 +17,13 @@ angular
 
         }
 
-        function editSponsor(id) {
+        function editSponsor(id, sponsor) {
             var xhrParams = {
                 method: 'PUT',
                 url: 'http://localhost:3000/api/admin/sponsor/' + id,
                 params: {
+                    sponsorName: sponsor.name,
+                    sponsor_desc: sponsor.desc
 
                 }
             }

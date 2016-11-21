@@ -52,18 +52,18 @@
                         <div class="card-action">
                             <p><b>Sponsored By: </b>{{thing.sponsor}}</p>
                             <button ng-show="role" class="btn" ng-click="manage = !manage; setPrize(thing, indexOf(thing))">Edit</button>
-                            <button ng-show="role" class="btn" ng-click="manage = !manage; deletePrize(thing, indexOf(thing))">Delete</button>
+                            <button ng-show="role" class="btn" ng-click="deletePrize(thing, indexOf(thing))">Delete</button>
                         </div>
                     </div>
                     <div ng-hide="manage">
                         <div class="card-content">
-                            <form ng-submit="manage = !manage; savePrize(prize)">
+                            <form ng-submit="manage = !manage; savePrize(thing)">
                                 <label>Prize Name:</label>
-                                <input type="text" ng-model="thing.name" placeholder="{{thing.name}}" ng-required />
+                                <input type="text" ng-model="thing.prizeName" placeholder="{{thing.prizeName}}" ng-required />
                                 <label>About Prize:</label>
-                                <input type="text" ng-model="thing.about" placeholder="{{thing.about}}" ng-required />
+                                <input type="text" ng-model="thing.prize_desc" placeholder="{{thing.prize_desc}}" ng-required />
                                 <label>Prize Sponsor:</label>
-                                <input type="text" ng-model="pthing.sponsor" placeholder="{{thing.sponsor}}" ng-required />
+                                <input type="text" ng-model="thing.sponsor" placeholder="{{thing.sponsor}}" ng-required />
                                 <button class="btn" type="submit">Save</button>
                             </form>
                         </div>
