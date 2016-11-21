@@ -1,17 +1,12 @@
 @import 'https://fonts.googleapis.com/css?family=VT323';
 
 #main_div {
-    position: absolute;
-    top: 12%;
-    padding-left: 7%;
 }
 
 #home {
-    width: 30%;
 }
 
 #login-ub-hacking {
-    width: 40%;
 }
 
 #nav-text {
@@ -20,7 +15,6 @@
 }
 
 #team_view {
-  width: 40%;
 }
 
 #hackingBlue {
@@ -35,6 +29,7 @@
 
 #hackerHead {
   /*color: #74BE30;*/
+  padding-left: 3%;
   font-size: 40px;
   font-family: 'vt323', monospace;
 }
@@ -49,30 +44,17 @@
 }
 
 #fixed-div {
-    position: fixed;
     float: right;
-    top: 10%;
-    right: 3%;
-    width: 50%;
 }
 
-#team-info {
-    position: fixed;
-    top: 40%;
-    right: 8%;
-    left: 45%;
-    /*display: inline-block;*/
+#member-info {
+    font-size: 16px;
 }
 
 #alerts {
-    position: fixed;
-    top: 19%;
-    right: 6%;
-    left: 43%;
 }
 
 #alert-height {
-    height: 8em;
 }
 
 #alert-text {
@@ -82,18 +64,14 @@
 }
 
 #card-height {
-    height: 25em;
 }
 #login-card {
-    width: 45em;
-    height: 35em;
 }
 
 #timer {
     position: fixed;
     float: right;
     /*top: 10%;*/
-    right: 4%;
 }
 
 #info-title {
@@ -102,6 +80,11 @@
 
 #timer-text {
     text-shadow: 1px 2px #909090;
+}
+
+#faicons {
+    font-size: 30px;
+    color: #ffffff;
 }
 
 .hide-on-med-and-down a i{

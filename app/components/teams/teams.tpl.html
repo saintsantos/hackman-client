@@ -13,28 +13,17 @@
 
 
 <body>
-    <div class="row container">
-        <div class="navbar-fixed">
-            <nav>
-                <div class="grey darken-3 nav-wrapper">
-                    <a id="hackerHead" class="navbar-brand" href="#">hackMan</a>
-                    <ul class="right hide-on-med-and-down">
-                        <li class="center-align">
-                            <div ng-controller="timerCtrl">
-                                <div id="wrapper" class="center-align">
-                                    <h2>
-                                        <timer id="timer-text" end-time="145162800000000">TIME REMAINING: {{hours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
-                                    </h2>
-                                </div>
-                            </div>
-                        </li>
-                        <li><a ng-click="sponsor()"><i class="fa fa-user"></i>Sponsors</a></li>
-                        <li><a ng-click="prize()"><i class="fa fa-user"></i>Prizes</a></li>
-                        <li><a ng-click="loggingOut()"><i class="fa fa-sign-in"></i>Log Out</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+    <div class="navbar-fixed valign-wrapper">
+        <nav>
+            <div class=" grey darken-3 nav-wrapper">
+                <a href="#!" id="hackerHead" class="brand-logo">hackMan</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a ng-click="sponsor()"><i class="fa fa-user"></i>Sponsors</a></li>
+                    <li><a ng-click="prize()"><i class="fa fa-user"></i>Prizes</a></li>
+                    <li><a ng-click="loggingOut()"><i class="fa fa-sign-in"></i>Log Out</a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
 
     <div class="container">
@@ -79,7 +68,7 @@
                 </div>
 
                 <!-- TEAM INFO STARTS HERE -->
-                <div class="card col s6" id="card-height">
+                <div class="card col s6">
                     <div class="card-content">
                         <div>
                             <span class="card-title black-text">Team Info</span>
@@ -100,56 +89,31 @@
 
                     <!-- TOP TWO PROFILES START HERE -->
                     <div class="row">
+
                         <div class="col s3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
-                                </div>
+                            <div class="card small">
                                 <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
+                                    <span class="card-title">John Doe</span>
+                                    <p id="member-info">I like dogs and web dev</p>
                                 </div>
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
-                                    <div>
-                                        <h5 class="center-align flow-text">I like dogs and web dev</h5>
-                                    </div>
-                                    <div class="fixed-action-btn horizontal click-to-toggle">
-                                        <a class="btn-floating red">
-                                            <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
-                                        </a>
-                                        <ul>
-                                            <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
-                                            <li><a class="btn-floating blue"><i class="fa fa-linkedin" id="fontawesomeicons" aria-hidden="true"></i></a></li>
-                                            <li><a class="btn-floating purple darken-1"><i class="fa fa-user" id="fontawesomeicons" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
+                                <div class="card-action grey darken-3">
+                                    <a href=""><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col s3">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
-                                </div>
+                            <div class="card small">
                                 <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
+                                    <span class="card-title">John Doe</span>
+                                    <p id="member-info">I like dogs and web dev</p>
                                 </div>
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
-                                    <div>
-                                        <h5 class="center-align flow-text">I like dogs and web dev</h5>
-                                    </div>
-                                    <div class="fixed-action-btn horizontal click-to-toggle">
-                                        <a class="btn-floating red">
-                                            <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
-                                        </a>
-                                        <ul>
-                                            <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
-                                            <li><a class="btn-floating blue"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                            <li><a class="btn-floating purple darken-1"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
+                                <div class="card-action grey darken-3">
+                                    <a href=""><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -158,55 +122,29 @@
                     <!--                BOTTOM TWO PROFILES START HERE -->
                     <div class="row push-s6">
                         <div class="col s3 push-s6">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
-                                </div>
+                            <div class="card small">
                                 <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
+                                    <span class="card-title">John Doe</span>
+                                    <p id="member-info">I like dogs and web dev</p>
                                 </div>
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
-                                    <div>
-                                        <h5 class="center-align flow-text">I like dogs and web dev</h5>
-                                    </div>
-                                    <div class="fixed-action-btn horizontal click-to-toggle">
-                                        <a class="btn-floating red">
-                                            <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
-                                        </a>
-                                        <ul>
-                                            <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
-                                            <li><a class="btn-floating blue"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                            <li><a class="btn-floating purple darken-1"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
+                                <div class="card-action grey darken-3">
+                                    <a href=""><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col s3 push-s6">
-                            <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
-                                </div>
+                            <div class="card small">
                                 <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4 flow-texts">Joe Smith<i class="material-icons right">more_vert</i></span>
+                                    <span class="card-title">John Doe</span>
+                                    <p id="member-info">I like dogs and web dev</p>
                                 </div>
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4 center-align flow-text">Joe Smith<i class="material-icons right">close</i></span>
-                                    <div>
-                                        <h5 class="center-align flow-text">I like dogs and web dev</h5>
-                                    </div>
-                                    <div class="fixed-action-btn horizontal click-to-toggle">
-                                        <a class="btn-floating red">
-                                            <i class="fa fa-chevron-circle-left" aria-hidden="true" id="centertheicon"></i>
-                                        </a>
-                                        <ul>
-                                            <li><a href="https://github.com/" target="_blank" title="Github" class="btn-floating grey darken-3"><i class="fa fa-github" id="fontawesomeicons" aria-hidden="true"></i></a></li>
-                                            <li><a class="btn-floating blue"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                            <li><a class="btn-floating purple darken-1"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
+                                <div class="card-action grey darken-3">
+                                    <a><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                                    <a><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                                    <a><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -214,10 +152,13 @@
                 </div>
 
             </div>
+
         </div>
     </div>
     </div>
     </div>
+    </div>
+    
 </body>
 
 </html>
