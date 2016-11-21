@@ -8,9 +8,9 @@ angular
             //console.log(prize);
             var xhrParams = {
                 method: 'POST',
-                url: 'http://localhost:3000/api/admin/prize/' + prize.name,
+                url: 'http://localhost:3000/api/admin/prize/' + prize.prizeName,
                 params: {
-                    desc: prize.desc,
+                    prize_desc: prize.prize_desc,
                     sponsor: prize.sponsor
                 }
             }
@@ -18,11 +18,14 @@ angular
 
         }
 
-        function editPrize(id) {
+        function editPrize(prize, id) {
             var xhrParams = {
                 method: 'PUT',
-                url: 'http://localhost:3000/api/admin/prize' + id,
+                url: 'http://localhost:3000/api/admin/prize/' + id,
                 params: {
+                    prizeName: prize.prizeName,
+                    prize_desc: prize.prize_desc,
+                    sponsor: prize.sponsor
 
                 }
             }
@@ -43,7 +46,7 @@ angular
         function deletePrize(id) {
             var xhrParams = {
                 method: 'DELETE',
-                url: 'http://localhost:3000/api/admin/prize' + id,
+                url: 'http://localhost:3000/api/admin/prize/' + id,
 
             }
 

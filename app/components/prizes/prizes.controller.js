@@ -15,42 +15,44 @@ angular
         }
 
         PrizeService.getPrizes().then(function(result) {
+            console.log(result);
             $scope.prizes = result.data;
         })
 
+        console.log($scope.prizes);
+
         $scope.manage = true;
 
-        console.log($scope.role);
         $scope.title='Prizes';
         $scope.savePrize = function(prize, id) {
-            //PrizeService.editPrize(prize);
+            PrizeService.editPrize(prize, prize._id);
             console.log(prize);
         }
 
         $scope.deletePrize = function(prize, id) {
-            //PrizeService.deletePrize(prize._id);
+            PrizeService.deletePrize(prize._id);
             $scope.prizes.splice(id, 1);
             console.log(prize);
 
         }
 
         $scope.setPrize = function(prize, index) {
-            $scope.chozen_index = index;
+            $scope.chosen_index = index;
             $scope.chosen_prize = prize;
-            console.log(prize);
+            console.log($scope.chosen_prize);
         }
 
         $scope.createPrize = function() {
             prize = {
-              	name:'New Prize',
-                desc:'This is a new prize',
+              	prizeName:'New Prize',
+                prize_desc:'This is a new prize',
                 sponsor:'Yes there is'
             }
             PrizeService.newPrize(prize);
             $scope.prizes.push(prize);
         }
 
-        
+
         //     $scope.sponsorX=[
         //         {
         //             name:'Fanciful Sponsor',
