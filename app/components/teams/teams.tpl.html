@@ -43,12 +43,39 @@
                 </div>
             </div>
         </div>
+
+        <div id="alerts">
+            <div class="card red darken-3" id="alert-height">
+                <div class="card-content">
+                <span id="alert-text" class="card-title white-text"><i class="fa fa-exclamation-triangle"></i>  Alert:</span>
+                <!--This should display the current alert, which is right now assumed to be 'alert'-->
+                {{latest.text}}
+                <br/>
+                <!--<button class="btn" ng-click="showAllAlerts=true">Show All Alerts</button>
+                <br>
+                <div ng-show="showAllAlerts" ng-submit="showAllAlerts=false">
+                    <ul ng-repeat="x in alerts"><li>{{x}}</li></ul>
+                    <button class="btn" type="submit">Close</button>
+
         <!-- TEAMS TITLE TEXT HERE -->
         <div class="container">
             <div class="row">
                 <div class="col s2 push-s1">
                     <h2 id="hackerHead">Teams</h2>
                 </div>
+                <br>-->
+                <button class="btn" ng-show="role" ng-click="showAlerts=true">Send a New Alert</button>
+
+
+
+            <div>
+                <!--add funciton call to form thingy-->
+                <br>
+                <form ng-show="showAlerts" ng-submit="showAlerts=false; addAlerts(alert)">
+                    <input type="text" ng-model="alert.text" placeholder="New Alert">
+                    <button class="btn" type="submit">Send Alert!</button>
+                </form>
+
             </div>
 
             <!-- ACCORDION POPOUTS HERE -->
