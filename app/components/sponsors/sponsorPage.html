@@ -45,18 +45,17 @@
                         <p>{{thing.sponsor_desc}}</p>
                     </div>
                     <div class="card-action">
-                        <p><b>Sponsored By: </b>{{thing.sponsor}}</p>
                         <button ng-show="role" class="btn" ng-click="manage = !manage; setSponsor(thing, indexOf(thing))">Edit</button>
-                        <button ng-show="role" class="btn" ng-click="manage = !manage; deleteSponsor(thing, indexOf(thing))">Delete</button>
+                        <button ng-show="role" class="btn" ng-click="deleteSponsor(thing, indexOf(thing))">Delete</button>
                     </div>
                 </div>
                 <div ng-hide="manage">
                     <div class="card-content">
-                        <form ng-submit="manage = !manage; saveSponsor(prize)">
+                        <form ng-submit="manage = !manage; saveSponsor(thing)">
                             <label>Sponsor Name:</label>
-                            <input type="text" ng-model="thing.name" placeholder="{{thing.name}}" ng-required />
+                            <input type="text" ng-model="thing.sponsorName" placeholder="{{thing.sponsorName}}" ng-required />
                             <label>About Sponsor:</label>
-                            <input type="text" ng-model="thing.about" placeholder="{{thing.about}}" ng-required />
+                            <input type="text" ng-model="thing.sponsor_desc" placeholder="{{thing.sponsor_desc}}" ng-required />
                             <button class="btn" type="submit">Save</button>
                         </form>
                     </div>
