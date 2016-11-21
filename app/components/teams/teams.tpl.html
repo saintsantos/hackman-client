@@ -1,100 +1,187 @@
-     <!-- Insert html here-->
+<!-- Insert html here-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <base href="/">
     <title>hackMan</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../../assets/css/teams.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 
 <body>
-<div class="navbar-fixed">
-    <nav class="grey darken-3">
-    <a id="hackerHead" class="navbar-brand" ng-click="teams()">hackMan</a>
-        <ul id="navbar-fixer" class="right">
-            <li><a id="navbar-fixer" href="#"><i class="fa fa-exclamation-triangle"></i> Alerts    </a></li>
-            <li><a id="navbar-fixer" ng-click="sponsor()"><i class="fa fa-user"></i>      Sponsors</a></li>
-            <li><a id="navbar-fixer" ng-click="prize()"><i class="fa fa-user"></i>      Prizes</a></li>
-            <li><a id="navbar-fixer" ng-click="loggingOut()"><i class="fa fa-sign-in"></i> Log Out   </a></li>
-        </ul>
-    </nav>
-</div>
-
-
-<div class="container" id="main_div">
-
-  <img src="../../assets/img/ubhacking.png" id="home">
-    <h2 id="hackerHead">Teams</h2>
-    <button class="btn" ng-click="newTeam()">Make new team</button>
-      <ul id="team_view" class="collapsible popout" data-collapsible="accordion">
-         <li ng-repeat="team in groups">
-            <div class="collapsible-header" id="hackingBlue" ng-click="selectTeam(team, groups.indexOf(team))"><i class="fa fa-group"></i>{{team.teamname}}</div>
-            <div class="collapsible-body white" id="hackingSub">
-            <ul>
-                <li ng-repeat="name in team.teammates"><i class="fa fa-user"></i> {{name}}</li>
-            </ul>
+    <div class="navbar-fixed valign-wrapper">
+        <nav>
+            <div class=" grey darken-3 nav-wrapper">
+                <a id="hackerHead" class="brand-logo" ng-click="teams()">hackMan</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a ng-click="sponsor()"><i class="fa fa-user"></i>Sponsors</a></li>
+                    <li><a ng-click="prize()"><i class="fa fa-user"></i>Prizes</a></li>
+                    <li><a ng-click="loggingOut()"><i class="fa fa-sign-in"></i>Log Out</a></li>
+                </ul>
             </div>
-         </li>
-      </ul>
-    <div id="fixed-div">
-        <div id="timer" ng-controller="timerCtrl">
-        <h2>
-            <timer id="timer-text" end-time="145162800000000">TIME REMAINING: {{hours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
-        </h2>
-        </div>
-        <div id="alerts">
-            <div class="card red darken-3" id="alert-height">
-                <div class="card-content">
-                <span id="alert-text" class="card-title white-text"><i class="fa fa-exclamation-triangle"></i>  This is where Alerts will be displayed</span>
-                <br/>
-                </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="row valign-wrapper">
+            <!-- UB HACKING LOGO -->
+            <div class="col s3">
+                <img src="../../assets/img/ubhacking.png">
             </div>
-            <div id="team-info">
-                <div class="card" id="card-height">
+            <!-- ALERTS STARTS HERE  -->
+            <div class="valign  col s8 push-s1">
+                <div class="card red darken-3">
                     <div class="card-content">
-                    <div >
-                        <span class="card-title black-text">Team Info</span>
-                    </div>
-                    <div ng-hide="editing">
-                        <div class="divider"></div>
-                        <h5>Team Name: </h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.teamname}}</p>
-                        <h5>Project Description:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.proj_desc}}</p>
-                        <h5>Status:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.status}}</p>
-                        <h5>Location:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.location}}</p>
-                        <button class="btn" ng-show="role" ng-click="editing = true">Edit</button>
-                        <button class="btn" ng-show="role" ng-click="manageTeammate = true">Add Teammate</button>
-                        <button class="btn" ng-show="role" ng-click="deleteTeam(chosen_team._id)">Delete Team</button>
-                    </div>
-                    <div>
-                        <form ng-show="editing" ng-submit="editing = false; saveTeam(chosen_team)">
-                            <label>Teamname:</label>
-                            <input type="text" ng-model="chosen_team.teamname" placeholder="{{chosen_team.teamname}}" ng-required />
-                            <label>Project Description:</label>
-                            <input type="text" ng-model="chosen_team.proj_desc" placeholder="{{chosen_team.proj_desc}}" ng-required />
-                            <label>Status:</label>
-                            <input type="text" ng-model="chosen_team.status" placeholder="Status" ng-required />
-                            <label>Location:</label>
-                            <input type="text" ng-model="chosen_team.location" placeholder="Location" ng-required />
-                            <br />
-                            <button class="btn" type="submit">Save</button>
-                        </form>
-                    </div>
-                    <div>
-                        <form ng-show="manageTeammate" ng-submit="manageTeammate = false; addTeammate(teammate)">
-                            <label>Add Teammate:</label>
-                            <input type="text" ng-model="teammate" placeholder="Teammate Name" ng-required />
-                            <br />
-                            <button class="btn" type="submit">Add Teammate</button>
-                        </form>
-                    </div>
+                        <span id="alert-text" class="card-title white-text"><i class="fa fa-exclamation-triangle"></i>  This is where Alerts will be displayed</span>
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- TEAMS TITLE TEXT HERE -->
+        <div class="container">
+            <div class="row">
+                <div class="col s2 push-s1">
+                    <h2 id="hackerHead">Teams</h2>
+                </div>
+            </div>
+
+            <!-- ACCORDION POPOUTS HERE -->
+            <div class="row">
+                <div class="col s6">
+                    <ul class="collapsible popout" data-collapsible="accordion">
+                        <li ng-repeat="x in groups">
+                            <div class="collapsible-header" id="hackingBlue"><i class="fa fa-group"></i>{{x.X}}</div>
+                            <div class="collapsible-body white" id="hackingSub">
+                                <ul>
+                                    <li><i class="fa fa-user"></i> Person 1</li>
+                                    <li><i class="fa fa-user"></i> Person 2</li>
+                                    <li><i class="fa fa-user"></i> Person 3</li>
+                                    <li><i class="fa fa-user"></i> Person 4</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- TEAM INFO STARTS HERE -->
+                <div class="card col s6">
+                    <div class="card-content">
+                        <div>
+                            <span class="card-title black-text">Team Info</span>
+                        </div>
+                        <div ng-hide="editing">
+                            <div class="divider"></div>
+                            <h5>Team Name: </h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.teamname}}</p>
+                            <h5>Project Description:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.proj_desc}}</p>
+                            <h5>Status:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.status}}</p>
+                            <h5>Location:</h5> <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.location}}</p>
+                            <button class="btn" ng-show="role" ng-click="editing = true">Edit</button>
+                            <button class="btn" ng-show="role" ng-click="manageTeammate = true">Add Teammate</button>
+                            <button class="btn" ng-show="role" ng-click="deleteTeam(chosen_team._id)">Delete Team</button>
+                        </div>
+                        <div>
+                            <form ng-show="editing" ng-submit="editing = false; saveTeam(chosen_team)">
+                                <label>Teamname:</label>
+                                <input type="text" ng-model="chosen_team.teamname" placeholder="{{chosen_team.teamname}}" ng-required />
+                                <label>Project Description:</label>
+                                <input type="text" ng-model="chosen_team.proj_desc" placeholder="{{chosen_team.proj_desc}}" ng-required />
+                                <label>Status:</label>
+                                <input type="text" ng-model="chosen_team.status" placeholder="Status" ng-required />
+                                <label>Location:</label>
+                                <input type="text" ng-model="chosen_team.location" placeholder="Location" ng-required />
+                                <br />
+                                <button class="btn" type="submit">Save</button>
+                            </form>
+                        </div>
+                        <div>
+                            <form ng-show="manageTeammate" ng-submit="manageTeammate = false; addTeammate(teammate)">
+                                <label>Add Teammate:</label>
+                                <input type="text" ng-model="teammate" placeholder="Teammate Name" ng-required />
+                                <br />
+                                <button class="btn" type="submit">Add Teammate</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- MEMBER PROFILE CARDS START HERE -->
+                <div class="row">
+
+                    <!-- TOP TWO PROFILES START HERE -->
+                    <div class="row">
+
+                        <div class="col s3">
+                            <div class="card small">
+                                <div class="card-content">
+                                    <span class="card-title">John Doe</span>
+                                    <p id="member-info">I like dogs and web dev</p>
+                                </div>
+                                <div class="card-action grey darken-3">
+                                    <a href=""><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s3">
+                            <div class="card small">
+                                <div class="card-content">
+                                    <span class="card-title">John Doe</span>
+                                    <p id="member-info">I like dogs and web dev</p>
+                                </div>
+                                <div class="card-action grey darken-3">
+                                    <a href=""><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--                BOTTOM TWO PROFILES START HERE -->
+                    <div class="row push-s6">
+                        <div class="col s3 push-s6">
+                            <div class="card small">
+                                <div class="card-content">
+                                    <span class="card-title">John Doe</span>
+                                    <p id="member-info">I like dogs and web dev</p>
+                                </div>
+                                <div class="card-action grey darken-3">
+                                    <a href=""><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col s3 push-s6">
+                            <div class="card small">
+                                <div class="card-content">
+                                    <span class="card-title">John Doe</span>
+                                    <p id="member-info">I like dogs and web dev</p>
+                                </div>
+                                <div class="card-action grey darken-3">
+                                    <a><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                                    <a><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                                    <a><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </div>
-</div>
+    </div>
+    </div>
+    </div>
+
 </body>
+
 </html>
