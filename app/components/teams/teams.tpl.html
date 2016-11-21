@@ -57,10 +57,7 @@
                             <div class="collapsible-header" id="hackingBlue" ng-click="selectTeam(team, groups.indexOf(team))"><i class="fa fa-group"></i>{{team.teamname}}</div>
                             <div class="collapsible-body white" id="hackingSub">
                                 <ul>
-                                    <li><i class="fa fa-user"></i> Person 1</li>
-                                    <li><i class="fa fa-user"></i> Person 2</li>
-                                    <li><i class="fa fa-user"></i> Person 3</li>
-                                    <li><i class="fa fa-user"></i> Person 4</li>
+                                    <li ng-repeat="name in team.teammates"><i class="fa fa-user"></i> {{name}}</li>
                                 </ul>
                             </div>
                         </li>
