@@ -18,6 +18,14 @@ angular
 
         }
 
+        function getUser() {
+            var xhrParams = {
+                method: 'GET',
+                url: 'http://localhost:3000/api/user/'
+            }
+            return $http(xhrParams);
+        }
+
         function signup(username, email, first_name, last_name, role, skills) {
             var xhrParams = {
                 method: 'POST',
@@ -41,6 +49,7 @@ angular
         return {
             signup: signup,
             login: login,
+            getUser: getUser
         }
 
     });

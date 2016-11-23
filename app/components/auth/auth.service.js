@@ -33,11 +33,15 @@
                         } else {
                             localStorage.setItem('email', profile.email);
                             localStorage.setItem('username', profile.nickname);
-    						UserService.login(profile.nickname, profile.email);
+                            //deferredProfile.resolve(profile);
+                            $state.go('teams');
                         }
                         //deferredProfile.resolve(profile);
                     });
+                    console.log("made it!");
                     authManager.authenticate();
+                    //console.log("trigger");
+                    //UserService.login(profile.nickname, profile.email);
 
                     //UserService.login($window.localStorage.getItem('username'), $window.localStorage.getItem('email'));
 
