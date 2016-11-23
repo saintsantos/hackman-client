@@ -5,6 +5,7 @@ angular
     .controller('UserController', function($scope, $state, $window,UserService, authService) {
 
         if($window.localStorage.getItem('id_token')) {
+			UserService.login($window.localStorage.getItem('username'), $window.localStorage.getItem('email'));
             $state.go('teams')
         } else {
             $state.go('login');
