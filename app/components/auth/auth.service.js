@@ -30,13 +30,16 @@
                     lock.getProfile(authResult.idToken, function(error, profile) {
                         if (error) {
                             return console.log(error);
+                        } else {
+                            localStorage.setItem('email', profile.email);
+                            localStorage.setItem('username', profile.nickname);
+    						UserService.login(profile.nickname, profile.email);
                         }
-                        localStorage.setItem('email', profile.email);
-                        localStorage.setItem('username', profile.nickname);
                         //deferredProfile.resolve(profile);
                     });
                     authManager.authenticate();
-                    UserService.login($window.localStorage.getItem('username'), $window.localStorage.getItem('email'));
+
+                    //UserService.login($window.localStorage.getItem('username'), $window.localStorage.getItem('email'));
 
                 });
             }
