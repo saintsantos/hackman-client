@@ -14,10 +14,7 @@
             function logout() {
                 console.log("Logging out");
                 $window.localStorage.removeItem('id_token');
-                $window.localStorage.removeItem('role');
-                $window.localStorage.removeItem('username');
-                $window.localStorage.removeItem('email');
-                $window.localStorage.removeItem('user_id');
+                $window.localStorage.removeItem('user');
                 authManager.unauthenticate();
                 $state.go('login');
             }
@@ -31,9 +28,7 @@
                         if (error) {
                             return console.log(error);
                         } else {
-                            localStorage.setItem('email', profile.email);
-                            localStorage.setItem('username', profile.nickname);
-                            //deferredProfile.resolve(profile);
+                            localStorage.setItem('profile', JSON.stringify(profile));
                             $state.go('teams');
                         }
                         //deferredProfile.resolve(profile);
