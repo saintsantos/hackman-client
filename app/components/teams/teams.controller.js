@@ -140,6 +140,8 @@ angular
 
         $scope.selectTeam = function(team, teamid) {
             var userid = $window.localStorage.getItem('user_id');
+            console.log(userid);
+            console.log(team.created_by);
             if (userid === team.created_by) {
                 $scope.owner = true;
             } else {

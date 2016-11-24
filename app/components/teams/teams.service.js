@@ -115,17 +115,21 @@ angular
         }
 
         function makeAdmin() {
-            var xhr params = {
+            var xhrparams = {
                 method: 'POST',
                 url: 'http://localhost:3000/api/admin/'
             }
+
+            return $http(xhrParams);
         }
 
         function removeAdmin() {
-            var xhr params = {
+            var xhrparams = {
                 method: 'DELETE',
                 url: 'http://localhost:3000/api/admin/'
             }
+
+            return $http(xhrParams);
         }
 
         //Move the alert calls to the alert service.
