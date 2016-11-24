@@ -15,6 +15,7 @@
                 console.log("Logging out");
                 $window.localStorage.removeItem('id_token');
                 $window.localStorage.removeItem('user');
+                $window.localStorage.removeItem('role');
                 authManager.unauthenticate();
                 $state.go('login');
             }
