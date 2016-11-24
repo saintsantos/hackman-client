@@ -10,9 +10,11 @@ angular
         $scope.groups = []
         TeamService.getAllTeams().then(function(teams) {
             $scope.groups = teams.data;
-            console.log(teams.data);
+            //console.log(teams.data);
         })
-        UserService.login($window.localStorage.getItem('username'), $window.localStorage.getItem('email')).then(function(result) {
+        var profile = JSON.parse($window.localStorage.getItem('profile'));
+
+        UserService.login(profile.nickname, profile.email).then(function(result) {
             $scope.user = result.data;
             $window.localStorage.setItem('user_id', $scope.user.id);
             $window.localStorage.setItem('role', $scope.user.role);
@@ -80,7 +82,7 @@ angular
         }
 
         $scope.members = function() {
-            console.log("going to members page");
+            //console.log("going to members page");
             $state.go('members');
         }
 
@@ -94,19 +96,19 @@ angular
         }
 
         $scope.prize = function() {
-            console.log("Going to prizes");
+            //console.log("Going to prizes");
             $state.go('prize');
 
         }
 
         $scope.sponsor = function() {
-            console.log("Going to sponsors");
+            //console.log("Going to sponsors");
             $state.go('sponsor');
 
         };
 
         $scope.teams = function() {
-            console.log("Going to teams");
+            //console.log("Going to teams");
             $state.go('teams');
             $window.location.reload();
         };
