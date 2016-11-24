@@ -19,12 +19,12 @@ angular
             $window.localStorage.setItem('user_id', $scope.user.id);
             $window.localStorage.setItem('role', $scope.user.role);
             if ($scope.user.role === "admin") {
-                $scope.role = true;
+                $scope.admin = true;
             } else {
-                $scope.role = false;
+                $scope.admin = false;
             }
 
-            console.log($scope.role);
+            //console.log($scope.role);
 
         });
 
@@ -145,9 +145,6 @@ angular
             } else {
                 $scope.owner = false;
             }
-            console.log(userid)
-            console.log(team.created_by);
-            console.log($scope.owner);
             $scope.chosen_id = teamid;
             $scope.chosen_team = team;
         }
@@ -170,5 +167,15 @@ angular
         }
         $scope.pageRefresh = function() {
             $window.location.reload();
+        }
+
+        $scope.makeAdmin = function(user) {
+            //Accepts a user id as an argument and sets that user to admin status on the backend
+            TeamService.makeAdmin(user._id);
+        }
+
+        $scope.removeAdmin = function(user) {
+            //Accepts a user id as an argument and turns the user into a normal user on the backend
+            TeamService.removeAdmin(user._id);
         }
     });
