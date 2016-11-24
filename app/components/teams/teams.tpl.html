@@ -102,9 +102,9 @@
                                     <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.status}}</p>
                                     <h5>Location:</h5>
                                     <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.location}}</p>
-                                    <button class="btn" ng-show="role" ng-click="editing = true">Edit</button>
-                                    <button class="btn" ng-show="role" ng-click="manageTeammate = true">Add Teammate</button>
-                                    <button class="btn" ng-show="role" ng-click="deleteTeam(chosen_team._id)">Delete Team</button>
+                                    <button class="btn" ng-show="admin == true || owner == true" ng-click="editing = true">Edit</button>
+                                    <button class="btn" ng-show="admin == true || owner == true" ng-click="manageTeammate = true">Add Teammate</button>
+                                    <button class="btn" ng-show="admin == true || owner == true" ng-click="deleteTeam(chosen_team._id)">Delete Team</button>
                                 </div>
                                 <div>
                                     <form ng-show="editing" ng-submit="editing = false; saveTeam(chosen_team)">

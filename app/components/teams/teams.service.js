@@ -114,6 +114,20 @@ angular
             return $http(xhrParams);
         }
 
+        function makeAdmin() {
+            var xhr params = {
+                method: 'POST',
+                url: 'http://localhost:3000/api/admin/'
+            }
+        }
+
+        function removeAdmin() {
+            var xhr params = {
+                method: 'DELETE',
+                url: 'http://localhost:3000/api/admin/'
+            }
+        }
+
         //Move the alert calls to the alert service.
         return {
             check: check,
@@ -123,6 +137,8 @@ angular
             editTeam: editTeam,
             delTeam: delTeam,
             addAlert: addAlert,
-            getAlerts: getAlerts
+            getAlerts: getAlerts,
+            makeAdmin: makeAdmin,
+            removeAdmin: removeAdmin
         }
     })
