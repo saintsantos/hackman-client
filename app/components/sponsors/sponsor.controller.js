@@ -43,12 +43,7 @@ angular
         }
 
         $scope.createSponsor = function() {
-            sponsor = {
-              	name:'New Sponsor',
-                desc:'This is a new sponsor'
-            }
-            SponsorService.newSponsor(sponsor).then(function(sponsor) {
-                console.log(sponsor.data);
+            SponsorService.newSponsor().then(function(sponsor) {
                 $scope.sponsors.push(sponsor.data);
             });
         }

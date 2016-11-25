@@ -8,10 +8,7 @@ angular
             console.log(sponsor);
             var xhrParams = {
                 method: 'POST',
-                url: 'http://localhost:3000/api/admin/sponsor/' + sponsor.name,
-                params: {
-                    desc: sponsor.desc
-                }
+                url: 'http://localhost:3000/api/admin/sponsor/'
             }
             return $http(xhrParams);
 
