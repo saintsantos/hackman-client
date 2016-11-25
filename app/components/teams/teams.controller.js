@@ -162,8 +162,12 @@ angular
             }
             console.log("sending team");
             TeamService.newTeam(team).then(function(team) {
-                //console.log(team);
-                $scope.groups.push(team.data);
+                if(!team) {
+                    console.log("Team not found");
+                } else {
+                    //console.log(team);
+                    $scope.groups.push(team.data);
+                }
             });
             //console.log(team);
         }
