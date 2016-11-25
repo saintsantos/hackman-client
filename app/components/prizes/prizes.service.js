@@ -8,11 +8,7 @@ angular
             //console.log(prize);
             var xhrParams = {
                 method: 'POST',
-                url: 'http://localhost:3000/api/admin/prize/' + prize.prizeName,
-                params: {
-                    prize_desc: prize.prize_desc,
-                    sponsor: prize.sponsor
-                }
+                url: 'http://localhost:3000/api/admin/prize/'
             }
             return $http(xhrParams);
 
