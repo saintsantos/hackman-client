@@ -30,41 +30,11 @@ angular
             })
         });
 
-        /*UserService.login(profile.nickname, profile.email).then(function(result) {
-            $scope.user = result.data;
-            $window.localStorage.setItem('user_id', $scope.user.id);
-            $window.localStorage.setItem('role', $scope.user.role);
-            if ($scope.user.role === "admin") {
-                $scope.admin = true;
-            } else {
-                $scope.admin = false;
-            }
-
-            //console.log($scope.role);
-
-        });*/
-
         TeamService.getAlerts().then(function(result) {
             //console.log(result.data);
             $scope.latest = result.data.slice(-1)[0];
             $scope.alerts = result.data;
         });
-        /*
-        $scope.currentAlert=[{"Alert"}]
-        $scope.groups = [{
-          "X":"Magic Cam"},{
-          "X":"Super Freezer 5000"},{
-          "X":"Random Group"},{
-          "X":"HoloGen"},{
-          "X":"Super Freezer 5000"},{
-          "X":"Random Group"},{
-          "X":"Super Freezer 5000"},{
-          "X":"Random Group"},{
-          "X":"Super Freezer 5000"},{
-          "X":"Random Group"},{
-          "X":"Super Freezer 5000"},{
-          "X":"Random Group"
-      }]*/
 
         $scope.test = function() {
             //Actually define what the function is supposed to do here

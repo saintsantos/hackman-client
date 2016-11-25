@@ -15,12 +15,13 @@ angular
         }
 
         function editSponsor(id, sponsor) {
+            console.log(sponsor);
             var xhrParams = {
                 method: 'PUT',
                 url: 'http://localhost:3000/api/admin/sponsor/' + id,
                 params: {
-                    sponsorName: sponsor.name,
-                    sponsor_desc: sponsor.desc
+                    sponsorName: sponsor.sponsorName,
+                    sponsor_desc: sponsor.sponsor_desc
 
                 }
             }

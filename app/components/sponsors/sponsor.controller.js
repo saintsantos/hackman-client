@@ -25,7 +25,7 @@ angular
         console.log($scope.role);
 
         $scope.saveSponsor = function(sponsor) {
-            //SponsorService.editSponsor(sponsor._id, sponsor);
+            SponsorService.editSponsor(sponsor._id, sponsor);
             console.log(sponsor);
         }
 
