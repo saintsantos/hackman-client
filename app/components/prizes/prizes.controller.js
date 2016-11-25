@@ -44,9 +44,9 @@ angular
         }
 
         $scope.createPrize = function() {
-            PrizeService.newPrize().then(fuction(result) {
+            PrizeService.newPrize().then(function(result) {
                 $scope.prizes.push(result.data);
-            })
+            });
 
         }
 });

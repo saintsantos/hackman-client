@@ -10,11 +10,27 @@ angular
         $scope.groups = []
         TeamService.getAllTeams().then(function(teams) {
             $scope.groups = teams.data;
-            //console.log(teams.data);
         })
-        var profile = JSON.parse($window.localStorage.getItem('profile'));
+        /*var profile = JSON.parse($window.localStorage.getItem('profile'));
+        var user = JSON.parse($window.localStorage.getItem('user'));
+        console.log(profile);
+        console.log(user);*/
+        authService.getDeferredProfile().then(function(profile) {
+            console.log(profile);
+            UserService.login(profile.nickname, profile.email);
+            UserService.getUser(profile.nickname).then(function(result) {
+                    $scope.user = result.data;
+                    $window.localStorage.setItem('user_id', $scope.user._id);
+                    $window.localStorage.setItem('role', $scope.user.role);
+                    if ($scope.user.role === "admin") {
+                        $scope.admin = true;
+                    } else {
+                        $scope.admin = false;
+                    }
+            })
+        });
 
-        UserService.login(profile.nickname, profile.email).then(function(result) {
+        /*UserService.login(profile.nickname, profile.email).then(function(result) {
             $scope.user = result.data;
             $window.localStorage.setItem('user_id', $scope.user.id);
             $window.localStorage.setItem('role', $scope.user.role);
@@ -26,7 +42,7 @@ angular
 
             //console.log($scope.role);
 
-        });
+        });*/
 
         TeamService.getAlerts().then(function(result) {
             //console.log(result.data);
