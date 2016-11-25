@@ -18,10 +18,10 @@ angular
 
         }
 
-        function getUser() {
+        function getUser(username) {
             var xhrParams = {
                 method: 'GET',
-                url: 'http://localhost:3000/api/user/'
+                url: 'http://localhost:3000/api/user/' + username
             }
             return $http(xhrParams);
         }
@@ -41,6 +41,18 @@ angular
             }
 
             return $http(xhrParams);
+
+        }
+
+        function updateJwt(username, email) {
+            var xhrParams = {
+                method: 'POST',
+                url: 'http://localhost:3000/api/user/update',
+                params: {
+                    username: username,
+                    email: email,
+                }
+            }
 
         }
 
