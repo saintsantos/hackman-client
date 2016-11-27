@@ -29,6 +29,8 @@ angular
                     }
             })
         });
+        $scope.github = 'https://github.com';
+        $scope.linkedIn = 'https://linkedin.com';
 
         TeamService.getAlerts().then(function(result) {
             //console.log(result.data);
