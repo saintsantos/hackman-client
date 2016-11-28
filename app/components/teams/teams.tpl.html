@@ -80,7 +80,9 @@
                                     <div class="collapsible-header" id="hackingBlue" ng-click="selectTeam(team, groups.indexOf(team))"><i class="fa fa-group"></i>{{team.teamname}}</div>
                                     <div class="collapsible-body white" id="hackingSub">
                                         <ul>
-                                            <li ng-repeat="name in team.teammates"><i class="fa fa-user"></i> {{name}}</li>
+
+                                            <li ng-repeat="user in team.teammates"><i class="fa fa-user"></i> {{user.username}}</li>
+
                                         </ul>
                                     </div>
                                 </li>
@@ -174,6 +176,23 @@
                                         </div>
                                     </div>
                                 </div>
+<<<<<<< HEAD
+=======
+
+                                <div class="col s3 push-s6">
+                                    <div class="card small">
+                                        <div class="card-content">
+                                            <span class="card-title">{{chosen_team.teammates[0].username}}</span>
+                                            <p id="member-info">I like dogs and web dev</p>
+                                        </div>
+                                        <div class="card-action grey darken-3">
+                                            <a href="{{github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                                            <a href="{{linkedIn}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                                            <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+>>>>>>> teammate handling output to the frontend
                             </div>
 
                             <!--                BOTTOM TWO PROFILES START HERE -->
@@ -181,7 +200,11 @@
                                 <div class="col s3 push-s6" ng-repeat="element in teammateArray2">
                                     <div class="card small">
                                         <div class="card-content">
+<<<<<<< HEAD
                                             <span class="card-title">Bottom Row</span>
+=======
+                                            <span class="card-title">{{chosen_team.teammates[1].username}}</span>
+>>>>>>> teammate handling output to the frontend
                                             <p id="member-info">I like dogs and web dev</p>
                                         </div>
                                         <div class="card-action grey darken-3">
