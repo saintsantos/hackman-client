@@ -17,6 +17,17 @@ angular
             return $http(xhrParams);
         }
 
+        function getTeammates(teammates) {
+            var xhrParams = {
+                method: 'GET',
+                url: 'http://localhost:3000/api/teams/teammates',
+                params: {
+                    teammates: teammates
+                }
+            }
+            return $http(xhrParams);
+        }
+
         function check() {
             var xhrParams = {
                 method: 'POST',
@@ -143,6 +154,7 @@ angular
             addAlert: addAlert,
             getAlerts: getAlerts,
             makeAdmin: makeAdmin,
-            removeAdmin: removeAdmin
+            removeAdmin: removeAdmin,
+            getTeammates: getTeammates
         }
     })

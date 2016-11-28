@@ -130,15 +130,20 @@ angular
 
         $scope.selectTeam = function(team, teamid) {
             var userid = $window.localStorage.getItem('user_id');
-            console.log(userid);
-            console.log(team.created_by);
+            //call function to get array and assign here.
+            //console.log(team.teammates);
             if (userid === team.created_by) {
                 $scope.owner = true;
             } else {
                 $scope.owner = false;
             }
             $scope.chosen_id = teamid;
-            $scope.chosen_team = team;
+            $scope.chosen_team = team; team;TeamService.getTeammates(team.teammates).then(function(teammate) {
+                //console.log(teammate.data);
+                $scope.chosen_team.teammates = teammate.data;
+            })
+            console.log($scope.chosen_team);
+
         }
 
         $scope.newTeam = function() {
