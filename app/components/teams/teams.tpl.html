@@ -136,11 +136,11 @@
                             <!-- TOP TWO PROFILES START HERE -->
                             <div class="row">
 
-                                <div class="col s3 push-s6">
+                                <div class="col s3 push-s6" ng-repeat="teammate in teammateArray1">
                                     <div class="card small">
                                         <div ng-hide="profile_edit">
                                             <div class="card-content">
-                                                <span class="card-title">John Doe</span>
+                                                <span class="card-title">Top Row</span>
                                                 <p id="member-info">I like dogs and web dev</p>
                                             </div>
                                             <div class="card-action grey darken-3">
@@ -173,28 +173,14 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col s3 push-s6">
-                                    <div class="card small">
-                                        <div class="card-content">
-                                            <span class="card-title">John Doe</span>
-                                            <p id="member-info">I like dogs and web dev</p>
-                                        </div>
-                                        <div class="card-action grey darken-3">
-                                            <a href="{{github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
-                                            <a href="{{linkedIn}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
-                                            <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
                             <!--                BOTTOM TWO PROFILES START HERE -->
                             <div class="row">
-                                <div class="col s3 push-s6">
+                                <div class="col s3 push-s6" ng-repeat="element in teammateArray2">
                                     <div class="card small">
                                         <div class="card-content">
-                                            <span class="card-title">John Doe</span>
+                                            <span class="card-title">Bottom Row</span>
                                             <p id="member-info">I like dogs and web dev</p>
                                         </div>
                                         <div class="card-action grey darken-3">
@@ -204,21 +190,9 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col s3 push-s6">
-                                    <div class="card small">
-                                        <div class="card-content">
-                                            <span class="card-title">John Doe</span>
-                                            <p id="member-info">I like dogs and web dev</p>
-                                        </div>
-                                        <div class="card-action grey darken-3">
-                                            <a href="{{github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
-                                            <a href="{{linkedIn}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
-                                            <a><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
+
+
                         </div>
 
                     </div>
