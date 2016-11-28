@@ -31,6 +31,8 @@ angular
         });
         $scope.github = 'https://github.com';
         $scope.linkedIn = 'https://linkedin.com';
+        $scope.teammateArray1 = ['1', '2'];
+        $scope.teammateArray2 = ['3', '4'];
 
         TeamService.getAlerts().then(function(result) {
             //console.log(result.data);
