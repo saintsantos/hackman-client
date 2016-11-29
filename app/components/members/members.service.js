@@ -12,7 +12,24 @@ angular
             return $http(xhrParams);
         }
 
+        function updateUser(user) {
+            console.log(user);
+            var xhrParams = {
+                method: 'PUT',
+                url: 'http://localhost:3000/api/user/' + user._id,
+                params: {
+                    first_name: user.first_name,
+                    last_name: user.last_name,
+                    github: user.github,
+                    linkedin: user.linkedIn,
+                    resume: user.resume
+                }
+            }
+            return $http(xhrParams);
+        }
+
         return {
             httpCall: httpCall,
+            updateUser: updateUser,
         }
     })
