@@ -81,7 +81,7 @@
                                     <div class="collapsible-body white" id="hackingSub">
                                         <ul>
 
-                                            <li ng-repeat="user in team.teammates"><i class="fa fa-user"></i> {{user.username}}</li>
+                                            <li ng-repeat="user in team.teammates"><i class="fa fa-user"></i> {{user}}</li>
 
                                         </ul>
                                     </div>
@@ -141,37 +141,15 @@
 
                                 <div class="col s3 push-s6" ng-repeat="teammate in teammateArray1">
                                     <div class="card small">
-                                        <div ng-hide="profile_edit">
+                                        <div>
                                             <div class="card-content">
-                                                <span class="card-title">Top Row</span>
-                                                <p id="member-info">I like dogs and web dev</p>
+                                                <span class="card-title">{{teammate.username}}</span>
+                                                <p id="member-info">{{teammate.email}}</p>
                                             </div>
                                             <div class="card-action grey darken-3">
-                                                <a href="{{github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
-                                                <a href="{{linkedIn}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
-                                                <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
-                                                <a class="btn" ng-click="profile_edit = true">Edit Profile</a>
-                                            </div>
-                                        </div>
-                                        <div ng-show="profile_edit">
-                                            <div class="card-content">
-                                                <form ng-submit="profile_edit = false">
-                                                    <label>First Name:</label>
-                                                    <input type="text" ng-model="teammate.first_name" placeholder="John" ng-required />
-                                                    <label>Last Name:</label>
-                                                    <input type="text" ng-model="teammate.last_name" placeholder="Doe" ng-required />
-                                                    <label>Username: johndoe</label>
-                                                    <label>Email: test@email.com</label>
-                                                    <label>Github:</label>
-                                                    <input type="text" ng-model="teammate.github" placeholder="http://github.com" ng-required />
-                                                    <label>LinkedIn:</label>
-                                                    <input type="text" ng-model="teammate.linkedIn" placeholder="http://linkedin.com" ng-required />
-                                                    <label>Resume Link:</label>
-                                                    <input type="text" ng-model="teammate.resume_link" placeholder="http://website.com" ng-required />
-
-                                                    <br />
-                                                    <button class="btn" type="submit">Save Profile</button>
-                                                </form>
+                                                <a href="{{teammate.github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                                                <a href="{{teammate.linkedin}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                                                <a href="{{teammate.resume}}"><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -183,13 +161,13 @@
                                 <div class="col s3 push-s6" ng-repeat="element in teammateArray2">
                                     <div class="card small">
                                         <div class="card-content">
-                                            <span class="card-title">Bottom Row</span>
-                                            <p id="member-info">I like dogs and web dev</p>
+                                            <span class="card-title">{{teammate.username}}</span>
+                                            <p id="member-info">{{teammate.email}}</p>
                                         </div>
                                         <div class="card-action grey darken-3">
-                                            <a href="{{github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
-                                            <a href="{{linkedIn}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
-                                            <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
+                                            <a href="{{teammate.github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                                            <a href="{{teammate.linkedin}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                                            <a href="{{teammate.resume}}"><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
                                         </div>
                                     </div>
                                 </div>
