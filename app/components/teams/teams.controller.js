@@ -20,9 +20,10 @@ angular
             UserService.login(profile.nickname, profile.email);
             UserService.getUser(profile.nickname).then(function(result) {
                     $scope.user = result.data;
+                    $window.localStorage.setItem('user', JSON.stringify(result.data));
                     $window.localStorage.setItem('user_id', $scope.user._id);
                     $window.localStorage.setItem('role', $scope.user.role);
-                    if ($scope.user.role === "admin") {
+                    if ($window.localStorage.getItem('role') === "admin") {
                         $scope.admin = true;
                     } else {
                         $scope.admin = false;
