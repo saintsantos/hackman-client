@@ -31,55 +31,59 @@
     </div>
 
     <div class="container">
-            <div class="row">
-                <div class="col s6 push-s3">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4 flow-texts">{{user.username}}<i class="material-icons right">more_vert</i></span>
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4 center-align flow-text">{{user.username}}<i class="material-icons right">close</i></span>
-                            <div ng-hide="profile_edit">
-                                <div class="card-content">
-                                    <span class="card-title">{{user.username}}</span>
-                                    <p>Email: {{user.email}}</p>
-                                    <p>Name: {{user.first_name}} {{user.last_name}}</p>
-                                </div>
-                                <div class="card-action grey darken-3">
-                                    <a href="{{user.github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
-                                    <a href="{{user.linkedIn}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
-                                    <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
-                                    <a class="btn" ng-click="profile_edit = true">Edit Profile</a>
-                                </div>
+        <div class="row">
+            <div class="col s6 push-s3">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator responsive-img" src="../../assets/img/nopic.jpg">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4 flow-texts">{{user.username}}<i class="material-icons right">more_vert</i></span>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4 center-align flow-text">{{user.username}}<i class="material-icons right">close</i></span>
+                        <div ng-hide="profile_edit">
+                            <div class="card-content">
+                                <span class="card-title">{{user.username}}</span>
+                                <p>Email: {{user.email}}</p>
+                                <p>Name: {{user.first_name}} {{user.last_name}}</p>
                             </div>
-                            <div ng-show="profile_edit">
-                                <div class="card-content">
-                                    <form ng-submit="profile_edit = false">
-                                        <label>First Name:</label>
-                                        <input type="text" ng-model="user.first_name" placeholder="{{user.first_name}}" ng-required />
-                                        <label>Last Name:</label>
-                                        <input type="text" ng-model="user.last_name" placeholder="{{user.last_name}}" ng-required />
-                                        <label>Username: {{user.username}}</label>
-                                        <label>Email: {{user.email}}</label>
-                                        <label>Github:</label>
-                                        <input type="text" ng-model="user.github" placeholder="http://github.com" ng-required />
-                                        <label>LinkedIn:</label>
-                                        <input type="text" ng-model="user.linkedIn" placeholder="http://linkedin.com" ng-required />
-                                        <label>Resume Link:</label>
-                                        <input type="text" ng-model="user.resume" placeholder="http://website.com" ng-required />
+                        </div>
+                        <div ng-show="profile_edit">
+                            <div class="card-content">
+                                <form ng-submit="profile_edit = false">
+                                    <label>First Name:</label>
+                                    <input type="text" ng-model="user.first_name" placeholder="{{user.first_name}}" ng-required />
+                                    <label>Last Name:</label>
+                                    <input type="text" ng-model="user.last_name" placeholder="{{user.last_name}}" ng-required />
+                                    <label>Username: {{user.username}}</label>
+                                    <label>Email: {{user.email}}</label>
+                                    <label>Github:</label>
+                                    <input type="text" ng-model="user.github" placeholder="http://github.com" ng-required />
+                                    <label>LinkedIn:</label>
+                                    <input type="text" ng-model="user.linkedIn" placeholder="http://linkedin.com" ng-required />
+                                    <label>Resume Link:</label>
+                                    <input type="text" ng-model="user.resume" placeholder="http://website.com" ng-required />
 
-                                        <br />
-                                        <button class="btn" type="submit" ng-click="saveUser(user)">Save Profile</button>
-                                    </form>
-                                </div>
+                                    <br/>
+                                    <button class="btn" type="submit" ng-click="saveUser(user)">Save Profile</button>
+                                </form>
                             </div>
                         </div>
+
+                        <!-- FOOTER STARTS HERE -->
+                        <footer class="page-footer grey darken-3 card-action valign-wrapper">
+                            <a href="{{user.github}}" target="blank"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                            <a href="{{user.linkedIn}}" target="blank"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                            <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
+                            <a href="" class="white-text valign" ng-click="profile_edit = true">Edit Profile</a>
+                        </footer>
+
+
                     </div>
                 </div>
             </div>
+        </div>
 
     </div>
 </body>
