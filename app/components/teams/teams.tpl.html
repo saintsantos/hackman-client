@@ -62,147 +62,147 @@
             </div>
         </div>
 
-            <!-- TEAMS TITLE TEXT HERE -->
-            <div class="container">
-                <div class="row">
-                    <div class="col s2 push-s1">
-                        <h2 id="hackerHead">Teams</h2>
-                    </div>
-                </div>
-
-
-
-                    <!-- ACCORDION POPOUTS HERE -->
-                    <div class="row">
-                        <div class="col s6">
-                            <ul class="collapsible popout" data-collapsible="accordion">
-                                <li ng-repeat="team in groups">
-                                    <div class="collapsible-header" id="hackingBlue" ng-click="selectTeam(team, groups.indexOf(team))"><i class="fa fa-group"></i>{{team.teamname}}</div>
-                                    <div class="collapsible-body white" id="hackingSub">
-                                        <ul>
-
-                                            <li ng-repeat="user in team.teammates"><i class="fa fa-user"></i> {{user.username}}</li>
-
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- TEAM INFO STARTS HERE -->
-                        <div class="card col s6">
-                            <div class="card-content">
-                                <div>
-                                    <span class="card-title black-text">Team Info</span>
-                                </div>
-                                <div ng-hide="editing">
-                                    <div class="divider"></div>
-                                    <h5>Team Name: </h5>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.teamname}}</p>
-                                    <h5>Project Description:</h5>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.proj_desc}}</p>
-                                    <h5>Status:</h5>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.status}}</p>
-                                    <h5>Location:</h5>
-                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.location}}</p>
-                                    <button class="btn" ng-show="admin == true || owner == true" ng-click="editing = true">Edit</button>
-                                    <button class="btn" ng-show="admin == true || owner == true" ng-click="manageTeammate = true">Add Teammate</button>
-                                    <button class="btn" ng-show="admin == true || owner == true" ng-click="deleteTeam(chosen_team._id)">Delete Team</button>
-                                </div>
-                                <div>
-                                    <form ng-show="editing" ng-submit="editing = false; saveTeam(chosen_team)">
-                                        <label>Teamname:</label>
-                                        <input type="text" ng-model="chosen_team.teamname" placeholder="{{chosen_team.teamname}}" ng-required />
-                                        <label>Project Description:</label>
-                                        <input type="text" ng-model="chosen_team.proj_desc" placeholder="{{chosen_team.proj_desc}}" ng-required />
-                                        <label>Status:</label>
-                                        <input type="text" ng-model="chosen_team.status" placeholder="Status" ng-required />
-                                        <label>Location:</label>
-                                        <input type="text" ng-model="chosen_team.location" placeholder="Location" ng-required />
-                                        <br />
-                                        <button class="btn" type="submit">Save</button>
-                                    </form>
-                                </div>
-                                <div>
-                                    <form ng-show="manageTeammate" ng-submit="manageTeammate = false; addTeammate(teammate)">
-                                        <label>Add Teammate:</label>
-                                        <input type="text" ng-model="teammate" placeholder="Teammate Name" ng-required />
-                                        <br />
-                                        <button class="btn" type="submit">Add Teammate</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- MEMBER PROFILE CARDS START HERE -->
-                        <div class="row">
-
-                            <!-- TOP TWO PROFILES START HERE -->
-                            <div class="row">
-
-                                <div class="col s3 push-s6" ng-repeat="teammate in teammateArray1">
-                                    <div class="card small">
-                                        <div ng-hide="profile_edit">
-                                            <div class="card-content">
-                                                <span class="card-title">Top Row</span>
-                                                <p id="member-info">I like dogs and web dev</p>
-                                            </div>
-                                            <div class="card-action grey darken-3">
-                                                <a href="{{github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
-                                                <a href="{{linkedIn}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
-                                                <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
-                                                <a class="btn" ng-click="profile_edit = true">Edit Profile</a>
-                                            </div>
-                                        </div>
-                                        <div ng-show="profile_edit">
-                                            <div class="card-content">
-                                                <form ng-submit="profile_edit = false">
-                                                    <label>First Name:</label>
-                                                    <input type="text" ng-model="teammate.first_name" placeholder="John" ng-required />
-                                                    <label>Last Name:</label>
-                                                    <input type="text" ng-model="teammate.last_name" placeholder="Doe" ng-required />
-                                                    <label>Username: johndoe</label>
-                                                    <label>Email: test@email.com</label>
-                                                    <label>Github:</label>
-                                                    <input type="text" ng-model="teammate.github" placeholder="http://github.com" ng-required />
-                                                    <label>LinkedIn:</label>
-                                                    <input type="text" ng-model="teammate.linkedIn" placeholder="http://linkedin.com" ng-required />
-                                                    <label>Resume Link:</label>
-                                                    <input type="text" ng-model="teammate.resume_link" placeholder="http://website.com" ng-required />
-
-                                                    <br />
-                                                    <button class="btn" type="submit">Save Profile</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--                BOTTOM TWO PROFILES START HERE -->
-                            <div class="row">
-                                <div class="col s3 push-s6" ng-repeat="element in teammateArray2">
-                                    <div class="card small">
-                                        <div class="card-content">
-                                            <span class="card-title">Bottom Row</span>
-                                            <p id="member-info">I like dogs and web dev</p>
-                                        </div>
-                                        <div class="card-action grey darken-3">
-                                            <a href="{{github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
-                                            <a href="{{linkedIn}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
-                                            <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
+        <!-- TEAMS TITLE TEXT HERE -->
+        <div class="container">
+            <div class="row">
+                <div class="col s2 push-s1">
+                    <h2 id="hackerHead">Teams</h2>
                 </div>
             </div>
+
+
+
+            <!-- ACCORDION POPOUTS HERE -->
+            <div class="row">
+                <div class="col s6">
+                    <ul class="collapsible popout" data-collapsible="accordion">
+                        <li ng-repeat="team in groups">
+                            <div class="collapsible-header" id="hackingBlue" ng-click="selectTeam(team, groups.indexOf(team))"><i class="fa fa-group"></i>{{team.teamname}}</div>
+                            <div class="collapsible-body white" id="hackingSub">
+                                <ul>
+
+                                    <li ng-repeat="user in team.teammates"><i class="fa fa-user"></i> {{user.username}}</li>
+
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- TEAM INFO STARTS HERE -->
+                <div class="card col s6">
+                    <div class="card-content">
+                        <div>
+                            <span class="card-title black-text">Team Info</span>
+                        </div>
+                        <div ng-hide="editing">
+                            <div class="divider"></div>
+                            <h5>Team Name: </h5>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.teamname}}</p>
+                            <h5>Project Description:</h5>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.proj_desc}}</p>
+                            <h5>Status:</h5>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.status}}</p>
+                            <h5>Location:</h5>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.location}}</p>
+                            <button class="btn" ng-show="admin == true || owner == true" ng-click="editing = true">Edit</button>
+                            <button class="btn" ng-show="admin == true || owner == true" ng-click="manageTeammate = true">Add Teammate</button>
+                            <button class="btn" ng-show="admin == true || owner == true" ng-click="deleteTeam(chosen_team._id)">Delete Team</button>
+                        </div>
+                        <div>
+                            <form ng-show="editing" ng-submit="editing = false; saveTeam(chosen_team)">
+                                <label>Teamname:</label>
+                                <input type="text" ng-model="chosen_team.teamname" placeholder="{{chosen_team.teamname}}" ng-required />
+                                <label>Project Description:</label>
+                                <input type="text" ng-model="chosen_team.proj_desc" placeholder="{{chosen_team.proj_desc}}" ng-required />
+                                <label>Status:</label>
+                                <input type="text" ng-model="chosen_team.status" placeholder="Status" ng-required />
+                                <label>Location:</label>
+                                <input type="text" ng-model="chosen_team.location" placeholder="Location" ng-required />
+                                <br />
+                                <button class="btn" type="submit">Save</button>
+                            </form>
+                        </div>
+                        <div>
+                            <form ng-show="manageTeammate" ng-submit="manageTeammate = false; addTeammate(teammate)">
+                                <label>Add Teammate:</label>
+                                <input type="text" ng-model="teammate" placeholder="Teammate Name" ng-required />
+                                <br />
+                                <button class="btn" type="submit">Add Teammate</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- MEMBER PROFILE CARDS START HERE -->
+                <div class="row">
+
+                    <!-- TOP TWO PROFILES START HERE -->
+                    <div class="row">
+
+                        <div class="col s3 push-s6" ng-repeat="teammate in teammateArray1">
+                            <div class="card small">
+                                <div ng-hide="profile_edit">
+                                    <div class="card-content">
+                                        <span class="card-title">Top Row</span>
+                                        <p id="member-info">I like dogs and web dev</p>
+                                    </div>
+                                    <div class="card-action grey darken-3">
+                                        <a href="{{github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                                        <a href="{{linkedIn}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                                        <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
+                                        <a class="btn" ng-click="profile_edit = true">Edit Profile</a>
+                                    </div>
+                                </div>
+                                <div ng-show="profile_edit">
+                                    <div class="card-content">
+                                        <form ng-submit="profile_edit = false">
+                                            <label>First Name:</label>
+                                            <input type="text" ng-model="teammate.first_name" placeholder="John" ng-required />
+                                            <label>Last Name:</label>
+                                            <input type="text" ng-model="teammate.last_name" placeholder="Doe" ng-required />
+                                            <label>Username: johndoe</label>
+                                            <label>Email: test@email.com</label>
+                                            <label>Github:</label>
+                                            <input type="text" ng-model="teammate.github" placeholder="http://github.com" ng-required />
+                                            <label>LinkedIn:</label>
+                                            <input type="text" ng-model="teammate.linkedIn" placeholder="http://linkedin.com" ng-required />
+                                            <label>Resume Link:</label>
+                                            <input type="text" ng-model="teammate.resume_link" placeholder="http://website.com" ng-required />
+
+                                            <br />
+                                            <button class="btn" type="submit">Save Profile</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BOTTOM TWO PROFILES START HERE -->
+                    <div class="row">
+                        <div class="col s3 push-s6" ng-repeat="element in teammateArray2">
+                            <div class="card small">
+                                <div class="card-content">
+                                    <span class="card-title">Bottom Row</span>
+                                    <p id="member-info">I like dogs and web dev</p>
+                                </div>
+                                <div class="card-action grey darken-3">
+                                    <a href="{{github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                                    <a href="{{linkedIn}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
         </div>
+    </div>
+    </div>
     </div>
 
 </body>
