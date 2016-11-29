@@ -32,8 +32,8 @@ angular
         });
         $scope.github = 'https://github.com';
         $scope.linkedIn = 'https://linkedin.com';
-        $scope.teammateArray1 = ['1', '2'];
-        $scope.teammateArray2 = ['3', '4'];
+        $scope.teammateArray1 = [];
+        $scope.teammateArray2 = [];
 
         TeamService.getAlerts().then(function(result) {
             //console.log(result.data);
@@ -133,16 +133,48 @@ angular
             var userid = $window.localStorage.getItem('user_id');
             //call function to get array and assign here.
             //console.log(team.teammates);
+            team.profiles = [];
             if (userid === team.created_by) {
                 $scope.owner = true;
             } else {
                 $scope.owner = false;
             }
             $scope.chosen_id = teamid;
-            $scope.chosen_team = team; team;TeamService.getTeammates(team.teammates).then(function(teammate) {
+            $scope.chosen_team = team;
+            TeamService.getTeammates(team.teammates).then(function(teammate) {
                 //console.log(teammate.data);
-                $scope.chosen_team.teammates = teammate.data;
+                $scope.chosen_team.profiles = teammate.data;
+                //This is gross
+                var set1 = [];
+                var set2 = [];
+                if (typeof $scope.chosen_team.profiles[0] === 'undefined') {
+                    console.log("User 1 not found");
+                } else {
+                    console.log("User 1 found");
+                    set1.push(teammate.data[0]);
+                }
+                if (typeof $scope.chosen_team.profiles[1] === 'undefined') {
+                    console.log("User 2 not found");
+                } else {
+                    console.log("User 2 found");
+                    set1.push(teammate.data[1]);
+                }
+                if (typeof $scope.chosen_team.profiles[2] === 'undefined') {
+                    console.log("User 3 not found");
+                } else {
+                    console.log("User 3 found");
+                    set2.push(teammate.data[2]);
+                }
+                if (typeof $scope.chosen_team.profiles[3] === 'undefined') {
+                    console.log("User 4 not found");
+                } else {
+                    console.log("User 4 found");
+                    set2.push(teammate.data[1]);
+                }
+                $scope.teammateArray1 = set1;
+                $scope.teammateArray2 = set2;
             })
+
             console.log($scope.chosen_team);
 
         }
