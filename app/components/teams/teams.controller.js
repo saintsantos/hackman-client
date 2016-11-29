@@ -120,7 +120,11 @@ angular
         }
 
         $scope.addTeammate = function(teammate) {
-            //console.log(teammate);
+            console.log(teammate);
+        }
+
+        $scope.removeTeammate = function(teammate) {
+            console.log(teammate);
         }
 
         $scope.deleteTeam = function(team) {
