@@ -66,10 +66,10 @@ angular
             return $http(xhrParams)
         }
 
-        function delTeammate(id, teamname) {
+        function delTeammate(id, username) {
             var xhrParams = {
                 method: 'DELETE',
-                url: 'http://localhost:3000/api/teams/' + teamname + '/modify/' + id,
+                url: 'http://localhost:3000/api/teams/' + id + '/modify/' + username,
             }
             return $http(xhrParams)
         }

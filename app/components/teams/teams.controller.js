@@ -16,7 +16,6 @@ angular
         console.log(profile);
         console.log(user);*/
         authService.getDeferredProfile().then(function(profile) {
-            console.log(profile);
             UserService.login(profile.nickname, profile.email);
             UserService.getUser(profile.nickname).then(function(result) {
                     $scope.user = result.data;
@@ -117,7 +116,6 @@ angular
             $scope.groups[$scope.chosen_id].location = team.location;
             var id = $scope.groups[$scope.chosen_id]._id;
             TeamService.editTeam(id, team);
-            console.log(team);
         }
 
         $scope.addTeammate = function(teammate) {
@@ -126,9 +124,11 @@ angular
             if (index > -1) {
                 $scope.groups[$scope.chosen_id].teammates[index] = teammate;
             }
+            TeamService.addTeammate($scope.groups[$scope.chosen_id]._id, teammate);
 
-            console.log($scope.groups[$scope.chosen_id]);
-            console.log(typeof teammate);
+            UserService.getUser(teammate).then(function(user) {
+                $scope.groups[$scope.chosen_id].profiles.push(user);
+            })
         }
 
         $scope.deleteTeammate = function(teammate) {
@@ -136,11 +136,17 @@ angular
             if (index > -1) {
                 $scope.groups[$scope.chosen_id].teammates.splice(index, 1);
             }
-            console.log(typeof teammate);
+
+            for(var i = 0; i < $scope.groups[$scope.chosen_id].profiles.length; i += 1) {
+                if ($scope.groups[$scope.chosen_id].profiles[i]['username'] === teammate) {
+                    $scope.groups[$scope.chosen_id].profiles.splice(i, 1);
+                }
+            }
+
+            TeamService.delTeammate($scope.groups[$scope.chosen_id]._id, teammate);
         }
 
         $scope.deleteTeam = function(team) {
-            console.log(team);
             TeamService.delTeam(team)
             $scope.groups.splice($scope.chosen_id, 1);
         }
@@ -163,35 +169,21 @@ angular
                 //This is gross
                 var set1 = [];
                 var set2 = [];
-                if (typeof $scope.chosen_team.profiles[0] === 'undefined') {
-                    console.log("User 1 not found");
-                } else {
-                    console.log("User 1 found");
+                if (typeof $scope.chosen_team.profiles[0] !== 'undefined') {
                     set1.push(teammate.data[0]);
                 }
-                if (typeof $scope.chosen_team.profiles[1] === 'undefined') {
-                    console.log("User 2 not found");
-                } else {
-                    console.log("User 2 found");
+                if (typeof $scope.chosen_team.profiles[1] !== 'undefined') {
                     set1.push(teammate.data[1]);
                 }
-                if (typeof $scope.chosen_team.profiles[2] === 'undefined') {
-                    console.log("User 3 not found");
-                } else {
-                    console.log("User 3 found");
+                if (typeof $scope.chosen_team.profiles[2] !== 'undefined') {
                     set2.push(teammate.data[2]);
                 }
-                if (typeof $scope.chosen_team.profiles[3] === 'undefined') {
-                    console.log("User 4 not found");
-                } else {
-                    console.log("User 4 found");
+                if (typeof $scope.chosen_team.profiles[3] !== 'undefined') {
                     set2.push(teammate.data[1]);
                 }
                 $scope.teammateArray1 = set1;
                 $scope.teammateArray2 = set2;
             })
-
-            console.log($scope.chosen_team);
 
         }
 
@@ -204,7 +196,6 @@ angular
                 'location': '1',
                 teammates: [$window.localStorage.getItem('username')]
             }
-            console.log("sending team");
             TeamService.newTeam(team).then(function(team) {
                 if(!team) {
                     console.log("Team not found");
