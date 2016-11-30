@@ -20,7 +20,7 @@
                 <a id="hackerHead" class="brand-logo" ng-click="teams()">hackMan</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a ng-click="showAllAlerts=true"><i class="fa fa-exclamation-triangle"></i> Show All Alerts</li></a>
-                        <li><a ng-click="showAlerts=true"><i class="fa fa-exclamation-triangle"></i> Send a New Alert</a></li>
+                        <li ng-show="admin == true"><a ng-click="showAlerts=true"><i class="fa fa-exclamation-triangle"></i> Send a New Alert</a></li>
                         <li><a ng-click="members()"><i class="fa fa-user"></i> Member Page</a></li>
                         <li><a ng-click="newTeam()"><i class="fa fa-user"></i> Make new team</a></li>
                         <li><a ng-click="sponsor()"><i class="fa fa-heart"></i> Sponsors</a></li>
