@@ -2,6 +2,10 @@
 angular
     .module('app.config', ['ui.router', 'auth0.lock', 'auth.service'])
 
+    .constant('urlConstant', {
+        baseUrl: 'http://localhost:3000'
+    })
+
     .config(function($stateProvider, $urlRouterProvider) {
 
         $stateProvider
