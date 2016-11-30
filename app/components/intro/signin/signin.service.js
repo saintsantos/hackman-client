@@ -2,12 +2,12 @@ angular
     //Module export for dependencies
     .module('user.service', [])
     //Service name for calls in other modules
-    .factory('UserService', function($http, $window, $q) {
+    .factory('UserService', function($http, $window, $q, urlConstant) {
 
         function login(username, email) {
             var xhrParams = {
                 method: 'GET',
-                url: 'http://localhost:3000/api/user/login',
+                url: urlConstant.baseUrl + '/api/user/login',
                 params: {
                     username: username,
                     email: email
@@ -21,7 +21,7 @@ angular
         function getUser(username) {
             var xhrParams = {
                 method: 'GET',
-                url: 'http://localhost:3000/api/user/' + username
+                url: urlConstant.baseUrl + '/api/user/' + username
             }
             return $http(xhrParams);
         }
@@ -29,7 +29,7 @@ angular
         function signup(username, email, first_name, last_name, role, skills) {
             var xhrParams = {
                 method: 'POST',
-                url: 'http://localhost:3000/api/user/signup',
+                url: urlConstant.baseUrl + '/api/user/signup',
                 params: {
                     username: username,
                     email: email,
@@ -47,7 +47,7 @@ angular
         function updateJwt(username, email) {
             var xhrParams = {
                 method: 'POST',
-                url: 'http://localhost:3000/api/user/update',
+                url: urlConstant.baseUrl + '/api/user/update',
                 params: {
                     username: username,
                     email: email,

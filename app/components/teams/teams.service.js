@@ -2,17 +2,22 @@ angular
     //Module export for dependencies
     .module('teams.service', [])
     //Service name for calls in other modules
-    .factory('TeamService', function($http, $window, $q) {
+    .factory('TeamService', function($http, $window, $q, urlConstant) {
 
         //Function definition here (Notice how there's no scope)
         //When adding this dependency to the different modules, as long as
         //the service is called in function($state, TeamService), you can call
         //any function using TeamService.<insertfunctionnamehere> ie
         //TeamService.httpCall();
+
+        function testConfig() {
+            console.log(urlConstant.baseUrl);
+        }
+
         function httpCall() {
             var xhrParams = {
                 method: 'GET',
-                url: 'http://54.244.60.155:3000/api/user/hi',
+                url: urlConstant.baseUrl + '/api/user/hi',
             }
             return $http(xhrParams);
         }
@@ -20,7 +25,7 @@ angular
         function getTeammates(teammates) {
             var xhrParams = {
                 method: 'GET',
-                url: 'http://localhost:3000/api/teams/teammates',
+                url: urlConstant.baseUrl + '/api/teams/teammates',
                 params: {
                     teammates: teammates
                 }
@@ -31,7 +36,7 @@ angular
         function check() {
             var xhrParams = {
                 method: 'POST',
-                url: 'http://localhost:3000/api/user/check',
+                url: urlConstant.baseUrl + '/api/user/check',
             }
 
             return $http(xhrParams);
@@ -41,7 +46,7 @@ angular
         function getAllTeams() {
             var xhrParams = {
                 method: 'GET',
-                url: 'http://localhost:3000/api/teams'
+                url: urlConstant.baseUrl + '/api/teams'
             }
 
             return $http(xhrParams);
@@ -50,7 +55,7 @@ angular
         function grabUser(username, email) {
             var xhrParams = {
                 method: 'GET',
-                url: 'http://localhost:3000/api/user/login',
+                url: urlConstant.baseUrl + '/api/user/login',
                 params: {
                     username: username,
                     email: email
@@ -61,7 +66,7 @@ angular
         function addTeammate(id, username) {
             var xhrParams = {
                 method: 'POST',
-                url: 'http://localhost:3000/api/teams/' + id + '/modify/' + username,
+                url: urlConstant.baseUrl + '/api/teams/' + id + '/modify/' + username,
             }
             return $http(xhrParams)
         }
@@ -69,7 +74,7 @@ angular
         function delTeammate(id, username) {
             var xhrParams = {
                 method: 'DELETE',
-                url: 'http://localhost:3000/api/teams/' + id + '/modify/' + username,
+                url: urlConstant.baseUrl + '/api/teams/' + id + '/modify/' + username,
             }
             return $http(xhrParams)
         }
@@ -77,7 +82,7 @@ angular
         function delTeam(id) {
             var xhrParams = {
                 method: 'DELETE',
-                url: 'http://localhost:3000/api/teams/' + id
+                url: urlConstant.baseUrl + '/api/teams/' + id
             }
             return $http(xhrParams)
         }
@@ -85,7 +90,7 @@ angular
         function newTeam(team) {
             var xhrParams = {
                 method: 'POST',
-                url: 'http://localhost:3000/api/teams/' + team.teamname,
+                url: urlConstant.baseUrl + '/api/teams/' + team.teamname,
                 params: {
                     created_by: team.created_by,
                     proj_desc: team.proj_desc,
@@ -100,7 +105,7 @@ angular
         function editTeam(id, team) {
             var xhrParams = {
                 method: 'PUT',
-                url: 'http://localhost:3000/api/teams/' + id + '/modify/',
+                url: urlConstant.baseUrl + '/api/teams/' + id + '/modify/',
                 params: {
                     teamname: team.teamname,
                     proj_desc: team.proj_desc,
@@ -115,7 +120,7 @@ angular
 
             var xhrParams = {
                 method: 'POST',
-                url: 'http://localhost:3000/api/admin/alert/add',
+                url: urlConstant.baseUrl + '/api/admin/alert/add',
                 params: {
                     text: alert.text
                 }
@@ -128,7 +133,7 @@ angular
         function getAlerts() {
             var xhrParams = {
                 method: 'GET',
-                url: 'http://localhost:3000/api/alerts/'
+                url: urlConstant.baseUrl + '/api/alerts/'
             }
 
             return $http(xhrParams);
@@ -137,7 +142,7 @@ angular
         function makeAdmin() {
             var xhrparams = {
                 method: 'POST',
-                url: 'http://localhost:3000/api/admin/'
+                url: urlConstant.baseUrl + '/api/admin/'
             }
 
             return $http(xhrParams);
@@ -146,7 +151,7 @@ angular
         function removeAdmin() {
             var xhrparams = {
                 method: 'DELETE',
-                url: 'http://localhost:3000/api/admin/'
+                url: urlConstant.baseUrl + '/api/admin/'
             }
 
             return $http(xhrParams);
@@ -166,6 +171,7 @@ angular
             removeAdmin: removeAdmin,
             getTeammates: getTeammates,
             delTeammate: delTeammate,
-            addTeammate: addTeammate
+            addTeammate: addTeammate,
+            testConfig: testConfig
         }
     })
