@@ -134,7 +134,7 @@
                             </form>
                         </div>
                         <div>
-                            <form ng-show="removeTeammate" ng-submit="removeTeammate = false">
+                            <form ng-show="removeTeammate" ng-submit="removeTeammate = false; deleteTeammate(teammate)">
                                 <label>Remove Teammate:</label>
                                 <input type="text" ng-model="teammate" placeholder="Teammate Name" ng-required />
                                 <br />
