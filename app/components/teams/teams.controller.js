@@ -23,13 +23,14 @@ angular
                     $window.localStorage.setItem('user', JSON.stringify(result.data));
                     $window.localStorage.setItem('user_id', $scope.user._id);
                     $window.localStorage.setItem('role', $scope.user.role);
-                    if ($window.localStorage.getItem('role') === "admin") {
-                        $scope.admin = true;
-                    } else {
-                        $scope.admin = false;
-                    }
             })
         });
+
+        if ($window.localStorage.getItem('role') === "admin") {
+            $scope.admin = true;
+        } else {
+            $scope.admin = false;
+        }
         $scope.github = 'https://github.com';
         $scope.linkedIn = 'https://linkedin.com';
         $scope.teammateArray1 = [];
@@ -120,11 +121,22 @@ angular
         }
 
         $scope.addTeammate = function(teammate) {
-            console.log(teammate);
+            $scope.groups[$scope.chosen_id].teammates.push("new teammate");
+            var index = $scope.groups[$scope.chosen_id].teammates.indexOf("new teammate");
+            if (index > -1) {
+                $scope.groups[$scope.chosen_id].teammates[index] = teammate;
+            }
+
+            console.log($scope.groups[$scope.chosen_id]);
+            console.log(typeof teammate);
         }
 
-        $scope.removeTeammate = function(teammate) {
-            console.log(teammate);
+        $scope.deleteTeammate = function(teammate) {
+            var index = $scope.groups[$scope.chosen_id].teammates.indexOf(teammate);
+            if (index > -1) {
+                $scope.groups[$scope.chosen_id].teammates.splice(index, 1);
+            }
+            console.log(typeof teammate);
         }
 
         $scope.deleteTeam = function(team) {
