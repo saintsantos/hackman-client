@@ -41,7 +41,7 @@
             <div class="valign col s8 push-s1">
                 <div>
                     <!--add funciton call to form thingy-->
-                    <form ng-show="showAlerts" ng-submit="showAlerts=false; addAlerts(alert)">
+                    <form ng-show="showAlerts == true" ng-submit="showAlerts=false; addAlerts(alert)">
                         <input type="text" ng-model="alert.text" placeholder="New Alert">
                         <button class="btn" type="submit">Send Alert!</button>
                     </form>
@@ -51,11 +51,11 @@
                     <div class="card-content">
                         <span class="card-title white-text"><i class="fa fa-exclamation-triangle"></i>  Alert: {{latest.text}}</span>
                         <!--This should display the current alert, which is right now assumed to be 'alert'-->
-                        <div ng-show="showAllAlerts" ng-submit="showAllAlerts = false">
+                        <div ng-show="showAllAlerts" ng-submit="showAllAlerts = true">
                             <ul ng-repeat="x in alerts">
                                 <li class="white-text">{{x.text}}</li>
                             </ul>
-                            <button class="btn" type="submit">Close</button>
+                            <button class="btn" type="submit" ng-click="showAllAlerts = false">Close</button>
                         </div>
                     </div>
                 </div>
