@@ -1,6 +1,6 @@
 angular
     .module('sponsor.controller', ['ui.materialize'])
-    .controller('SponsorController', function($scope, $state, $window, SponsorService) {
+    .controller('SponsorController', function($scope, $state, authService, $window, SponsorService) {
 
         $scope.teams = function() {
             console.log("Going to teams");
@@ -48,6 +48,33 @@ angular
                 $scope.sponsors.push(sponsor.data);
             });
         }
+
+        var authenticate = this;
+        authenticate.authService = authService;
+        authService.getDeferredProfile().then(function(profile) {
+            UserService.login(profile.nickname, profile.email);
+            UserService.getUser(profile.nickname).then(function(result) {
+                    $scope.user = result.data;
+                    $window.localStorage.setItem('user', JSON.stringify(result.data));
+                    $window.localStorage.setItem('user_id', $scope.user._id);
+                    $window.localStorage.setItem('role', $scope.user.role);
+            })
+        });
+        $scope.loggingOut = function() {
+            authenticate.authService.logout();
+        }
+
+        $scope.prize = function() {
+            //console.log("Going to prizes");
+            $state.go('prize');
+
+        }
+
+        $scope.sponsor = function() {
+            //console.log("Going to sponsors");
+            $state.go('sponsor');
+
+        };
 
 
 });

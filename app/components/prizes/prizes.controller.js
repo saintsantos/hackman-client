@@ -1,6 +1,6 @@
 angular
     .module('prizes.controller', ['ui.materialize'])
-    .controller('PrizeController', function($scope, $state, $window, PrizeService) {
+    .controller('PrizeController', function($scope, $state, $window, authService, PrizeService) {
 
         $scope.teams = function() {
             $state.go('teams');
@@ -42,6 +42,33 @@ angular
             $scope.chosen_prize = prize;
             console.log($scope.chosen_prize);
         }
+
+        var authenticate = this;
+        authenticate.authService = authService;
+        authService.getDeferredProfile().then(function(profile) {
+            UserService.login(profile.nickname, profile.email);
+            UserService.getUser(profile.nickname).then(function(result) {
+                    $scope.user = result.data;
+                    $window.localStorage.setItem('user', JSON.stringify(result.data));
+                    $window.localStorage.setItem('user_id', $scope.user._id);
+                    $window.localStorage.setItem('role', $scope.user.role);
+            })
+        });
+        $scope.loggingOut = function() {
+            authenticate.authService.logout();
+        }
+
+        $scope.prize = function() {
+            //console.log("Going to prizes");
+            $state.go('prize');
+
+        }
+
+        $scope.sponsor = function() {
+            //console.log("Going to sponsors");
+            $state.go('sponsor');
+
+        };
 
         $scope.createPrize = function() {
             PrizeService.newPrize().then(function(result) {
