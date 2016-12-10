@@ -105,7 +105,7 @@
                             <button class="btn" ng-show="admin == true || owner == true" ng-click="deleteTeam(chosen_team._id)">Delete Team</button>
                             <button class="btn" ng-show="admin == true || owner == true" ng-click="askForHelp(chosen_team)">Help!</button>
                         </div>
-                        <div ng-show="editing" >
+                        <div ng-show="editing">
                             <form ng-submit="editing = false; saveTeam(chosen_team)">
                                 <label>Teamname:</label>
                                 <input type="text" ng-model="chosen_team.teamname" placeholder="{{chosen_team.teamname}}" ng-required />
@@ -133,66 +133,62 @@
                         </div>
                     </div>
                 </div>
-                        <!-- MEMBER PROFILE CARDS START HERE -->
-                        <div class="row">
+                <!-- MEMBER PROFILE CARDS START HERE -->
+                <div class="row">
 
-                            <!-- TOP TWO PROFILES START HERE -->
-                            <div class="row">
+                    <!-- TOP TWO PROFILES START HERE -->
 
-                                <div class="col s3 push-s6" ng-repeat="teammate1 in teammateArray1">
-                                    <div class="card small">
-                                        <div>
-                                            <div class="card-content">
-                                                <span class="card-title">{{teammate1.username}}</span>
-                                                <p id="member-info">{{teammate1.email}}</p>
-                                            </div>
-                                            <div class="card-action grey darken-3">
-                                                <a target="blank" href="{{teammate1.github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
-                                                <a target="blank" href="{{teammate1.linkedin}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
-                                                <a target="blank" href="{{teammate1.resume}}"><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
-                                                <button ng-show="admin == true" class="btn" ng-click="makeAdmin(teammate1)">Make Admin</button>
-                                                <button ng-show="admin == true" class="btn" ng-click="removeAdmin(teammate1)">Remove Admin</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <div class="col s3" ng-repeat="teammate1 in teammateArray1">
+                        <div class="card small">
+                            <div>
+                                <div class="card-content">
+                                    <span class="card-title">{{teammate1.username}}</span>
+                                    <p id="member-info">{{teammate1.email}}</p>
+                                </div>
+                                <div class="card-action grey darken-3">
+                                    <a target="blank" href="{{teammate1.github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                                    <a target="blank" href="{{teammate1.linkedin}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                                    <a target="blank" href="{{teammate1.resume}}"><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
+                                    <!-- Switch -->
+                                      <div class="switch">
+                                        <label>
+                                          Off
+                                          <input type="checkbox">
+                                          <span ng-show="admin == true" ng-click="makeAdmin(teammate1)" class="lever"></span>
+                                          On
+                                        </label>
+                                      </div>
+                                    <button ng-show="admin == true" class="btn" ng-click="makeAdmin(teammate1)">Make Admin</button>
+                                    <button ng-show="admin == true" class="btn" ng-click="removeAdmin(teammate1)">Remove Admin</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                            <!--                BOTTOM TWO PROFILES START HERE -->
-                            <div class="row">
-                                <div class="col s3 push-s6" ng-repeat="teammate2 in teammateArray2">
-                                    <div class="card small">
-                                        <div class="card-content">
-                                            <span class="card-title">{{teammate2.username}}</span>
-                                            <p id="member-info">{{teammate2.email}}</p>
-                                        </div>
-                                        <div class="card-action grey darken-3">
-                                            <a href="{{teammate2.github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
-                                            <a href="{{teammate2.linkedin}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
-                                            <a href="{{teammate2.resume}}"><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
-                                            <div ng-show="admin == true">
-                                                <button ng-show="admin == true" ng-click="makeAdmin(teammate2)" class="btn">Make Admin</button>
-                                                <button ng-show="admin == true" ng-click="removeAdmin(teammate2)" class="btn">Remove Admin</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <!--                BOTTOM TWO PROFILES START HERE -->
+                    <div class="col s3" ng-repeat="teammate2 in teammateArray2">
+                        <div class="card small">
+                            <div class="card-content">
+                                <span class="card-title">{{teammate2.username}}</span>
+                                <p id="member-info">{{teammate2.email}}</p>
+                            </div>
+                            <div class="card-action grey darken-3">
+                                <a href="{{teammate2.github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
+                                <a href="{{teammate2.linkedin}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
+                                <a href="{{teammate2.resume}}"><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
+                                <div ng-show="admin == true">
+                                    <button ng-show="admin == true" ng-click="makeAdmin(teammate2)" class="btn">Make Admin</button>
+                                    <button ng-show="admin == true" ng-click="removeAdmin(teammate2)" class="btn">Remove Admin</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
             </div>
-
         </div>
-    </div>
-    </div>
-    </div>
 
+
+    </div>
 </body>
 
 </html>
