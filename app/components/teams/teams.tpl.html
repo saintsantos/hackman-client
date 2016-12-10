@@ -162,8 +162,8 @@
                                                 <a target="blank" href="{{teammate1.github}}"><i class="fa fa-github" id="faicons" aria-hidden="true"></i></a>
                                                 <a target="blank" href="{{teammate1.linkedin}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
                                                 <a target="blank" href="{{teammate1.resume}}"><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
-                                                <button class="btn" ng-click="makeAdmin(teammate1)">Make Admin</button>
-                                                <button class="btn" ng-click="removeAdmin(teammate1)">Remove Admin</button>
+                                                <button ng-show="role == admin" class="btn" ng-click="makeAdmin(teammate1)">Make Admin</button>
+                                                <button ng-show="role == admin" class="btn" ng-click="removeAdmin(teammate1)">Remove Admin</button>
                                             </div>
                                         </div>
                                     </div>
@@ -185,7 +185,7 @@
                                             <a href="{{teammate2.linkedin}}"><i class="fa fa-linkedin" id="faicons" aria-hidden="true"></i></a>
                                             <a href="{{teammate2.resume}}"><i class="fa fa-file-text-o" id="faicons" aria-hidden="true"></i></a>
                                             <div ng-show="admin == true">
-                                                <button ng-show="role == user" ng-click="makeAdmin(teammate2)" class="btn">Make Admin</button>
+                                                <button ng-show="role == admin" ng-click="makeAdmin(teammate2)" class="btn">Make Admin</button>
                                                 <button ng-show="role == admin" ng-click="removeAdmin(teammate2)" class="btn">Remove Admin</button>
                                             </div>
                                         </div>
