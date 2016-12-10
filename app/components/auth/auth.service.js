@@ -38,7 +38,7 @@
                         //UserService.login(profile.nickname, profile.email);
                         //$state.go('teams');
                         deferred.resolve(profile);
-                        $state.go('teams');
+                        //$state.go('teams');
                     });
                     console.log("made it!");
                     authManager.authenticate();

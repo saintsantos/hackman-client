@@ -10,7 +10,8 @@ angular
         $scope.groups = []
         TeamService.getAllTeams().then(function(teams) {
             $scope.groups = teams.data;
-        })
+        });
+
         /*var profile = JSON.parse($window.localStorage.getItem('profile'));
         var user = JSON.parse($window.localStorage.getItem('user'));
         console.log(profile);
@@ -42,44 +43,11 @@ angular
             $scope.alerts = result.data;
         });
 
-        $scope.test = function() {
-            //Actually define what the function is supposed to do here
-            console.log("This is a function triggered in a controller");
-        }
-
-        $scope.underConstruction = function() {
-            document.getElementById("ConstMessage").innerHTML = "These buttons are under construction. Please check back once databases are up and running!";
-        }
-
-        $scope.loadTeamInfo = function(group) {
-            document.getElementById("groupName").innerHTML = group;
-            document.getElementById("InfoPanel").innerHTML = "This is the information for the team";
-        }
-
-        $scope.loadAnnouncementInfo = function(group, announce) {
-            document.getElementById("groupName").innerHTML = group;
-            document.getElementById("InfoPanel").innerHTML = announce;
-        }
-
-        $scope.loadMembers = function(group, num1, num2, num3) {
-            document.getElementById("groupName").innerHTML = group;
-            document.getElementById("InfoPanel").innerHTML = "DummyMember"+num1+"\t DummyMember"+num2+"\t DummyMember"+num3;
-        }
-
-        $scope.teamInfoPopUp = function() {
-            var team=prompt("Enter your team name:","teamName");
-            if(team!=null && team!="teamName"){
-            alert("We were unable to create the team:\n\t"+team+"\n as our databases are not yet up and running.\n Thank you for your understanding");
-            }
-        }
-
         $scope.members = function() {
             //console.log("going to members page");
             $state.go('members');
         }
 
-        //Olivia added this to mess around with the angular stuff on the sponsors page
-        //Olivia added these to mess around with the angular stuff on the sponsors and prizes page
         $scope.addAlerts = function(alert) {
             //console.log(alert);
             TeamService.addAlert(alert);

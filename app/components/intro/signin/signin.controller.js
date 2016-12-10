@@ -4,12 +4,12 @@ angular
     //The exported name of the controller module, this is called in other modules and in html
     .controller('UserController', function($scope, $state, $window,UserService, authService) {
 
-        /*if($window.localStorage.getItem('id_token')) {
+        if($window.localStorage.getItem('id_token')) {
 			//UserService.login($window.localStorage.getItem('username'), $window.localStorage.getItem('email'));
             $state.go('teams')
         } else {
             $state.go('login');
-        }*/
+        }
 
         var authenticate = this;
         authenticate.authService = authService;
