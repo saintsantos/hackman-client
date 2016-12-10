@@ -139,19 +139,19 @@ angular
             return $http(xhrParams);
         }
 
-        function makeAdmin() {
-            var xhrparams = {
+        function makeAdmin(id) {
+            var xhrParams = {
                 method: 'POST',
-                url: urlConstant.baseUrl + '/api/admin/'
+                url: urlConstant.baseUrl + '/api/admin/' + id
             }
 
             return $http(xhrParams);
         }
 
-        function removeAdmin() {
-            var xhrparams = {
+        function removeAdmin(id) {
+            var xhrParams = {
                 method: 'DELETE',
-                url: urlConstant.baseUrl + '/api/admin/'
+                url: urlConstant.baseUrl + '/api/admin/' + id
             }
 
             return $http(xhrParams);

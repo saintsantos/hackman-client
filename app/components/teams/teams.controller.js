@@ -23,6 +23,7 @@ angular
                     $window.localStorage.setItem('user_id', $scope.user._id);
                     $window.localStorage.setItem('role', $scope.user.role);
             })
+            console.log(profile)
         });
 
         if ($window.localStorage.getItem('role') === "admin") {
@@ -213,10 +214,12 @@ angular
         $scope.makeAdmin = function(user) {
             //Accepts a user id as an argument and sets that user to admin status on the backend
             TeamService.makeAdmin(user._id);
+            //console.log(user._id)
         }
 
         $scope.removeAdmin = function(user) {
             //Accepts a user id as an argument and turns the user into a normal user on the backend
             TeamService.removeAdmin(user._id);
+            //console.log(user._id)
         }
     });
