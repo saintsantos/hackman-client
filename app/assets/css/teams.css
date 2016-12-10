@@ -27,6 +27,16 @@
   /*border: 4px;*/
 }
 
+#hackingRed {
+
+  background-color: #E0320F;
+  font: sans-serif;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px #808080;
+  /*border: 4px;*/
+}
+
 #hackerHead {
   /*color: #74BE30;*/
   padding-left: 3%;
