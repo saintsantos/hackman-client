@@ -157,6 +157,16 @@ angular
             return $http(xhrParams);
         }
 
+        function getHelp(id, help) {
+            var xhrParams = {
+                method: 'POST',
+                url: urlConstant.baseUrl + '/api/teams/' + id + '/help',
+                params: {
+                    help: help
+                }
+            }
+        }
+
         //Move the alert calls to the alert service.
         return {
             check: check,
@@ -172,6 +182,7 @@ angular
             getTeammates: getTeammates,
             delTeammate: delTeammate,
             addTeammate: addTeammate,
-            testConfig: testConfig
+            testConfig: testConfig,
+            getHelp: getHelp
         }
     })

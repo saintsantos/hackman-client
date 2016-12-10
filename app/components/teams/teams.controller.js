@@ -155,7 +155,7 @@ angular
         $scope.selectTeam = function(team, teamid) {
             var userid = $window.localStorage.getItem('user_id');
             //call function to get array and assign here.
-            //console.log(team.teammates);
+            console.log(team);
             team.profiles = [];
             if (userid === team.created_by) {
                 $scope.owner = true;
@@ -221,5 +221,12 @@ angular
             //Accepts a user id as an argument and turns the user into a normal user on the backend
             TeamService.removeAdmin(user._id);
             //console.log(user._id)
+        }
+
+        $scope.askForHelp = function(team) {
+            team.help = !team.help;
+            $scope.groups[$scope.chosen_id].help = team.help;
+            console.log(team);
+            //TeamService.getHelp(team._id, team.help);
         }
     });
