@@ -197,4 +197,13 @@ angular
             console.log(team);
             //TeamService.getHelp(team._id, team.help);
         }
+
+        $scope.adminFunk = function(user) {
+            if (user.role != 'admin') {
+                user.role = 'admin'
+            } else {
+                user.role = 'user'
+            }
+            console.log(user.role);
+        }
     });
