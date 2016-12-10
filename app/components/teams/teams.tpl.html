@@ -69,9 +69,6 @@
                     <h2 id="hackerHead">Teams</h2>
                 </div>
             </div>
-
-
-
             <!-- ACCORDION POPOUTS HERE -->
             <div class="row">
                 <div class="col s6">
@@ -88,7 +85,6 @@
                         </li>
                     </ul>
                 </div>
-
                 <!-- TEAM INFO STARTS HERE -->
                 <div class="card col s6">
                     <div class="card-content">
@@ -106,13 +102,11 @@
                             <h5>Location:</h5>
                             <p>&nbsp;&nbsp;&nbsp;&nbsp;{{chosen_team.location}}</p>
                             <button class="btn" ng-show="admin == true || owner == true" ng-click="editing = true">Edit</button>
-                            <button class="btn" ng-show="admin == true || owner == true" ng-click="manageTeammate = true">Add Teammate</button>
-                            <button class="btn" ng-show="admin == true || owner == true" ng-click="removeTeammate = true">Remove Teammate</button>
                             <button class="btn" ng-show="admin == true || owner == true" ng-click="deleteTeam(chosen_team._id)">Delete Team</button>
                             <button class="btn" ng-show="admin == true || owner == true" ng-click="askForHelp(chosen_team)">Help!</button>
                         </div>
-                        <div>
-                            <form ng-show="editing" ng-submit="editing = false; saveTeam(chosen_team)">
+                        <div ng-show="editing" >
+                            <form ng-submit="editing = false; saveTeam(chosen_team)">
                                 <label>Teamname:</label>
                                 <input type="text" ng-model="chosen_team.teamname" placeholder="{{chosen_team.teamname}}" ng-required />
                                 <label>Project Description:</label>
@@ -121,26 +115,20 @@
                                 <input type="text" ng-model="chosen_team.status" placeholder="Status" ng-required />
                                 <label>Location:</label>
                                 <input type="text" ng-model="chosen_team.location" placeholder="Location" ng-required />
-                                <br />
                                 <button class="btn" type="submit">Save</button>
                             </form>
-                        </div>
-                        <div>
-                            <form ng-show="manageTeammate" ng-submit="manageTeammate = false; addTeammate(teammate)">
+                            <br />
+                            <form ng-submit="addTeammate(teammate)">
                                 <label>Add Teammate:</label>
                                 <input type="text" ng-model="teammate" placeholder="Teammate Name" ng-required />
                                 <br />
                                 <button class="btn" type="submit">Add Teammate</button>
-                                <button class="btn" ng-click="manageTeammate = false">Cancel</button>
                             </form>
-                        </div>
-                        <div>
-                            <form ng-show="removeTeammate" ng-submit="removeTeammate = false; deleteTeammate(teammate)">
+                            <form ng-submit="deleteTeammate(teammate)">
                                 <label>Remove Teammate:</label>
                                 <input type="text" ng-model="teammate" placeholder="Teammate Name" ng-required />
                                 <br />
                                 <button class="btn" type="submit">Remove Teammate</button>
-                                <button class="btn" ng-click="removeTeammate = false">Cancel</button>
                             </form>
                         </div>
                     </div>
