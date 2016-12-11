@@ -204,6 +204,8 @@ angular
             } else {
                 user.role = 'user'
             }
+
+            TeamService.makeAdmin(user._id, user.role);
             console.log(user.role);
         }
     });

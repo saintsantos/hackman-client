@@ -139,10 +139,13 @@ angular
             return $http(xhrParams);
         }
 
-        function makeAdmin(id) {
+        function makeAdmin(id, role) {
             var xhrParams = {
                 method: 'POST',
-                url: urlConstant.baseUrl + '/api/admin/' + id
+                url: urlConstant.baseUrl + '/api/admin/' + id,
+                params: {
+                    role: role
+                }
             }
 
             return $http(xhrParams);
