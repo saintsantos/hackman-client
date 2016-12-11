@@ -4,11 +4,10 @@ angular
     //Service name for calls in other modules
     .factory('SponsorService', function($http, $window, $q, urlConstant) {
 
-        function newSponsor(sponsor) {
-            console.log(sponsor);
+        function newSponsor() {
             var xhrParams = {
                 method: 'POST',
-                url: urlConstant.baseUrl + '/api/admin/sponsor/'
+                url: urlConstant.baseUrl + '/api/admin/sponsor/new'
             }
             return $http(xhrParams);
 

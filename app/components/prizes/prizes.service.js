@@ -8,7 +8,7 @@ angular
             //console.log(prize);
             var xhrParams = {
                 method: 'POST',
-                url: urlConstant.baseUrl + '/api/admin/prize/'
+                url: urlConstant.baseUrl + '/api/admin/prize/new'
             }
             return $http(xhrParams);
 
