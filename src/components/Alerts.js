@@ -1,10 +1,10 @@
-import React, {PropTypes, Component} from 'react';
-import Button from 'react-materialize';
+import React, { Component } from 'react';
+import { Card } from 'react-materialize';
 
 export default class Alerts extends Component {
     render() {
         return (
-            <Button>Alert button!</Button>
+            <Card className='red'>This is where alerts will be sent!</Card>
         )
     }
 }

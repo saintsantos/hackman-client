@@ -1,10 +1,10 @@
-import React, {PropTypes, Component} from 'react';
-import Button from 'react-materialize';
+import React, { Component } from 'react';
+import { Card } from 'react-materialize';
 
 export default class Logo extends Component {
     render() {
         return (
-            <Button>Logo Button!</Button>
+            <Card>Insert Logo here</Card>
         )
     }
 }
